@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NFL AI Predictor</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+    :root { --bg: #f3f4f6; --card: #ffffff; --border: #e5e7eb; --text: #1f2937; --muted: #6b7280; --primary: #2563eb; --toggle-bg: #f3f4f6; --ai-light: #f5f3ff; }
+    [data-theme="dark"] { --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #f8fafc; --muted: #94a3b8; --primary: #3b82f6; --toggle-bg: #0f172a; --ai-light: #1e1b4b; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); padding: 20px; margin: 0; }
+    .container { max-width: 1400px; margin: 0 auto; }
+    .top-nav-bar { background: var(--card); padding: 14px 22px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 10px; z-index: 100; }
+    .week-badge { background: var(--primary); color: white; padding: 10px 16px; border-radius: 8px; font-weight: 900; }
+    .btn-action { background: var(--toggle-bg); color: var(--text); border: 1px solid var(--border); padding: 7px 12px; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; }
+    .game-pane-card { background: var(--card); padding: 20px 24px; border-radius: 16px; border: 1px solid var(--border); margin-bottom: 24px; }
+    .matchup-overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .ai-script-card { background: var(--ai-light); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+    .live-badge { background: #ef4444; color: white; padding: 4px 8px; border-radius: 4px; font-weight: 900; font-size: 12px; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    .grade-badge { font-size: 24px; font-weight: 900; color: var(--primary); }
+</style>
+<script>
+    function formatLocalTime(isoString) { const d = new Date(isoString); return d.toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }); }
+</script>
+</head><body><div class="container">
+
+    <div class="top-nav-bar">
+        <div class="week-badge" style="background:#8b5cf6;">WEEK 3 • AI POST-GAME AUTOPSIES</div>
+        <div style="display:flex; gap:10px;">
+            <a href="index.html" class="btn-action">🏈 Upcoming Matchups</a>
+            <button class="btn-action" onclick="document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark')">🌓 Theme</button>
+        </div>
+    </div>
+    
+        <div class="game-pane-card">
+            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png" style="width:30px;"> Atlanta Falcons vs 
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png" style="width:30px;"> Green Bay Packers
+                </div>
+                <div style="font-weight:900;">FINAL: ATL 35 - GB 14</div>
+            </h2>
+            <div class="matchup-overview-grid">
+                <div style="border-right:1px solid var(--border); padding-right:16px;">
+                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
+                    <div style="font-weight:700; margin-bottom:10px;">Pick: Green Bay Packers</div>
+                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 19.5 - 24.0</div>
+                    <p style="font-size:14px;">The outdoor environment amplifies the importance of defensive line dominance and weather resilience. Green Bay’s projected superior defensive rating (65) suggests they will control the trenches, limiting Atlanta’s offensive output. Packers’ front seven is expected to generate consistent pressure, forcing Falcons into predictable passing plays. Atlanta’s offense (55) may struggle to sustain drives in cold conditions, while Packers’ balanced attack (60) should exploit mismatches in the secondary. Special teams (60) for Green Bay could provide critical field position advantages. The game is likely to be a low-scoring grind, favoring the team with the stronger defense. Green Bay’s ability to dictate tempo and limit explosive plays will be key. Packers 24, Falcons 17.</p>
+                </div>
+                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
+                        <div class="grade-badge">N/A</div>
+                    </div>
+                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
+                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
+                        <li>Total Yards: ATL 498 | GB 328</li>
+                        <li>Turnovers: ATL 1 | GB 1</li>
+                    </ul>
+                    <p style="font-size:14px; margin-top:10px;">Autopsy prompt missing.</p>
+                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: N/A</div>
+                </div>
+            </div>
+        </div>
+        </div></body></html>
