@@ -729,6 +729,21 @@
             "live_away_score": "16",
             "live_home_score": "16",
             "is_live": true
+        },
+        "autopsy": {
+            "actual_away_score": 26,
+            "actual_home_score": 30,
+            "actual_winner": "Denver Broncos",
+            "away_yds": "482",
+            "home_yds": "257",
+            "away_to": "2",
+            "home_to": "1",
+            "analysis": {
+                "grade": "C",
+                "winner_correct": true,
+                "autopsy_analysis": "The pre-game prediction correctly identified Denver\u2019s victory but underestimated the Rams\u2019 offensive efficiency and the Broncos\u2019 defensive struggles. Denver\u2019s projected defensive dominance (68) failed to materialize, as the Rams amassed 482 total yards\u2014nearly double the Broncos\u2019 257\u2014highlighting the Rams\u2019 offensive line\u2019s ability to generate consistent pressure despite their 55 rating. The low-scoring script (20-17) was inaccurate, as the game exceeded the 43.5 O/U by 12.5 points, with both teams scoring more than predicted. Denver\u2019s turnover margin (1-2) and special teams (62) were neutralized by the Rams\u2019 explosive plays and field position gains, contradicting the expectation that Denver\u2019s defense would dictate tempo. While Denver\u2019s defense limited LA\u2019s red zone efficiency, the Rams\u2019 ability to convert yardage into points (26) far exceeded the 17 predicted.",
+                "key_takeaway": "Even dominant defensive metrics can be outmaneuvered by an opposing offense\u2019s execution and yardage production."
+            }
         }
     },
     "401872963": {
@@ -741,19 +756,19 @@
             "home_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
             "away_color": "#06424d",
             "home_color": "#0b1c3a",
-            "market_line": "PHI -4.5 | O/U: 41.5",
-            "est_away_pts": 23.0,
-            "est_home_pts": 18.5,
+            "market_line": "PHI -3.5 | O/U: 41.5",
+            "est_away_pts": 22.5,
+            "est_home_pts": 19.0,
             "ai_insights": {
-                "away_off": 55,
-                "away_def": 60,
-                "away_st": 58,
-                "home_off": 52,
-                "home_def": 62,
-                "home_st": 55,
+                "away_off": 50,
+                "away_def": 55,
+                "away_st": 50,
+                "home_off": 50,
+                "home_def": 55,
+                "home_st": 50,
                 "predicted_winner": "Philadelphia Eagles",
-                "confidence": 6,
-                "analysis": "The outdoor environment amplifies the importance of defensive line dominance and weather resilience. While both teams lack specific player data, the Eagles' slight edge in defensive ratings (60 vs. 62 for Bears) suggests Chicago's defense may hold serve in critical moments. However, Philadelphia's offensive efficiency (55) vs. Chicago's weaker offensive projection (52) creates a favorable imbalance. The game will hinge on red-zone efficiency and turnover margins, with the Eagles' special teams (58) providing a narrow edge. Final score projection: Philadelphia Eagles 23, Chicago Bears 19.",
+                "confidence": 7,
+                "analysis": "The outdoor environment amplifies the importance of defensive line dominance, but with no starters or injury data provided, both teams' defenses are projected as equal. The Eagles' slight edge in the market (-3.5) suggests a marginally stronger offensive or special teams unit. However, the Bears' home-field advantage could counteract this, though no specific home-field metrics are available. The low-scoring environment favors defenses, but without clear offensive disparities, the game hinges on execution. Philadelphia's projected 7-point edge aligns with the market, assuming balanced play. Final score prediction: Philadelphia Eagles 23, Chicago Bears 16.",
                 "injury_impact": {}
             },
             "winner_side": "away",
