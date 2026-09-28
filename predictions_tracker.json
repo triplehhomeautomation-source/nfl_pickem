@@ -769,7 +769,7 @@
             "id": "401872963",
             "matchup_label": "Philadelphia Eagles at Chicago Bears",
             "utc_date": "2026-09-29T00:15Z",
-            "last_updated": "2026-09-28T19:36:03.921458+00:00",
+            "last_updated": "2026-09-28T19:40:51.885214+00:00",
             "market_line": "PHI -3.5 | O/U: 41.5",
             "ou_line": "O/U 41.5",
             "est_away_pts": 22.5,
@@ -781,21 +781,42 @@
             "nfelo_away": 58.8,
             "nfelo_home": 41.2,
             "ai_insights": {
-                "away_off": 65,
-                "away_def": 85,
+                "away_off": 75,
+                "away_def": 65,
                 "away_st": 70,
                 "home_off": 60,
                 "home_def": 75,
-                "home_st": 72,
-                "predicted_winner": "Chicago Bears",
-                "confidence": 6,
-                "analysis": "AI Analysis error.",
-                "injury_impact": {}
+                "home_st": 65,
+                "predicted_winner": "Philadelphia Eagles",
+                "confidence": 8,
+                "analysis": "The Eagles' offense, led by Jalen Hurts and featuring DeVonta Smith and Dontayvion Wicks, should exploit the Bears' weakened secondary, which lacks key starters like Kyler Gordon and Shemar Turner. The Bears' offensive line, while solid, will struggle without Caleb Williams, forcing a backup QB into a high-pressure situation. Chicago's defense, anchored by Montez Sweat and Grady Jarrett, may contain Hurts but faces challenges against the Eagles' running game with Saquon Barkley. Special teams parity could tilt the game slightly toward Philadelphia. The Eagles' depth at wide receiver and the Bears' quarterback crisis create a clear advantage for Philadelphia. Final score prediction: Philadelphia Eagles 24, Chicago Bears 17.",
+                "injury_impact": {
+                    "Dallas Goedert": {
+                        "score": 9.0,
+                        "analysis": "His absence removes a key red-zone target for Jalen Hurts."
+                    },
+                    "Caleb Williams": {
+                        "score": 10.0,
+                        "analysis": "Chicago's entire offensive identity is crippled without their starting quarterback."
+                    },
+                    "Hollywood Brown": {
+                        "score": 8.0,
+                        "analysis": "Limits the Eagles' WR depth and slot coverage options."
+                    },
+                    "Noah Sewell": {
+                        "score": 7.0,
+                        "analysis": "Weakens Chicago's linebacking corps against the run."
+                    },
+                    "Jonathan Greenard": {
+                        "score": 6.0,
+                        "analysis": "His questionable status creates uncertainty at linebacker for Philadelphia."
+                    }
+                }
             },
-            "winner_side": "home",
-            "loser_side": "away",
-            "confidence": 6,
-            "is_upset": true,
+            "winner_side": "away",
+            "loser_side": "home",
+            "confidence": 8,
+            "is_upset": false,
             "weather_summary": "62\u00b0F, Clear Sky (Wind: 5 mph)",
             "quarters_weather": [
                 {
@@ -846,20 +867,20 @@
                     {
                         "text": "Jonathan Greenard \u2014 Questionable",
                         "name": "Jonathan Greenard",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 6.0,
+                        "analysis": "His questionable status creates uncertainty at linebacker for Philadelphia."
                     },
                     {
                         "text": "Hollywood Brown \u2014 Out",
                         "name": "Hollywood Brown",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 8.0,
+                        "analysis": "Limits the Eagles' WR depth and slot coverage options."
                     },
                     {
                         "text": "Dallas Goedert \u2014 Out",
                         "name": "Dallas Goedert",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 9.0,
+                        "analysis": "His absence removes a key red-zone target for Jalen Hurts."
                     },
                     {
                         "text": "Landon Dickerson \u2014 Injured Reserve",
@@ -1301,7 +1322,7 @@
                         }
                     ]
                 },
-                "inj_metric": 100.0,
+                "inj_metric": 77.0,
                 "color": "#000000"
             },
             "home": {
@@ -1319,8 +1340,8 @@
                     {
                         "text": "Caleb Williams \u2014 Out",
                         "name": "Caleb Williams",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 10.0,
+                        "analysis": "Chicago's entire offensive identity is crippled without their starting quarterback."
                     },
                     {
                         "text": "Shemar Turner \u2014 Out",
@@ -1331,8 +1352,8 @@
                     {
                         "text": "Noah Sewell \u2014 Out",
                         "name": "Noah Sewell",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 7.0,
+                        "analysis": "Weakens Chicago's linebacking corps against the run."
                     },
                     {
                         "text": "Kyler Gordon \u2014 Out",
@@ -1782,7 +1803,7 @@
                         }
                     ]
                 },
-                "inj_metric": 100.0,
+                "inj_metric": 83.0,
                 "color": "#0b1c3a"
             }
         }
