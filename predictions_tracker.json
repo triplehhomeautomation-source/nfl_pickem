@@ -769,7 +769,7 @@
             "id": "401872963",
             "matchup_label": "Philadelphia Eagles at Chicago Bears",
             "utc_date": "2026-09-29T00:15Z",
-            "last_updated": "2026-09-28T19:17:43.810791+00:00",
+            "last_updated": "2026-09-28T19:36:03.921458+00:00",
             "market_line": "PHI -3.5 | O/U: 41.5",
             "ou_line": "O/U 41.5",
             "est_away_pts": 22.5,
@@ -782,37 +782,20 @@
             "nfelo_home": 41.2,
             "ai_insights": {
                 "away_off": 65,
-                "away_def": 75,
+                "away_def": 85,
                 "away_st": 70,
-                "home_off": 70,
-                "home_def": 80,
-                "home_st": 75,
-                "predicted_winner": "Philadelphia Eagles",
-                "confidence": 8,
-                "analysis": "The Eagles' offensive line (Jordan Mailata, Lane Johnson) provides solid protection for Jalen Hurts, who can exploit the Bears' weakened secondary (missing Kyler Gordon, Shemar Turner). Saquon Barkley's presence adds a reliable running threat, while DeVonta Smith and Dontayvion Wicks can create mismatches against a Bears defense missing key starters. The Bears' offense is crippled by Caleb Williams' absence, forcing a backup QB to manage a unit missing multiple skill-position players (Rome Odunze, Luther Burden III, Colston Loveland). Chicago's defense, though strong upfront (Montez Sweat, Grady Jarrett), lacks depth at linebacker (T.J. Edwards, D'Marco Jackson) and secondary (Jaylon Johnson, Tyrique Stevenson Sr.) to contain Hurts and Barkley. Special teams are competitive but unlikely to sway the game. The Eagles' superior offensive balance and defensive depth give them the edge. Final score prediction: Philadelphia Eagles 24, Chicago Bears 17.",
-                "injury_impact": {
-                    "Dallas Goedert": {
-                        "score": 8.0,
-                        "analysis": "His absence weakens the Eagles' passing game, reducing Hurts' primary target in the red zone."
-                    },
-                    "Caleb Williams": {
-                        "score": 10.0,
-                        "analysis": "His injury cripples the Bears' offense, removing their most dynamic playmaker and forcing a backup QB into a high-stakes game."
-                    },
-                    "Jonathan Greenard": {
-                        "score": 7.0,
-                        "analysis": "His questionable status creates uncertainty at linebacker, potentially limiting the Eagles' ability to stop the run and pressure the quarterback."
-                    },
-                    "Anthony Johnson Jr.": {
-                        "score": 6.0,
-                        "analysis": "His absence reduces the Bears' special teams depth, though the unit remains functional with Tory Taylor and Kalif Raymond."
-                    }
-                }
+                "home_off": 60,
+                "home_def": 75,
+                "home_st": 72,
+                "predicted_winner": "Chicago Bears",
+                "confidence": 6,
+                "analysis": "AI Analysis error.",
+                "injury_impact": {}
             },
-            "winner_side": "away",
-            "loser_side": "home",
-            "confidence": 8,
-            "is_upset": false,
+            "winner_side": "home",
+            "loser_side": "away",
+            "confidence": 6,
+            "is_upset": true,
             "weather_summary": "62\u00b0F, Clear Sky (Wind: 5 mph)",
             "quarters_weather": [
                 {
@@ -863,8 +846,8 @@
                     {
                         "text": "Jonathan Greenard \u2014 Questionable",
                         "name": "Jonathan Greenard",
-                        "score": 7.0,
-                        "analysis": "His questionable status creates uncertainty at linebacker, potentially limiting the Eagles' ability to stop the run and pressure the quarterback."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Hollywood Brown \u2014 Out",
@@ -875,8 +858,8 @@
                     {
                         "text": "Dallas Goedert \u2014 Out",
                         "name": "Dallas Goedert",
-                        "score": 8.0,
-                        "analysis": "His absence weakens the Eagles' passing game, reducing Hurts' primary target in the red zone."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Landon Dickerson \u2014 Injured Reserve",
@@ -1318,7 +1301,7 @@
                         }
                     ]
                 },
-                "inj_metric": 85.0,
+                "inj_metric": 100.0,
                 "color": "#000000"
             },
             "home": {
@@ -1330,14 +1313,14 @@
                     {
                         "text": "Anthony Johnson Jr. \u2014 Injured Reserve",
                         "name": "Anthony Johnson Jr.",
-                        "score": 6.0,
-                        "analysis": "His absence reduces the Bears' special teams depth, though the unit remains functional with Tory Taylor and Kalif Raymond."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Caleb Williams \u2014 Out",
                         "name": "Caleb Williams",
-                        "score": 10.0,
-                        "analysis": "His injury cripples the Bears' offense, removing their most dynamic playmaker and forcing a backup QB into a high-stakes game."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Shemar Turner \u2014 Out",
@@ -1799,7 +1782,7 @@
                         }
                     ]
                 },
-                "inj_metric": 84.0,
+                "inj_metric": 100.0,
                 "color": "#0b1c3a"
             }
         }
