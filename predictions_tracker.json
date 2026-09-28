@@ -769,7 +769,7 @@
             "id": "401872963",
             "matchup_label": "Philadelphia Eagles at Chicago Bears",
             "utc_date": "2026-09-29T00:15Z",
-            "last_updated": "2026-09-28T18:16:28.317090+00:00",
+            "last_updated": "2026-09-28T19:17:43.810791+00:00",
             "market_line": "PHI -3.5 | O/U: 41.5",
             "ou_line": "O/U 41.5",
             "est_away_pts": 22.5,
@@ -782,34 +782,30 @@
             "nfelo_home": 41.2,
             "ai_insights": {
                 "away_off": 65,
-                "away_def": 78,
+                "away_def": 75,
                 "away_st": 70,
-                "home_off": 60,
-                "home_def": 82,
-                "home_st": 68,
+                "home_off": 70,
+                "home_def": 80,
+                "home_st": 75,
                 "predicted_winner": "Philadelphia Eagles",
                 "confidence": 8,
-                "analysis": "The Eagles' defense, anchored by a dominant defensive line (Jalen Carter, Moro Ojomo) and a secondary with Riq Woolen and Marcus Epps, should neutralize the Bears' weakened offense, which lacks its starting QB (Caleb Williams) and has multiple key injuries on the offensive line. The Bears' defensive line (Montez Sweat, Grady Jarrett) is formidable, but the Eagles' offensive line (Jordan Mailata, Lane Johnson) should protect Jalen Hurts effectively despite Landon Dickerson's absence. The Bears' special teams, missing multiple contributors, may struggle compared to the Eagles' reliable kicking units. The Eagles' ability to control the tempo with Saquon Barkley and a functional passing game (DeVonta Smith, Dontayvion Wicks) gives them the edge in a low-scoring, defensive battle. Final score: Philadelphia Eagles 23, Chicago Bears 17.",
+                "analysis": "The Eagles' offensive line (Jordan Mailata, Lane Johnson) provides solid protection for Jalen Hurts, who can exploit the Bears' weakened secondary (missing Kyler Gordon, Shemar Turner). Saquon Barkley's presence adds a reliable running threat, while DeVonta Smith and Dontayvion Wicks can create mismatches against a Bears defense missing key starters. The Bears' offense is crippled by Caleb Williams' absence, forcing a backup QB to manage a unit missing multiple skill-position players (Rome Odunze, Luther Burden III, Colston Loveland). Chicago's defense, though strong upfront (Montez Sweat, Grady Jarrett), lacks depth at linebacker (T.J. Edwards, D'Marco Jackson) and secondary (Jaylon Johnson, Tyrique Stevenson Sr.) to contain Hurts and Barkley. Special teams are competitive but unlikely to sway the game. The Eagles' superior offensive balance and defensive depth give them the edge. Final score prediction: Philadelphia Eagles 24, Chicago Bears 17.",
                 "injury_impact": {
                     "Dallas Goedert": {
                         "score": 8.0,
-                        "analysis": "His absence weakens the Eagles' passing game and tight end blocking, but Hurts and Barkley can compensate."
+                        "analysis": "His absence weakens the Eagles' passing game, reducing Hurts' primary target in the red zone."
                     },
                     "Caleb Williams": {
                         "score": 10.0,
-                        "analysis": "His injury cripples the Bears' offense, removing their most dynamic playmaker and forcing a backup QB into action."
+                        "analysis": "His injury cripples the Bears' offense, removing their most dynamic playmaker and forcing a backup QB into a high-stakes game."
                     },
-                    "Landon Dickerson": {
-                        "score": 7.5,
-                        "analysis": "His absence hurts the Eagles' run blocking and pass protection, though the offensive line's talent may mitigate the impact."
-                    },
-                    "Noah Sewell": {
-                        "score": 6.5,
-                        "analysis": "His injury weakens the Bears' linebacker corps, reducing their ability to stop the run and cover tight ends."
-                    },
-                    "Kyler Gordon": {
+                    "Jonathan Greenard": {
                         "score": 7.0,
-                        "analysis": "His absence leaves a void in the Bears' secondary, making them vulnerable to the Eagles' wide receivers."
+                        "analysis": "His questionable status creates uncertainty at linebacker, potentially limiting the Eagles' ability to stop the run and pressure the quarterback."
+                    },
+                    "Anthony Johnson Jr.": {
+                        "score": 6.0,
+                        "analysis": "His absence reduces the Bears' special teams depth, though the unit remains functional with Tory Taylor and Kalif Raymond."
                     }
                 }
             },
@@ -817,13 +813,13 @@
             "loser_side": "home",
             "confidence": 8,
             "is_upset": false,
-            "weather_summary": "62\u00b0F, Clear Sky (Wind: 4 mph)",
+            "weather_summary": "62\u00b0F, Clear Sky (Wind: 5 mph)",
             "quarters_weather": [
                 {
                     "quarter": "Q1",
                     "utc_time": "2026-09-29T00:15:00+00:00",
                     "temp": 62,
-                    "wind": 4,
+                    "wind": 5,
                     "condition": "Clear Sky",
                     "icon": "clear"
                 },
@@ -867,8 +863,8 @@
                     {
                         "text": "Jonathan Greenard \u2014 Questionable",
                         "name": "Jonathan Greenard",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 7.0,
+                        "analysis": "His questionable status creates uncertainty at linebacker, potentially limiting the Eagles' ability to stop the run and pressure the quarterback."
                     },
                     {
                         "text": "Hollywood Brown \u2014 Out",
@@ -880,13 +876,13 @@
                         "text": "Dallas Goedert \u2014 Out",
                         "name": "Dallas Goedert",
                         "score": 8.0,
-                        "analysis": "His absence weakens the Eagles' passing game and tight end blocking, but Hurts and Barkley can compensate."
+                        "analysis": "His absence weakens the Eagles' passing game, reducing Hurts' primary target in the red zone."
                     },
                     {
                         "text": "Landon Dickerson \u2014 Injured Reserve",
                         "name": "Landon Dickerson",
-                        "score": 7.5,
-                        "analysis": "His absence hurts the Eagles' run blocking and pass protection, though the offensive line's talent may mitigate the impact."
+                        "score": 0.0,
+                        "analysis": ""
                     }
                 ],
                 "depth_chart": {
@@ -1322,7 +1318,7 @@
                         }
                     ]
                 },
-                "inj_metric": 84.5,
+                "inj_metric": 85.0,
                 "color": "#000000"
             },
             "home": {
@@ -1334,14 +1330,14 @@
                     {
                         "text": "Anthony Johnson Jr. \u2014 Injured Reserve",
                         "name": "Anthony Johnson Jr.",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 6.0,
+                        "analysis": "His absence reduces the Bears' special teams depth, though the unit remains functional with Tory Taylor and Kalif Raymond."
                     },
                     {
                         "text": "Caleb Williams \u2014 Out",
                         "name": "Caleb Williams",
                         "score": 10.0,
-                        "analysis": "His injury cripples the Bears' offense, removing their most dynamic playmaker and forcing a backup QB into action."
+                        "analysis": "His injury cripples the Bears' offense, removing their most dynamic playmaker and forcing a backup QB into a high-stakes game."
                     },
                     {
                         "text": "Shemar Turner \u2014 Out",
@@ -1352,14 +1348,14 @@
                     {
                         "text": "Noah Sewell \u2014 Out",
                         "name": "Noah Sewell",
-                        "score": 6.5,
-                        "analysis": "His injury weakens the Bears' linebacker corps, reducing their ability to stop the run and cover tight ends."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Kyler Gordon \u2014 Out",
                         "name": "Kyler Gordon",
-                        "score": 7.0,
-                        "analysis": "His absence leaves a void in the Bears' secondary, making them vulnerable to the Eagles' wide receivers."
+                        "score": 0.0,
+                        "analysis": ""
                     }
                 ],
                 "depth_chart": {
@@ -1803,7 +1799,7 @@
                         }
                     ]
                 },
-                "inj_metric": 76.5,
+                "inj_metric": 84.0,
                 "color": "#0b1c3a"
             }
         }
