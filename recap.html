@@ -1,500 +1,932 @@
-
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NFL AI Predictor</title>
+<title>NFL Post-Game Autopsies & Grades</title>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
-    :root { --bg: #f3f4f6; --card: #ffffff; --border: #e5e7eb; --text: #1f2937; --muted: #6b7280; --primary: #2563eb; --toggle-bg: #f3f4f6; --ai-light: #f5f3ff; }
-    [data-theme="dark"] { --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #f8fafc; --muted: #94a3b8; --primary: #3b82f6; --toggle-bg: #0f172a; --ai-light: #1e1b4b; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); padding: 20px; margin: 0; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    :root {
+        --bg: #f3f4f6; --card: #ffffff; --border: #e5e7eb; --text: #1f2937; --muted: #6b7280; 
+        --primary: #8b5cf6; --toggle-bg: #f3f4f6;
+    }
+    [data-theme="dark"] {
+        --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #f8fafc; --muted: #94a3b8; 
+        --primary: #a78bfa; --toggle-bg: #0f172a;
+    }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 20px; margin: 0; }
     .container { max-width: 1400px; margin: 0 auto; }
     .top-nav-bar { background: var(--card); padding: 14px 22px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 10px; z-index: 100; }
     .week-badge { background: var(--primary); color: white; padding: 10px 16px; border-radius: 8px; font-weight: 900; }
-    .btn-action { background: var(--toggle-bg); color: var(--text); border: 1px solid var(--border); padding: 7px 12px; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; }
-    .game-pane-card { background: var(--card); padding: 20px 24px; border-radius: 16px; border: 1px solid var(--border); margin-bottom: 24px; }
+    .btn-action { background: var(--toggle-bg); color: var(--text); border: 1px solid var(--border); padding: 7px 12px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none; }
+    .game-pane-card { background: var(--card); padding: 20px 24px; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+    .game-pane-header-row { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 16px; }
+    .header-center-logos { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 16px; }
+    .header-center-logos img { width: 34px; height: 34px; object-fit: contain; }
+    .header-market-box { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+    .market-badge { background: var(--toggle-bg); font-weight: 800; font-size: 13px; padding: 3px 8px; border-radius: 6px; border: 1px solid var(--border); }
     .matchup-overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .ai-script-card { background: var(--ai-light); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
-    .live-badge { background: #ef4444; color: white; padding: 4px 8px; border-radius: 4px; font-weight: 900; font-size: 12px; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-    .grade-badge { font-size: 24px; font-weight: 900; color: var(--primary); }
+    .comp-group-title { font-size: 11px; font-weight: 800; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; border-bottom: 1px solid var(--border); padding-bottom: 3px; }
+    .confidence-badge { font-size: 11px; font-weight: 800; padding: 3px 7px; border-radius: 6px; background: var(--toggle-bg); border: 1px solid var(--border); }
 </style>
-<script>
-    function formatLocalTime(isoString) { const d = new Date(isoString); return d.toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }); }
-</script>
-</head><body><div class="container">
-
+</head>
+<body>
+<div class="container">
     <div class="top-nav-bar">
-        <div class="week-badge" style="background:#8b5cf6;">WEEK 3 • AI POST-GAME AUTOPSIES</div>
-        <div style="display:flex; gap:10px;">
-            <a href="index.html" class="btn-action">🏈 Upcoming Matchups</a>
+        <div style="display:flex; align-items:center; gap:16px;">
+            <div class="week-badge">WEEK 3 • AUTOPSIES</div>
+            <span style="font-size:13px; font-weight:700; color:var(--muted);">Audited Outcomes & Report Cards</span>
+        </div>
+        <div style="display:flex; gap:8px;">
+            <a href="index.html" class="btn-action">🏈 Upcoming Matchups & Live Board</a>
             <button class="btn-action" onclick="document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark')">🌓 Theme</button>
         </div>
     </div>
     
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png" style="width:30px;"> Atlanta Falcons vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png" style="width:30px;"> Green Bay Packers
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: ATL 35 - GB 14</span>
                 </div>
-                <div style="font-weight:900;">FINAL: ATL 35 - GB 14</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png">
+                    <span>Atlanta Falcons @ Green Bay Packers</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">GB -4.5 | O/U: 43.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: Atlanta Falcons</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: Green Bay Packers</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 19.5 - 24.0</div>
-                    <p style="font-size:14px;">The outdoor environment amplifies the importance of defensive line dominance and weather resilience. Green Bay’s projected superior defensive rating (65) suggests they will control the trenches, limiting Atlanta’s offensive output. Packers’ front seven is expected to generate consistent pressure, forcing Falcons into predictable passing plays. Atlanta’s offense (55) may struggle to sustain drives in cold conditions, while Packers’ balanced attack (60) should exploit mismatches in the secondary. Special teams (60) for Green Bay could provide critical field position advantages. The game is likely to be a low-scoring grind, favoring the team with the stronger defense. Green Bay’s ability to dictate tempo and limit explosive plays will be key. Packers 24, Falcons 17.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">N/A</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">Green Bay Packers</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: ATL 498 | GB 328</li>
-                        <li>Turnovers: ATL 1 | GB 1</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">Autopsy prompt missing.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: N/A</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: ATL 19.5 - GB 24.0
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The outdoor environment amplifies the importance of defensive line dominance and weather resilience. Green Bay’s projected superior defensive rating (65) suggests they will control the trenches, limiting Atlanta’s offensive output. Packers’ front seven is expected to generate consistent pressure, forcing Falcons into predictable passing plays. Atlanta’s offense (55) may struggle to sustain drives in cold conditions, while Packers’ balanced attack (60) should exploit mismatches in the secondary. Special teams (60) for Green Bay could provide critical field position advantages. The game is likely to be a low-scoring grind, favoring the team with the stronger defense. Green Bay’s ability to dictate tempo and limit explosive plays will be key. Packers 24, Falcons 17.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">❌ Pick Missed</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: N/A</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: ATL 498 | GB 328</div>
+                        <div>• Turnovers: ATL 1 | GB 1</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        Autopsy prompt missing.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: N/A
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png" style="width:30px;"> Los Angeles Chargers vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png" style="width:30px;"> Buffalo Bills
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: LAC 16 - BUF 24</span>
                 </div>
-                <div style="font-weight:900;">FINAL: LAC 16 - BUF 24</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png">
+                    <span>Los Angeles Chargers @ Buffalo Bills</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">BUF -7 | O/U: 50.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: Buffalo Bills</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: Buffalo Bills</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 21.8 - 28.8</div>
-                    <p style="font-size:14px;">The outdoor environment amplifies the importance of defensive line dominance and weather resilience. Buffalo’s projected defensive edge (60 vs. LA’s 55) suggests superior ability to disrupt opposing offenses and control the line of scrimmage, critical in cold or windy conditions. Both teams lack defined offensive identities without confirmed starters, but Buffalo’s higher offensive rating (55 vs. 50) implies marginally better execution. The Bills’ defense, ranked higher, should limit LA’s scoring opportunities while their own offense capitalizes on turnovers. The grind-style outdoor matchup favors the team with the steeper defensive leverage, which Buffalo possesses. Final score projection: Buffalo Bills 27, Los Angeles Chargers 20.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">B</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">Buffalo Bills</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: LAC 348 | BUF 350</li>
-                        <li>Turnovers: LAC 1 | BUF 5</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">The pre-game analysis correctly identified Buffalo’s defensive dominance, evidenced by 5 turnovers (vs. LA’s 1), aligning with the prediction of superior defensive leverage. However, the score prediction (27-20) underestimated the Chargers’ ability to limit Buffalo’s offense (24 points) while the Bills’ offensive rating (55) only marginally outperformed LA’s (50). The actual score (24-16) reflected a tighter game than projected, as Buffalo’s defense offset their offensive inefficiencies, while LA’s defense held Buffalo to 16 points despite the Bills’ higher offensive rating. The outdoor conditions favored Buffalo’s defensive edge, but the Chargers’ resilience in limiting explosive plays kept the game closer than anticipated.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: Defensive execution and turnover margin can override offensive inefficiencies, even in favorable matchups.</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: LAC 21.8 - BUF 28.8
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The outdoor environment amplifies the importance of defensive line dominance and weather resilience. Buffalo’s projected defensive edge (60 vs. LA’s 55) suggests superior ability to disrupt opposing offenses and control the line of scrimmage, critical in cold or windy conditions. Both teams lack defined offensive identities without confirmed starters, but Buffalo’s higher offensive rating (55 vs. 50) implies marginally better execution. The Bills’ defense, ranked higher, should limit LA’s scoring opportunities while their own offense capitalizes on turnovers. The grind-style outdoor matchup favors the team with the steeper defensive leverage, which Buffalo possesses. Final score projection: Buffalo Bills 27, Los Angeles Chargers 20.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">✅ Pick Hit</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: B</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: LAC 348 | BUF 350</div>
+                        <div>• Turnovers: LAC 1 | BUF 5</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        The pre-game analysis correctly identified Buffalo’s defensive dominance, evidenced by 5 turnovers (vs. LA’s 1), aligning with the prediction of superior defensive leverage. However, the score prediction (27-20) underestimated the Chargers’ ability to limit Buffalo’s offense (24 points) while the Bills’ offensive rating (55) only marginally outperformed LA’s (50). The actual score (24-16) reflected a tighter game than projected, as Buffalo’s defense offset their offensive inefficiencies, while LA’s defense held Buffalo to 16 points despite the Bills’ higher offensive rating. The outdoor conditions favored Buffalo’s defensive edge, but the Chargers’ resilience in limiting explosive plays kept the game closer than anticipated.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: Defensive execution and turnover margin can override offensive inefficiencies, even in favorable matchups.
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png" style="width:30px;"> Carolina Panthers vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cle.png" style="width:30px;"> Cleveland Browns
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: CAR 18 - CLE 21</span>
                 </div>
-                <div style="font-weight:900;">FINAL: CAR 18 - CLE 21</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png">
+                    <span>Carolina Panthers @ Cleveland Browns</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cle.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">CAR -1.5 | O/U: 41.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: Cleveland Browns</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: Cleveland Browns</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 21.5 - 20.0</div>
-                    <p style="font-size:14px;">The outdoor environment and lack of specific roster data create a grind-heavy matchup. Cleveland's defensive line, implied by the home_def rating, holds a slight edge in trench leverage, which is critical for controlling the tempo in poor weather. Carolina's offense (away_off 50) may struggle to generate consistent yardage against a disciplined Browns front seven, while Cleveland's balanced attack (home_off 52) could exploit Carolina's middle-of-the-road special teams (away_st 52). The Browns' defensive efficiency (home_def 58) projects to limit Carolina's explosive plays, leading to a low-scoring contest. Final score prediction: Cleveland Browns 20, Carolina Panthers 17.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">B</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">Cleveland Browns</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: CAR 360 | CLE 259</li>
-                        <li>Turnovers: CAR 1 | CLE 1</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">The prediction correctly identified Cleveland's victory, but underestimated Carolina's offensive output (360 yards vs. projected low-scoring script). Cleveland's defense (home_def 58) limited Carolina's explosive plays as expected, yet the Panthers' ability to generate 360 yards highlighted gaps in the Browns' front seven despite the pre-game emphasis on Cleveland's trench leverage. The score prediction (20-17) was close but missed the 4-point margin, as Cleveland's balanced attack (home_off 52) and Carolina's turnover efficiency (1 turnover each) shifted the game's dynamics slightly. The outdoor conditions and special teams analysis were less impactful than anticipated, with Cleveland's defense ultimately prevailing despite Carolina's yardage edge.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: Yardage advantage doesn't always translate to points—Cleveland's defensive discipline and turnover parity secured the win despite Carolina's offensive output.</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: CAR 21.5 - CLE 20.0
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The outdoor environment and lack of specific roster data create a grind-heavy matchup. Cleveland's defensive line, implied by the home_def rating, holds a slight edge in trench leverage, which is critical for controlling the tempo in poor weather. Carolina's offense (away_off 50) may struggle to generate consistent yardage against a disciplined Browns front seven, while Cleveland's balanced attack (home_off 52) could exploit Carolina's middle-of-the-road special teams (away_st 52). The Browns' defensive efficiency (home_def 58) projects to limit Carolina's explosive plays, leading to a low-scoring contest. Final score prediction: Cleveland Browns 20, Carolina Panthers 17.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">✅ Pick Hit</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: B</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: CAR 360 | CLE 259</div>
+                        <div>• Turnovers: CAR 1 | CLE 1</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        The prediction correctly identified Cleveland's victory, but underestimated Carolina's offensive output (360 yards vs. projected low-scoring script). Cleveland's defense (home_def 58) limited Carolina's explosive plays as expected, yet the Panthers' ability to generate 360 yards highlighted gaps in the Browns' front seven despite the pre-game emphasis on Cleveland's trench leverage. The score prediction (20-17) was close but missed the 4-point margin, as Cleveland's balanced attack (home_off 52) and Carolina's turnover efficiency (1 turnover each) shifted the game's dynamics slightly. The outdoor conditions and special teams analysis were less impactful than anticipated, with Cleveland's defense ultimately prevailing despite Carolina's yardage edge.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: Yardage advantage doesn't always translate to points—Cleveland's defensive discipline and turnover parity secured the win despite Carolina's offensive output.
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyj.png" style="width:30px;"> New York Jets vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png" style="width:30px;"> Detroit Lions
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: NYJ 24 - DET 31</span>
                 </div>
-                <div style="font-weight:900;">FINAL: NYJ 24 - DET 31</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyj.png">
+                    <span>New York Jets @ Detroit Lions</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">DET -6.5 | O/U: 48.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: Detroit Lions</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: Detroit Lions</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 21.0 - 27.5</div>
-                    <p style="font-size:14px;">The outdoor environment favors a physical, defensive-oriented game, where the Lions' projected defensive line advantage could dominate the Jets' offensive line. Detroit's superior defensive metrics (home_def: 65 vs. New York's 60) suggest they will limit big plays and force turnovers, while their offensive line (home_off: 60) should protect the quarterback effectively. The Jets' lack of clear offensive identity (away_off: 55) and weaker special teams (away_st: 58) make them vulnerable in a low-scoring, grind-it-out matchup. Detroit's ability to control the tempo and capitalize on short-yardage situations will be critical. The Lions' defensive dominance and home-field advantage should lead to a narrow but decisive win. Detroit Lions 27, New York Jets 20.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">B</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">Detroit Lions</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: NYJ 335 | DET 381</li>
-                        <li>Turnovers: NYJ 1 | DET 0</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">The Lions secured the win as predicted, leveraging their defensive dominance (0 turnovers) and home-field advantage. However, the game's script diverged from expectations: total yards (716) far exceeded the 48.5 O/U, contradicting the pre-game forecast of a low-scoring, grind-it-out affair. Detroit's offensive line protected the QB effectively (381 yards), but the Jets' offense (335 yards) outperformed expectations, avoiding the predicted vulnerability. The score (31-24) was closer than the 27-20 projection, highlighting the Jets' ability to capitalize on opportunities despite their offensive inefficiencies.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: Even dominant defenses can't fully suppress offenses in high-octane matchups, underscoring the importance of balancing defensive metrics with offensive adaptability.</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: NYJ 21.0 - DET 27.5
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The outdoor environment favors a physical, defensive-oriented game, where the Lions' projected defensive line advantage could dominate the Jets' offensive line. Detroit's superior defensive metrics (home_def: 65 vs. New York's 60) suggest they will limit big plays and force turnovers, while their offensive line (home_off: 60) should protect the quarterback effectively. The Jets' lack of clear offensive identity (away_off: 55) and weaker special teams (away_st: 58) make them vulnerable in a low-scoring, grind-it-out matchup. Detroit's ability to control the tempo and capitalize on short-yardage situations will be critical. The Lions' defensive dominance and home-field advantage should lead to a narrow but decisive win. Detroit Lions 27, New York Jets 20.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">✅ Pick Hit</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: B</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: NYJ 335 | DET 381</div>
+                        <div>• Turnovers: NYJ 1 | DET 0</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        The Lions secured the win as predicted, leveraging their defensive dominance (0 turnovers) and home-field advantage. However, the game's script diverged from expectations: total yards (716) far exceeded the 48.5 O/U, contradicting the pre-game forecast of a low-scoring, grind-it-out affair. Detroit's offensive line protected the QB effectively (381 yards), but the Jets' offense (335 yards) outperformed expectations, avoiding the predicted vulnerability. The score (31-24) was closer than the 27-20 projection, highlighting the Jets' ability to capitalize on opportunities despite their offensive inefficiencies.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: Even dominant defenses can't fully suppress offenses in high-octane matchups, underscoring the importance of balancing defensive metrics with offensive adaptability.
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png" style="width:30px;"> Houston Texans vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png" style="width:30px;"> Indianapolis Colts
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: HOU 17 - IND 19</span>
                 </div>
-                <div style="font-weight:900;">FINAL: HOU 17 - IND 19</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png">
+                    <span>Houston Texans @ Indianapolis Colts</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">HOU -1.5 | O/U: 42.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: Indianapolis Colts</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: Indianapolis Colts</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 22.0 - 20.5</div>
-                    <p style="font-size:14px;">The outdoor environment and lack of injury reports suggest a defensive-focused game. Indianapolis' slightly higher-ranked defense (58) and offensive line leverage may counterbalance Houston's moderate offensive output (50). Houston's special teams (52) could create field position opportunities, but Indianapolis' balanced attack (52) and stronger defensive line (58) may dominate time of possession. Both teams lack clear offensive stars, but Indianapolis' defensive depth could force Houston into low-percentage plays. The Colts' ability to limit explosive plays may lead to a low-scoring, grind-it-out contest. Indianapolis' defensive line pressure could disrupt Houston's rhythm, leading to a conservative game plan. Final score prediction: Indianapolis Colts 20, Houston Texans 17.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">B</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">Indianapolis Colts</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: HOU 223 | IND 300</li>
-                        <li>Turnovers: HOU 0 | IND 3</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">The game script aligned with the pre-game prediction of a low-scoring, defensive-dominated contest, as both teams combined for 38 points (under the 42.5 O/U). However, the score prediction (20-17 Colts) was slightly off, as the Colts won 19-17. The Colts' defensive depth and ability to limit explosive plays were evident, but their three turnovers (a critical factor not emphasized in the pre-game analysis) directly led to Houston's only touchdown. The Texans' 223 yards were lower than expected, but their efficient red-zone execution and turnover avoidance offset the Colts' superior total yards. The prediction underestimated the impact of turnovers and overestimated the Colts' offensive line leverage.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: Turnovers can decisively shift momentum in a low-scoring game, even when a team's overall performance appears superior on paper.</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: HOU 22.0 - IND 20.5
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The outdoor environment and lack of injury reports suggest a defensive-focused game. Indianapolis' slightly higher-ranked defense (58) and offensive line leverage may counterbalance Houston's moderate offensive output (50). Houston's special teams (52) could create field position opportunities, but Indianapolis' balanced attack (52) and stronger defensive line (58) may dominate time of possession. Both teams lack clear offensive stars, but Indianapolis' defensive depth could force Houston into low-percentage plays. The Colts' ability to limit explosive plays may lead to a low-scoring, grind-it-out contest. Indianapolis' defensive line pressure could disrupt Houston's rhythm, leading to a conservative game plan. Final score prediction: Indianapolis Colts 20, Houston Texans 17.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">✅ Pick Hit</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: B</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: HOU 223 | IND 300</div>
+                        <div>• Turnovers: HOU 0 | IND 3</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        The game script aligned with the pre-game prediction of a low-scoring, defensive-dominated contest, as both teams combined for 38 points (under the 42.5 O/U). However, the score prediction (20-17 Colts) was slightly off, as the Colts won 19-17. The Colts' defensive depth and ability to limit explosive plays were evident, but their three turnovers (a critical factor not emphasized in the pre-game analysis) directly led to Houston's only touchdown. The Texans' 223 yards were lower than expected, but their efficient red-zone execution and turnover avoidance offset the Colts' superior total yards. The prediction underestimated the impact of turnovers and overestimated the Colts' offensive line leverage.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: Turnovers can decisively shift momentum in a low-scoring game, even when a team's overall performance appears superior on paper.
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png" style="width:30px;"> Kansas City Chiefs vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png" style="width:30px;"> Miami Dolphins
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: KC 24 - MIA 10</span>
                 </div>
-                <div style="font-weight:900;">FINAL: KC 24 - MIA 10</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png">
+                    <span>Kansas City Chiefs @ Miami Dolphins</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">KC -9.5 | O/U: 45.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: Kansas City Chiefs</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: Kansas City Chiefs</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 27.5 - 18.0</div>
-                    <p style="font-size:14px;">The outdoor environment amplifies the importance of defensive line dominance and weather resilience. Kansas City's offense, led by a high-octane passing attack, should exploit Miami's secondary vulnerabilities, particularly in the red zone. Miami's defense, anchored by a disruptive front seven, will aim to limit explosive plays and force turnovers, but their ability to sustain pressure against Kansas City's veteran offensive line remains uncertain. Special teams will play a pivotal role in field position battles, with Kansas City's return game providing a slight edge. The Chiefs' superior offensive firepower and experience in high-stakes environments give them the upper hand despite Miami's defensive tenacity. Final score prediction: Kansas City Chiefs 27, Miami Dolphins 20.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">B</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">Kansas City Chiefs</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: KC 334 | MIA 329</li>
-                        <li>Turnovers: KC 1 | MIA 2</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">The Chiefs' victory aligned with the pre-game prediction, but the score gap (24-10 vs. 27-20) highlighted underestimated defensive dominance by Kansas City and Miami's catastrophic turnovers (2 vs. Chiefs' 1). While the original analysis correctly identified Chiefs' offensive firepower, it overlooked the critical impact of defensive stops and turnovers, which amplified the score discrepancy. The total yards (334-329) suggested a competitive game, but Miami's inability to capitalize on opportunities (2 turnovers) and Chiefs' efficient red-zone execution (actual score closer to prediction) validated the outcome. The score prediction was slightly off but directionally accurate.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: Turnovers and defensive execution can eclipse even the most potent offenses in high-stakes matchups.</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: KC 27.5 - MIA 18.0
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The outdoor environment amplifies the importance of defensive line dominance and weather resilience. Kansas City's offense, led by a high-octane passing attack, should exploit Miami's secondary vulnerabilities, particularly in the red zone. Miami's defense, anchored by a disruptive front seven, will aim to limit explosive plays and force turnovers, but their ability to sustain pressure against Kansas City's veteran offensive line remains uncertain. Special teams will play a pivotal role in field position battles, with Kansas City's return game providing a slight edge. The Chiefs' superior offensive firepower and experience in high-stakes environments give them the upper hand despite Miami's defensive tenacity. Final score prediction: Kansas City Chiefs 27, Miami Dolphins 20.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">✅ Pick Hit</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: B</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: KC 334 | MIA 329</div>
+                        <div>• Turnovers: KC 1 | MIA 2</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        The Chiefs' victory aligned with the pre-game prediction, but the score gap (24-10 vs. 27-20) highlighted underestimated defensive dominance by Kansas City and Miami's catastrophic turnovers (2 vs. Chiefs' 1). While the original analysis correctly identified Chiefs' offensive firepower, it overlooked the critical impact of defensive stops and turnovers, which amplified the score discrepancy. The total yards (334-329) suggested a competitive game, but Miami's inability to capitalize on opportunities (2 turnovers) and Chiefs' efficient red-zone execution (actual score closer to prediction) validated the outcome. The score prediction was slightly off but directionally accurate.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: Turnovers and defensive execution can eclipse even the most potent offenses in high-stakes matchups.
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ten.png" style="width:30px;"> Tennessee Titans vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png" style="width:30px;"> New York Giants
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: TEN 7 - NYG 12</span>
                 </div>
-                <div style="font-weight:900;">FINAL: TEN 7 - NYG 12</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ten.png">
+                    <span>Tennessee Titans @ New York Giants</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">NYG -2.5 | O/U: 37.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: New York Giants</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: New York Giants</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 17.5 - 20.0</div>
-                    <p style="font-size:14px;">The outdoor environment amplifies the importance of defensive line dominance and special teams execution. With no injuries and no specific starter data, projections default to league-average metrics. New York’s slightly higher-ranked defense (58) and offensive line (52) suggest marginally better control in a low-scoring, grind-it-out game. Tennessee’s defense (55) and offense (50) project as competitive but less likely to overcome New York’s balanced unit. Special teams (51) for the Giants provide a narrow edge in field position. The Giants’ defense should limit Tennessee’s explosive plays while their offensive line secures enough field position for a conservative, high-percentage game plan. Final score prediction: New York Giants 17, Tennessee Titans 10.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">B</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">New York Giants</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: TEN 262 | NYG 238</li>
-                        <li>Turnovers: TEN 2 | NYG 0</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">The game script aligned with the pre-game prediction’s emphasis on a low-scoring, defensive battle, as both teams combined for 39 points (under the 37.5 O/U). However, the Giants’ offense underperformed relative to expectations, scoring only 12 points (vs. the predicted 17), while the Titans’ defense (ranked 55) limited big plays more effectively than anticipated. The Giants’ defensive line (ranked 58) held the Titans to just 7 points, but turnovers (2 for Tennessee) proved pivotal, a factor not explicitly addressed in the original analysis. The Titans’ conservative approach and Giants’ inability to capitalize on field position opportunities (despite special teams ranked 51) skewed the score lower than predicted, though the Giants still secured the win.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: Turnovers and defensive execution can override even modest offensive line advantages in low-scoring matchups.</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: TEN 17.5 - NYG 20.0
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The outdoor environment amplifies the importance of defensive line dominance and special teams execution. With no injuries and no specific starter data, projections default to league-average metrics. New York’s slightly higher-ranked defense (58) and offensive line (52) suggest marginally better control in a low-scoring, grind-it-out game. Tennessee’s defense (55) and offense (50) project as competitive but less likely to overcome New York’s balanced unit. Special teams (51) for the Giants provide a narrow edge in field position. The Giants’ defense should limit Tennessee’s explosive plays while their offensive line secures enough field position for a conservative, high-percentage game plan. Final score prediction: New York Giants 17, Tennessee Titans 10.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">✅ Pick Hit</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: B</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: TEN 262 | NYG 238</div>
+                        <div>• Turnovers: TEN 2 | NYG 0</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        The game script aligned with the pre-game prediction’s emphasis on a low-scoring, defensive battle, as both teams combined for 39 points (under the 37.5 O/U). However, the Giants’ offense underperformed relative to expectations, scoring only 12 points (vs. the predicted 17), while the Titans’ defense (ranked 55) limited big plays more effectively than anticipated. The Giants’ defensive line (ranked 58) held the Titans to just 7 points, but turnovers (2 for Tennessee) proved pivotal, a factor not explicitly addressed in the original analysis. The Titans’ conservative approach and Giants’ inability to capitalize on field position opportunities (despite special teams ranked 51) skewed the score lower than predicted, though the Giants still secured the win.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: Turnovers and defensive execution can override even modest offensive line advantages in low-scoring matchups.
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png" style="width:30px;"> Cincinnati Bengals vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png" style="width:30px;"> Pittsburgh Steelers
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: CIN 27 - PIT 30</span>
                 </div>
-                <div style="font-weight:900;">FINAL: CIN 27 - PIT 30</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png">
+                    <span>Cincinnati Bengals @ Pittsburgh Steelers</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">CIN -3.5 | O/U: 42.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: Pittsburgh Steelers</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: Pittsburgh Steelers</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 23.0 - 19.5</div>
-                    <p style="font-size:14px;">The outdoor environment amplifies the importance of defensive line dominance and trench leverage. Both teams lack injury-related disruptions, but the Steelers' historically superior defensive line (projected higher in 'home_def') should dominate the trenches, limiting Bengals' explosive plays. Pittsburgh's defense will prioritize stopping the run, forcing Cincinnati into long passes that may be disrupted by Steelers' aggressive coverage. The Bengals' offense, while capable, lacks the elite playmakers to overcome Pittsburgh's defensive structure in a low-scoring grind. Pittsburgh's balanced offensive approach (higher 'home_st') will capitalize on short gains and field position, leading to a methodical, high-percentage game plan. The Steelers' defensive line leverage and experience in adverse conditions give them the edge in a physical, low-scoring contest. Final score prediction: Pittsburgh Steelers 20, Cincinnati Bengals 17.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">B</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">Pittsburgh Steelers</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: CIN 352 | PIT 411</li>
-                        <li>Turnovers: CIN 2 | PIT 1</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">The Steelers' defensive dominance was partially accurate (limiting Bengals to 17 points), but the Bengals' offensive efficiency (352 yards, 27 points) exceeded expectations. The original prediction underestimated Pittsburgh's offensive balance (411 yards) and the Bengals' ability to exploit Steelers' defensive gaps, particularly in the red zone. While the Steelers' turnover differential (1-2) aligned with the prediction, the Bengals' explosive plays and third-down conversions (20/31) contradicted the expectation of a low-scoring grind. The score prediction (20-17) was too conservative, as both teams exceeded projected totals (42.5 O/U) by 12 points.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: Pittsburgh's defensive line leverage mattered, but Cincinnati's offensive execution and turnover resilience proved decisive in a higher-scoring, more dynamic game than anticipated.</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: CIN 23.0 - PIT 19.5
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The outdoor environment amplifies the importance of defensive line dominance and trench leverage. Both teams lack injury-related disruptions, but the Steelers' historically superior defensive line (projected higher in 'home_def') should dominate the trenches, limiting Bengals' explosive plays. Pittsburgh's defense will prioritize stopping the run, forcing Cincinnati into long passes that may be disrupted by Steelers' aggressive coverage. The Bengals' offense, while capable, lacks the elite playmakers to overcome Pittsburgh's defensive structure in a low-scoring grind. Pittsburgh's balanced offensive approach (higher 'home_st') will capitalize on short gains and field position, leading to a methodical, high-percentage game plan. The Steelers' defensive line leverage and experience in adverse conditions give them the edge in a physical, low-scoring contest. Final score prediction: Pittsburgh Steelers 20, Cincinnati Bengals 17.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">✅ Pick Hit</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: B</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: CIN 352 | PIT 411</div>
+                        <div>• Turnovers: CIN 2 | PIT 1</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        The Steelers' defensive dominance was partially accurate (limiting Bengals to 17 points), but the Bengals' offensive efficiency (352 yards, 27 points) exceeded expectations. The original prediction underestimated Pittsburgh's offensive balance (411 yards) and the Bengals' ability to exploit Steelers' defensive gaps, particularly in the red zone. While the Steelers' turnover differential (1-2) aligned with the prediction, the Bengals' explosive plays and third-down conversions (20/31) contradicted the expectation of a low-scoring grind. The score prediction (20-17) was too conservative, as both teams exceeded projected totals (42.5 O/U) by 12 points.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: Pittsburgh's defensive line leverage mattered, but Cincinnati's offensive execution and turnover resilience proved decisive in a higher-scoring, more dynamic game than anticipated.
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png" style="width:30px;"> Seattle Seahawks vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png" style="width:30px;"> Washington Commanders
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: SEA 31 - WSH 33</span>
                 </div>
-                <div style="font-weight:900;">FINAL: SEA 31 - WSH 33</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png">
+                    <span>Seattle Seahawks @ Washington Commanders</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">SEA -8.5 | O/U: 40.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: Washington Commanders</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: Seattle Seahawks</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 24.5 - 16.0</div>
-                    <p style="font-size:14px;">The outdoor environment amplifies the importance of defensive line dominance and weather resilience. Seattle's higher-ranked defense (65) suggests stronger trench leverage, particularly against Washington's projected lower-ranked offensive line (50). The Seahawks' balanced offensive efficiency (55) combined with their defensive edge should limit Washington's scoring opportunities. However, Washington's slightly superior special teams (55) may create field position advantages. The game is likely to be a low-scoring grind, with Seattle's defense capitalizing on outdoor conditions to control the tempo. Final score projection: Seattle Seahawks 24, Washington Commanders 17.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">C</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">Seattle Seahawks</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: SEA 437 | WSH 258</li>
-                        <li>Turnovers: SEA 3 | WSH 0</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">The pre-game analysis overestimated Seattle's defensive control and underestimated Washington's offensive resilience. Despite Seattle's higher-ranked defense, Washington's zero turnovers and efficient 258 total yards highlighted their ability to counter Seattle's defensive pressure, contradicting the prediction of a low-scoring grind. The original score projection (24-17) was significantly off, as both teams scored over 30 points, with Washington's 33 points reflecting a more dynamic offensive performance than anticipated. Special teams, while rated as a potential factor, did not create the field position advantages predicted, and Seattle's three turnovers proved decisive in shifting momentum. The outdoor conditions did not amplify Seattle's defensive edge as expected, allowing Washington to capitalize on turnovers and maintain offensive rhythm.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: Turnovers and offensive execution overshadowed defensive dominance, proving that even high-ranked defenses can be undone by disciplined offensive play and minimal mistakes.</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: SEA 24.5 - WSH 16.0
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The outdoor environment amplifies the importance of defensive line dominance and weather resilience. Seattle's higher-ranked defense (65) suggests stronger trench leverage, particularly against Washington's projected lower-ranked offensive line (50). The Seahawks' balanced offensive efficiency (55) combined with their defensive edge should limit Washington's scoring opportunities. However, Washington's slightly superior special teams (55) may create field position advantages. The game is likely to be a low-scoring grind, with Seattle's defense capitalizing on outdoor conditions to control the tempo. Final score projection: Seattle Seahawks 24, Washington Commanders 17.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">❌ Pick Missed</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: C</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: SEA 437 | WSH 258</div>
+                        <div>• Turnovers: SEA 3 | WSH 0</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        The pre-game analysis overestimated Seattle's defensive control and underestimated Washington's offensive resilience. Despite Seattle's higher-ranked defense, Washington's zero turnovers and efficient 258 total yards highlighted their ability to counter Seattle's defensive pressure, contradicting the prediction of a low-scoring grind. The original score projection (24-17) was significantly off, as both teams scored over 30 points, with Washington's 33 points reflecting a more dynamic offensive performance than anticipated. Special teams, while rated as a potential factor, did not create the field position advantages predicted, and Seattle's three turnovers proved decisive in shifting momentum. The outdoor conditions did not amplify Seattle's defensive edge as expected, allowing Washington to capitalize on turnovers and maintain offensive rhythm.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: Turnovers and offensive execution overshadowed defensive dominance, proving that even high-ranked defenses can be undone by disciplined offensive play and minimal mistakes.
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ne.png" style="width:30px;"> New England Patriots vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png" style="width:30px;"> Jacksonville Jaguars
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: NE 6 - JAX 35</span>
                 </div>
-                <div style="font-weight:900;">FINAL: NE 6 - JAX 35</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ne.png">
+                    <span>New England Patriots @ Jacksonville Jaguars</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">JAX -3 | O/U: 45.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: Jacksonville Jaguars</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: Jacksonville Jaguars</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 21.2 - 24.2</div>
-                    <p style="font-size:14px;">The Jaguars hold a slight edge in offensive efficiency and defensive leverage, particularly in the trenches, which is critical for controlling the tempo in an outdoor environment. Jacksonville's defense, ranked higher in the depth chart, should dominate the Patriots' offensive line, limiting big plays and forcing turnovers. The Patriots' offense, while capable, may struggle to sustain drives against a physical Jaguars defense, especially in adverse conditions. Special teams are projected to be evenly matched, but Jacksonville's superior field position from defensive stops will give them more scoring opportunities. The Jaguars' ability to apply pressure upfront and limit New England's explosive plays will be key. The game is expected to be a low-scoring grind, favoring the team with the stronger defense. Jacksonville's home-field advantage and defensive dominance should secure the win.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">B</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">Jacksonville Jaguars</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: NE 317 | JAX 315</li>
-                        <li>Turnovers: NE 3 | JAX 1</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">The pre-game prediction correctly identified Jacksonville's defensive dominance and home-field advantage as key factors, which aligned with their 35-6 win. However, the score prediction underestimated Jacksonville's offensive efficiency and overestimated the low-scoring nature of the game. While the Jaguars' defense forced 3 turnovers (matching the prediction's emphasis on defensive leverage), their offense outperformed expectations, generating 315 yards and scoring 35 points despite similar total yardage to New England. The prediction also failed to account for the Jaguars' ability to capitalize on turnovers and sustain high-octane scoring, which contrasted with the anticipated grind. The Patriots' 3 turnovers proved decisive, but their offensive struggles were more severe than anticipated, leading to a lopsided score.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: Jacksonville's explosive offense and defensive turnover creation overwhelmed New England, proving that even slight edges in efficiency can translate to dominant performances when capitalized upon.</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: NE 21.2 - JAX 24.2
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The Jaguars hold a slight edge in offensive efficiency and defensive leverage, particularly in the trenches, which is critical for controlling the tempo in an outdoor environment. Jacksonville's defense, ranked higher in the depth chart, should dominate the Patriots' offensive line, limiting big plays and forcing turnovers. The Patriots' offense, while capable, may struggle to sustain drives against a physical Jaguars defense, especially in adverse conditions. Special teams are projected to be evenly matched, but Jacksonville's superior field position from defensive stops will give them more scoring opportunities. The Jaguars' ability to apply pressure upfront and limit New England's explosive plays will be key. The game is expected to be a low-scoring grind, favoring the team with the stronger defense. Jacksonville's home-field advantage and defensive dominance should secure the win.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">✅ Pick Hit</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: B</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: NE 317 | JAX 315</div>
+                        <div>• Turnovers: NE 3 | JAX 1</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        The pre-game prediction correctly identified Jacksonville's defensive dominance and home-field advantage as key factors, which aligned with their 35-6 win. However, the score prediction underestimated Jacksonville's offensive efficiency and overestimated the low-scoring nature of the game. While the Jaguars' defense forced 3 turnovers (matching the prediction's emphasis on defensive leverage), their offense outperformed expectations, generating 315 yards and scoring 35 points despite similar total yardage to New England. The prediction also failed to account for the Jaguars' ability to capitalize on turnovers and sustain high-octane scoring, which contrasted with the anticipated grind. The Patriots' 3 turnovers proved decisive, but their offensive struggles were more severe than anticipated, leading to a lopsided score.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: Jacksonville's explosive offense and defensive turnover creation overwhelmed New England, proving that even slight edges in efficiency can translate to dominant performances when capitalized upon.
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png" style="width:30px;"> Arizona Cardinals vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png" style="width:30px;"> San Francisco 49ers
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: ARI 30 - SF 36</span>
                 </div>
-                <div style="font-weight:900;">FINAL: ARI 30 - SF 36</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png">
+                    <span>Arizona Cardinals @ San Francisco 49ers</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">SF -7.5 | O/U: 48.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: San Francisco 49ers</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: San Francisco 49ers</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 20.5 - 28.0</div>
-                    <p style="font-size:14px;">The outdoor environment amplifies the importance of defensive line dominance and weather resilience. San Francisco’s projected defensive edge (home_def: 65) suggests superior trench leverage, likely stifling Arizona’s offensive line. The 49ers’ balanced attack (home_off: 60) and stronger defensive structure should control tempo, especially in a low-scoring grind. Arizona’s offense (away_off: 55) may struggle to sustain drives against a disciplined 49ers front seven. San Francisco’s special teams (home_st: 60) could provide critical field position advantages. Final score projection: San Francisco 24, Arizona 17.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">B</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">San Francisco 49ers</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: ARI 365 | SF 437</li>
-                        <li>Turnovers: ARI 0 | SF 1</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">The game script diverged sharply from predictions, as the 49ers’ offense (437 yards) and Arizona’s resilience (30 points) fueled a high-scoring 66-point contest, far exceeding the O/U of 48.5. While the 49ers’ defensive edge (1 turnover) and special teams were impactful, Arizona’s balanced attack (365 yards) and zero turnovers countered the predicted grind. The score prediction (24-17) underestimated both teams’ offensive firepower, particularly Arizona’s ability to exploit San Francisco’s secondary. The 49ers’ win was secured by their offensive efficiency, not defensive dominance, contrasting the pre-game emphasis on trench leverage.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: High-octane offenses and turnover-free play can render pre-game defensive narratives obsolete in high-scoring matchups.</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: ARI 20.5 - SF 28.0
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The outdoor environment amplifies the importance of defensive line dominance and weather resilience. San Francisco’s projected defensive edge (home_def: 65) suggests superior trench leverage, likely stifling Arizona’s offensive line. The 49ers’ balanced attack (home_off: 60) and stronger defensive structure should control tempo, especially in a low-scoring grind. Arizona’s offense (away_off: 55) may struggle to sustain drives against a disciplined 49ers front seven. San Francisco’s special teams (home_st: 60) could provide critical field position advantages. Final score projection: San Francisco 24, Arizona 17.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">✅ Pick Hit</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: B</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: ARI 365 | SF 437</div>
+                        <div>• Turnovers: ARI 0 | SF 1</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        The game script diverged sharply from predictions, as the 49ers’ offense (437 yards) and Arizona’s resilience (30 points) fueled a high-scoring 66-point contest, far exceeding the O/U of 48.5. While the 49ers’ defensive edge (1 turnover) and special teams were impactful, Arizona’s balanced attack (365 yards) and zero turnovers countered the predicted grind. The score prediction (24-17) underestimated both teams’ offensive firepower, particularly Arizona’s ability to exploit San Francisco’s secondary. The 49ers’ win was secured by their offensive efficiency, not defensive dominance, contrasting the pre-game emphasis on trench leverage.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: High-octane offenses and turnover-free play can render pre-game defensive narratives obsolete in high-scoring matchups.
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png" style="width:30px;"> Minnesota Vikings vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/tb.png" style="width:30px;"> Tampa Bay Buccaneers
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: MIN 23 - TB 16</span>
                 </div>
-                <div style="font-weight:900;">FINAL: MIN 23 - TB 16</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png">
+                    <span>Minnesota Vikings @ Tampa Bay Buccaneers</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/tb.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">MIN -1.5 | O/U: 42.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: Minnesota Vikings</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: Tampa Bay Buccaneers</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 22.0 - 20.5</div>
-                    <p style="font-size:14px;">The outdoor environment amplifies the importance of defensive line dominance and trench leverage. Tampa Bay's superior defensive rankings (home_def: 58) suggest they will control the line of scrimmage, limiting Minnesota's offensive output. Minnesota's offense (away_off: 50) may struggle to generate consistent pressure on Baker Mayfield, while Tampa's defense should capitalize on turnovers. The Buccaneers' home-field advantage and stronger defensive metrics position them to win a low-scoring, grind-it-out contest. Final score prediction: Tampa Bay Buccaneers 23, Minnesota Vikings 17.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">C</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">Tampa Bay Buccaneers</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: MIN 230 | TB 243</li>
-                        <li>Turnovers: MIN 1 | TB 2</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">The pre-game analysis underestimated Minnesota's offensive resilience and overestimated Tampa Bay's defensive dominance. While Tampa's defense forced two turnovers, Minnesota's offense capitalized on efficiency (230 yards) and limited mistakes (1 turnover), contrasting with the prediction of a low-scoring, defensive-dominated game. The score prediction (23-17) was remarkably close to the actual result (23-16), but the incorrect pick highlights the failure to account for Tampa's defensive breakdown in critical moments. Minnesota's ability to sustain drives and avoid turnovers proved decisive despite Tampa's superior defensive metrics.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: Tampa Bay's defensive struggles and costly turnovers overshadowed their statistical edge, proving that execution in high-leverage moments can override pre-game expectations.</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: MIN 22.0 - TB 20.5
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The outdoor environment amplifies the importance of defensive line dominance and trench leverage. Tampa Bay's superior defensive rankings (home_def: 58) suggest they will control the line of scrimmage, limiting Minnesota's offensive output. Minnesota's offense (away_off: 50) may struggle to generate consistent pressure on Baker Mayfield, while Tampa's defense should capitalize on turnovers. The Buccaneers' home-field advantage and stronger defensive metrics position them to win a low-scoring, grind-it-out contest. Final score prediction: Tampa Bay Buccaneers 23, Minnesota Vikings 17.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">❌ Pick Missed</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: C</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: MIN 230 | TB 243</div>
+                        <div>• Turnovers: MIN 1 | TB 2</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        The pre-game analysis underestimated Minnesota's offensive resilience and overestimated Tampa Bay's defensive dominance. While Tampa's defense forced two turnovers, Minnesota's offense capitalized on efficiency (230 yards) and limited mistakes (1 turnover), contrasting with the prediction of a low-scoring, defensive-dominated game. The score prediction (23-17) was remarkably close to the actual result (23-16), but the incorrect pick highlights the failure to account for Tampa's defensive breakdown in critical moments. Minnesota's ability to sustain drives and avoid turnovers proved decisive despite Tampa's superior defensive metrics.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: Tampa Bay's defensive struggles and costly turnovers overshadowed their statistical edge, proving that execution in high-leverage moments can override pre-game expectations.
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png" style="width:30px;"> Baltimore Ravens vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png" style="width:30px;"> Dallas Cowboys
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: BAL 34 - DAL 31</span>
                 </div>
-                <div style="font-weight:900;">FINAL: BAL 34 - DAL 31</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png">
+                    <span>Baltimore Ravens @ Dallas Cowboys</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">BAL -3 | O/U: 53.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: Baltimore Ravens</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: Dallas Cowboys</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 28.2 - 25.2</div>
-                    <p style="font-size:14px;">The outdoor environment favors a physical, low-scoring contest where defensive line dominance and trench leverage will dictate outcomes. The Cowboys' projected defensive edge (75) suggests they will control the line of scrimmage, limiting Baltimore's explosive plays and forcing the Ravens into longer, riskier drives. Dallas' ability to generate consistent pressure and limit big gains will counterbalance Baltimore's offensive efficiency. However, the Ravens' balanced attack (75) and experienced coaching staff (70) will keep the game competitive. The Cowboys' superior defensive line depth and recent schematic adjustments give them the slight edge in a grind-it-out matchup. The final score will reflect a tightly contested game where defensive stops decide the outcome. Dallas Cowboys 24, Baltimore Ravens 21.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">C</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">Dallas Cowboys</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: BAL 378 | DAL 415</li>
-                        <li>Turnovers: BAL 0 | DAL 1</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">The game script deviated sharply from pre-game expectations, as the Ravens' offense outperformed projections despite lower total yards (378 vs. 415). The Cowboys' defensive edge (75) failed to materialize, as Baltimore's balanced attack (75) and zero turnovers (vs. Dallas' one) fueled a high-scoring, turnover-driven contest. The original score prediction (24-21) underestimated the Ravens' offensive efficiency and overestimated the Cowboys' ability to limit explosive plays. The Cowboys' schematic adjustments and defensive depth did not translate to sustained pressure, while Baltimore's ability to capitalize on Dallas' mistake proved decisive. The final score (34-31) reflected a more dynamic game than anticipated, highlighting the unpredictability of outdoor matchups.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: Turnovers and offensive efficiency, not yardage dominance, defined the outcome in this high-stakes, low-scoring clash.</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: BAL 28.2 - DAL 25.2
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The outdoor environment favors a physical, low-scoring contest where defensive line dominance and trench leverage will dictate outcomes. The Cowboys' projected defensive edge (75) suggests they will control the line of scrimmage, limiting Baltimore's explosive plays and forcing the Ravens into longer, riskier drives. Dallas' ability to generate consistent pressure and limit big gains will counterbalance Baltimore's offensive efficiency. However, the Ravens' balanced attack (75) and experienced coaching staff (70) will keep the game competitive. The Cowboys' superior defensive line depth and recent schematic adjustments give them the slight edge in a grind-it-out matchup. The final score will reflect a tightly contested game where defensive stops decide the outcome. Dallas Cowboys 24, Baltimore Ravens 21.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">❌ Pick Missed</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: C</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: BAL 378 | DAL 415</div>
+                        <div>• Turnovers: BAL 0 | DAL 1</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        The game script deviated sharply from pre-game expectations, as the Ravens' offense outperformed projections despite lower total yards (378 vs. 415). The Cowboys' defensive edge (75) failed to materialize, as Baltimore's balanced attack (75) and zero turnovers (vs. Dallas' one) fueled a high-scoring, turnover-driven contest. The original score prediction (24-21) underestimated the Ravens' offensive efficiency and overestimated the Cowboys' ability to limit explosive plays. The Cowboys' schematic adjustments and defensive depth did not translate to sustained pressure, while Baltimore's ability to capitalize on Dallas' mistake proved decisive. The final score (34-31) reflected a more dynamic game than anticipated, highlighting the unpredictability of outdoor matchups.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: Turnovers and offensive efficiency, not yardage dominance, defined the outcome in this high-stakes, low-scoring clash.
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png" style="width:30px;"> Las Vegas Raiders vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png" style="width:30px;"> New Orleans Saints
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: LV 35 - NO 27</span>
                 </div>
-                <div style="font-weight:900;">FINAL: LV 35 - NO 27</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png">
+                    <span>Las Vegas Raiders @ New Orleans Saints</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">NO -3.5 | O/U: 43.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: Las Vegas Raiders</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: New Orleans Saints</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 20.0 - 23.5</div>
-                    <p style="font-size:14px;">The outdoor environment amplifies the importance of defensive line dominance and weather resilience. New Orleans Saints' projected superior defensive metrics (higher home_def rating) suggest they will control the line of scrimmage, limiting big plays and forcing turnovers. Las Vegas Raiders' offensive line may struggle to generate consistent pressure, while the Saints' defense can exploit gaps in the Raiders' secondary. The Saints' home-field advantage and stronger defensive structure should lead to a low-scoring, defensive battle. Final score prediction: New Orleans Saints 20, Las Vegas Raiders 17.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">F</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">New Orleans Saints</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: LV 340 | NO 381</li>
-                        <li>Turnovers: LV 1 | NO 4</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">The pre-game prediction completely missed the game's trajectory, as the Saints lost 35-27 despite the Raiders' 1 turnover compared to the Saints' 4. The original analysis incorrectly assumed the Saints' defense would dominate, but their 4 turnovers and inability to limit big plays directly contradicted this. The Raiders' offensive line likely neutralized the Saints' defensive front, while the Saints' offense struggled to capitalize on home-field advantage, resulting in a high-scoring game (721 total yards) far exceeding the predicted low-scoring battle. The score prediction of 20-17 was wildly inaccurate, as both teams scored over 20 points. The Saints' defensive metrics failed to materialize, and the Raiders' offensive efficiency overwhelmed the Saints' projected defensive structure.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: Turnovers and offensive execution can override defensive projections and home-field advantage in high-stakes matchups.</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: LV 20.0 - NO 23.5
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The outdoor environment amplifies the importance of defensive line dominance and weather resilience. New Orleans Saints' projected superior defensive metrics (higher home_def rating) suggest they will control the line of scrimmage, limiting big plays and forcing turnovers. Las Vegas Raiders' offensive line may struggle to generate consistent pressure, while the Saints' defense can exploit gaps in the Raiders' secondary. The Saints' home-field advantage and stronger defensive structure should lead to a low-scoring, defensive battle. Final score prediction: New Orleans Saints 20, Las Vegas Raiders 17.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">❌ Pick Missed</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: F</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: LV 340 | NO 381</div>
+                        <div>• Turnovers: LV 1 | NO 4</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        The pre-game prediction completely missed the game's trajectory, as the Saints lost 35-27 despite the Raiders' 1 turnover compared to the Saints' 4. The original analysis incorrectly assumed the Saints' defense would dominate, but their 4 turnovers and inability to limit big plays directly contradicted this. The Raiders' offensive line likely neutralized the Saints' defensive front, while the Saints' offense struggled to capitalize on home-field advantage, resulting in a high-scoring game (721 total yards) far exceeding the predicted low-scoring battle. The score prediction of 20-17 was wildly inaccurate, as both teams scored over 20 points. The Saints' defensive metrics failed to materialize, and the Raiders' offensive efficiency overwhelmed the Saints' projected defensive structure.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: Turnovers and offensive execution can override defensive projections and home-field advantage in high-stakes matchups.
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="game-pane-card">
-            <h2 style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png" style="width:30px;"> Los Angeles Rams vs 
-                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png" style="width:30px;"> Denver Broncos
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div class="game-pane-header-row">
+                <div class="header-time-info">
+                    <span class="timestamp-badge">🗓 Completed</span>
+                    <span style="font-weight:900; font-size:16px; color:var(--primary);">FINAL: LAR 26 - DEN 30</span>
                 </div>
-                <div style="font-weight:900;">FINAL: LAR 26 - DEN 30</div>
-            </h2>
+                <div class="header-center-logos">
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png">
+                    <span>Los Angeles Rams @ Denver Broncos</span>
+                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png">
+                </div>
+                <div class="header-market-box">
+                    <span class="market-badge">LAR -1.5 | O/U: 43.5</span>
+                    <span style="font-size:12px; font-weight:700;">Actual Winner: Denver Broncos</span>
+                </div>
+            </div>
+
             <div class="matchup-overview-grid">
-                <div style="border-right:1px solid var(--border); padding-right:16px;">
-                    <h4 style="color:var(--muted); text-transform:uppercase;">Pre-Game AI Thesis (Locked)</h4>
-                    <div style="font-weight:700; margin-bottom:10px;">Pick: Denver Broncos</div>
-                    <div style="font-weight:700; margin-bottom:10px;">Projected Score: 22.5 - 21.0</div>
-                    <p style="font-size:14px;">The outdoor environment amplifies the importance of defensive line dominance and weather resilience. Denver’s projected defensive edge (68) suggests they’ll limit Los Angeles’ offensive production, particularly in the red zone. The Broncos’ ability to control the trenches and force turnovers could dictate the tempo, while the Rams’ offensive line (55) may struggle to generate consistent pressure against Denver’s projected defensive front. Special teams (62) for Denver could provide critical field position advantages. The low-scoring nature of the game (43.5 O/U) favors the team with the superior defense, and Denver’s projected defensive metrics align with that logic. The Broncos’ defensive line leverage and ability to disrupt the Rams’ rhythm will be pivotal. Denver’s defense will force the Rams into long possessions, leading to field goal opportunities rather than touchdowns. Final score prediction: Denver Broncos 20, Los Angeles Rams 17.</p>
-                </div>
-                <div class="ai-script-card" style="background:#f0fdf4; border-color:#86efac;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div style="font-weight:800; text-transform:uppercase;">🩺 Post-Game Autopsy</div>
-                        <div class="grade-badge">C</div>
+                <div style="border-right: 1px solid var(--border); padding-right: 20px;">
+                    <div class="comp-group-title">Pre-Game AI Thesis (Locked @ Kickoff)</div>
+                    <div style="margin: 10px 0; font-weight: 800; font-size: 15px;">
+                        🎯 Pre-Game Pick: <span style="color:var(--primary);">Denver Broncos</span> 
+                        <span class="confidence-badge">Conf: 6/10</span>
                     </div>
-                    <div style="font-weight:700; margin-top:8px;">📊 Box Score Reality:</div>
-                    <ul style="margin:4px 0; padding-left:20px; font-size:13px;">
-                        <li>Total Yards: LAR 482 | DEN 257</li>
-                        <li>Turnovers: LAR 2 | DEN 1</li>
-                    </ul>
-                    <p style="font-size:14px; margin-top:10px;">The pre-game prediction correctly identified Denver’s victory but underestimated the Rams’ offensive efficiency and the Broncos’ defensive struggles. Denver’s projected defensive dominance (68) failed to materialize, as the Rams amassed 482 total yards—nearly double the Broncos’ 257—highlighting the Rams’ offensive line’s ability to generate consistent pressure despite their 55 rating. The low-scoring script (20-17) was inaccurate, as the game exceeded the 43.5 O/U by 12.5 points, with both teams scoring more than predicted. Denver’s turnover margin (1-2) and special teams (62) were neutralized by the Rams’ explosive plays and field position gains, contradicting the expectation that Denver’s defense would dictate tempo. While Denver’s defense limited LA’s red zone efficiency, the Rams’ ability to convert yardage into points (26) far exceeded the 17 predicted.</p>
-                    <div style="font-weight:800; font-size:13px; color:var(--primary); margin-top:10px;">Takeaway: Even dominant defensive metrics can be outmaneuvered by an opposing offense’s execution and yardage production.</div>
+                    <div style="font-weight:700; font-size:13px; margin-bottom:8px;">
+                        Projected Implied: LAR 22.5 - DEN 21.0
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.5; color: var(--text); background: var(--toggle-bg); padding: 12px; border-radius: 8px;">
+                        The outdoor environment amplifies the importance of defensive line dominance and weather resilience. Denver’s projected defensive edge (68) suggests they’ll limit Los Angeles’ offensive production, particularly in the red zone. The Broncos’ ability to control the trenches and force turnovers could dictate the tempo, while the Rams’ offensive line (55) may struggle to generate consistent pressure against Denver’s projected defensive front. Special teams (62) for Denver could provide critical field position advantages. The low-scoring nature of the game (43.5 O/U) favors the team with the superior defense, and Denver’s projected defensive metrics align with that logic. The Broncos’ defensive line leverage and ability to disrupt the Rams’ rhythm will be pivotal. Denver’s defense will force the Rams into long possessions, leading to field goal opportunities rather than touchdowns. Final score prediction: Denver Broncos 20, Los Angeles Rams 17.
+                    </p>
+                </div>
+
+                <div class="ai-script-card" style="background: var(--card);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px;">
+                        <span style="font-weight:900; font-size:14px; text-transform:uppercase;">🩺 Post-Game Autopsy</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="confidence-badge">✅ Pick Hit</span>
+                            <span style="font-size:22px; font-weight:900; color:var(--primary);">Grade: C</span>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:12px; background:var(--toggle-bg); padding:10px; border-radius:8px; margin-top:4px;">
+                        <div style="font-weight:800; margin-bottom:4px;">📊 Box Score Reality:</div>
+                        <div>• Total Yards: LAR 482 | DEN 257</div>
+                        <div>• Turnovers: LAR 2 | DEN 1</div>
+                        <div style="color:var(--muted); font-size:11px; margin-top:2px;">• Leaders: N/A</div>
+                    </div>
+
+                    <p style="font-size: 13.5px; line-height: 1.5; margin: 6px 0;">
+                        The pre-game prediction correctly identified Denver’s victory but underestimated the Rams’ offensive efficiency and the Broncos’ defensive struggles. Denver’s projected defensive dominance (68) failed to materialize, as the Rams amassed 482 total yards—nearly double the Broncos’ 257—highlighting the Rams’ offensive line’s ability to generate consistent pressure despite their 55 rating. The low-scoring script (20-17) was inaccurate, as the game exceeded the 43.5 O/U by 12.5 points, with both teams scoring more than predicted. Denver’s turnover margin (1-2) and special teams (62) were neutralized by the Rams’ explosive plays and field position gains, contradicting the expectation that Denver’s defense would dictate tempo. While Denver’s defense limited LA’s red zone efficiency, the Rams’ ability to convert yardage into points (26) far exceeded the 17 predicted.
+                    </p>
+
+                    <div style="font-weight:800; font-size:12px; color:var(--primary); border-top:1px solid var(--border); padding-top:6px;">
+                        💡 Takeaway: Even dominant defensive metrics can be outmaneuvered by an opposing offense’s execution and yardage production.
+                    </div>
                 </div>
             </div>
         </div>
-        </div></body></html>
+        
+</div>
+</body>
+</html>
