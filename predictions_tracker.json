@@ -1805,6 +1805,26 @@
                 },
                 "inj_metric": 83.0,
                 "color": "#0b1c3a"
+            },
+            "is_live": false,
+            "is_final": true,
+            "live_away_score": "7",
+            "live_home_score": "27"
+        },
+        "autopsy": {
+            "actual_away_score": 7,
+            "actual_home_score": 27,
+            "actual_winner": "Chicago Bears",
+            "away_yds": "248",
+            "home_yds": "375",
+            "away_to": "3",
+            "home_to": "0",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "F",
+                "winner_correct": false,
+                "autopsy_analysis": "The pre-game prediction drastically underestimated the Bears' offensive capabilities and overestimated the Eagles' efficiency. The Bears' backup QB (likely Justin Fields, though not named) outperformed expectations, while the Eagles' offense sputtered (248 yards, 3 turnovers) despite favorable matchups. The Bears' 375 yards and 27 points highlighted their ability to exploit the Eagles' defense, which failed to contain Chicago's running game or pressure the QB. The score prediction (24-17) was wildly inaccurate, as the Eagles scored only 7 points\u2014far below expectations. The Bears' offensive line and backup QB composure were critical factors unaddressed in the original analysis.",
+                "key_takeaway": "Underestimating the impact of a backup QB and overestimating the Eagles' offensive execution led to a catastrophic prediction failure."
             }
         }
     }
