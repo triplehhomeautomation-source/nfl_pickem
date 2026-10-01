@@ -1833,7 +1833,7 @@
             "id": "401872964",
             "matchup_label": "Pittsburgh Steelers at Cleveland Browns",
             "utc_date": "2026-10-02T00:15Z",
-            "last_updated": "2026-10-01T03:01:02.894827+00:00",
+            "last_updated": "2026-10-01T14:01:14.490389+00:00",
             "market_line": "PIT -2.5 | O/U: 38.5",
             "ou_line": "O/U 38.5",
             "est_away_pts": 20.5,
@@ -1846,48 +1846,40 @@
             "nfelo_home": 46.9,
             "ai_insights": {
                 "away_off": 70,
-                "away_def": 75,
-                "away_st": 65,
-                "home_off": 80,
-                "home_def": 85,
-                "home_st": 70,
+                "away_def": 65,
+                "away_st": 60,
+                "home_off": 75,
+                "home_def": 78,
+                "home_st": 65,
                 "predicted_winner": "Pittsburgh Steelers",
-                "confidence": 7,
-                "analysis": "The Steelers' offensive line, led by Troy Fautanu and Max Iheanachor, should provide solid protection for Aaron Rodgers, who has the talent to exploit Cleveland's secondary vulnerabilities, particularly with Tylan Wallace and Jeremiah Owusu-Koramoah out. The Browns' offensive line is decimated by the absence of Elgton Jenkins, Teven Jenkins, and Dylan Sampson, which will hinder Deshaun Watson's mobility and passing accuracy. Pittsburgh's defense, anchored by T.J. Watt and Cameron Heyward, should dominate the Browns' run game, while the questionable status of Joey Porter Jr. and Jalen Ramsey could allow Cleveland's WRs (Jerry Jeudy, Denzel Boston) to find open lanes. Special teams are projected to be neutral, with Chris Boswell's kicking consistency giving Pittsburgh a slight edge. The Steelers' superior offensive efficiency and defensive depth should offset Cleveland's star power, leading to a low-scoring but tightly contested game. Pittsburgh's defense will force turnovers, and Rodgers' precision passing will capitalize on Browns' coverage gaps. Final Score Prediction: Pittsburgh Steelers 20, Cleveland Browns 17.",
+                "confidence": 6,
+                "analysis": "The Steelers' defense, anchored by T.J. Watt and Cameron Heyward, presents a formidable front against Deshaun Watson, who faces a weakened Browns offensive line missing Elgton Jenkins and Teven Jenkins. Pittsburgh's offense, led by Aaron Rodgers with a deep WR trio (DK Metcalf, Michael Pittman Jr., Roman Wilson), should exploit Cleveland's inconsistent secondary, especially with Jalen Ramsey (questionable) potentially limiting Denzel Ward and Tyson Campbell. Cleveland's defense, while solid with Quincy Williams and Jared Verse, may struggle to contain Rodgers' mobility and accuracy. Special teams are projected to be evenly matched, but Pittsburgh's superior offensive efficiency and defensive depth give them the edge. The Browns' injury-depleted offensive line will likely force Watson into hurried decisions, while the Steelers' balanced attack should capitalize on turnovers. Pittsburgh 24, Cleveland 20.",
                 "injury_impact": {
-                    "Joey Porter Jr.": {
-                        "score": 8.5,
-                        "analysis": "His absence weakens Pittsburgh's secondary, potentially allowing Cleveland's WRs to exploit the deep middle."
+                    "Elgton Jenkins": {
+                        "score": 9.0,
+                        "analysis": "His absence weakens Cleveland's offensive line, increasing pressure on Deshaun Watson and reducing protection against Pittsburgh's pass rush."
+                    },
+                    "Teven Jenkins": {
+                        "score": 9.0,
+                        "analysis": "Another missing offensive lineman further destabilizes Cleveland's blocking, compounding Watson's challenges against Pittsburgh's defensive front."
                     },
                     "Jalen Ramsey": {
-                        "score": 8.0,
-                        "analysis": "His questionable status creates a coverage mismatch against Cleveland's WRs, particularly Jerry Jeudy."
-                    },
-                    "Elgton Jenkins": {
-                        "score": 9.5,
-                        "analysis": "His absence cripples Cleveland's offensive line, severely limiting Deshaun Watson's ability to extend plays."
-                    },
-                    "Tylan Wallace": {
-                        "score": 9.0,
-                        "analysis": "His injury removes a key deep threat from Cleveland's WR corps, reducing offensive explosiveness."
-                    },
-                    "Jeremiah Owusu-Koramoah": {
-                        "score": 9.5,
-                        "analysis": "His absence leaves a massive void in Cleveland's secondary, making them vulnerable to Pittsburgh's passing attack."
+                        "score": 7.5,
+                        "analysis": "His questionable status slightly hampers Pittsburgh's pass defense, though Asante Samuel Jr. and Jamel Dean should compensate against Cleveland's WRs."
                     }
                 }
             },
             "winner_side": "away",
             "loser_side": "home",
-            "confidence": 7,
+            "confidence": 6,
             "is_upset": false,
-            "weather_summary": "78\u00b0F, Overcast (Wind: 8 mph)",
+            "weather_summary": "77\u00b0F, Overcast (Wind: 12 mph)",
             "quarters_weather": [
                 {
                     "quarter": "Q1",
                     "utc_time": "2026-10-02T00:15:00+00:00",
-                    "temp": 78,
-                    "wind": 8,
+                    "temp": 77,
+                    "wind": 12,
                     "condition": "Overcast",
                     "icon": "overcast"
                 },
@@ -1895,7 +1887,7 @@
                     "quarter": "Q2",
                     "utc_time": "2026-10-02T00:53:00+00:00",
                     "temp": 77,
-                    "wind": 11,
+                    "wind": 13,
                     "condition": "Overcast",
                     "icon": "overcast"
                 },
@@ -1903,7 +1895,7 @@
                     "quarter": "Q3",
                     "utc_time": "2026-10-02T01:46:00+00:00",
                     "temp": 76,
-                    "wind": 13,
+                    "wind": 12,
                     "condition": "Overcast",
                     "icon": "overcast"
                 },
@@ -1911,7 +1903,7 @@
                     "quarter": "Q4",
                     "utc_time": "2026-10-02T02:21:00+00:00",
                     "temp": 76,
-                    "wind": 13,
+                    "wind": 12,
                     "condition": "Overcast",
                     "icon": "overcast"
                 }
@@ -1931,14 +1923,8 @@
                     {
                         "text": "Jalen Ramsey \u2014 Questionable",
                         "name": "Jalen Ramsey",
-                        "score": 8.0,
-                        "analysis": "His questionable status creates a coverage mismatch against Cleveland's WRs, particularly Jerry Jeudy."
-                    },
-                    {
-                        "text": "Joey Porter Jr. \u2014 Out",
-                        "name": "Joey Porter Jr.",
-                        "score": 8.5,
-                        "analysis": "His absence weakens Pittsburgh's secondary, potentially allowing Cleveland's WRs to exploit the deep middle."
+                        "score": 7.5,
+                        "analysis": "His questionable status slightly hampers Pittsburgh's pass defense, though Asante Samuel Jr. and Jamel Dean should compensate against Cleveland's WRs."
                     },
                     {
                         "text": "Rico Dowdle \u2014 Out",
@@ -1949,6 +1935,12 @@
                     {
                         "text": "Gennings Dunker \u2014 Injured Reserve",
                         "name": "Gennings Dunker",
+                        "score": 0.0,
+                        "analysis": ""
+                    },
+                    {
+                        "text": "DeShon Elliott \u2014 Injured Reserve",
+                        "name": "DeShon Elliott",
                         "score": 0.0,
                         "analysis": ""
                     }
@@ -2058,10 +2050,6 @@
                             "pos": "LCB",
                             "players": [
                                 {
-                                    "name": "Joey Porter Jr.",
-                                    "badge": "O"
-                                },
-                                {
                                     "name": "Asante Samuel Jr.",
                                     "badge": ""
                                 }
@@ -2076,7 +2064,7 @@
                                 },
                                 {
                                     "name": "DeShon Elliott",
-                                    "badge": ""
+                                    "badge": "IR"
                                 }
                             ]
                         },
@@ -2395,7 +2383,7 @@
                         }
                     ]
                 },
-                "inj_metric": 83.5,
+                "inj_metric": 92.5,
                 "color": "#000000"
             },
             "home": {
@@ -2407,20 +2395,20 @@
                     {
                         "text": "Teven Jenkins \u2014 Out",
                         "name": "Teven Jenkins",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 9.0,
+                        "analysis": "Another missing offensive lineman further destabilizes Cleveland's blocking, compounding Watson's challenges against Pittsburgh's defensive front."
                     },
                     {
                         "text": "Elgton Jenkins \u2014 Out",
                         "name": "Elgton Jenkins",
-                        "score": 9.5,
-                        "analysis": "His absence cripples Cleveland's offensive line, severely limiting Deshaun Watson's ability to extend plays."
+                        "score": 9.0,
+                        "analysis": "His absence weakens Cleveland's offensive line, increasing pressure on Deshaun Watson and reducing protection against Pittsburgh's pass rush."
                     },
                     {
                         "text": "Tylan Wallace \u2014 Out",
                         "name": "Tylan Wallace",
-                        "score": 9.0,
-                        "analysis": "His injury removes a key deep threat from Cleveland's WR corps, reducing offensive explosiveness."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Dylan Sampson \u2014 Injured Reserve",
@@ -2431,8 +2419,8 @@
                     {
                         "text": "Jeremiah Owusu-Koramoah \u2014 Out",
                         "name": "Jeremiah Owusu-Koramoah",
-                        "score": 9.5,
-                        "analysis": "His absence leaves a massive void in Cleveland's secondary, making them vulnerable to Pittsburgh's passing attack."
+                        "score": 0.0,
+                        "analysis": ""
                     }
                 ],
                 "depth_chart": {
@@ -2873,7 +2861,7 @@
                         }
                     ]
                 },
-                "inj_metric": 72.0,
+                "inj_metric": 82.0,
                 "color": "#472a08"
             },
             "is_live": false,
@@ -2887,7 +2875,7 @@
             "id": "401872965",
             "matchup_label": "Indianapolis Colts at Washington Commanders",
             "utc_date": "2026-10-04T13:30Z",
-            "last_updated": "2026-10-01T03:02:14.390059+00:00",
+            "last_updated": "2026-10-01T14:02:31.023315+00:00",
             "market_line": "IND -3.5 | O/U: 47.5",
             "ou_line": "O/U 47.5",
             "est_away_pts": 25.5,
@@ -2902,24 +2890,28 @@
                 "away_off": 75,
                 "away_def": 80,
                 "away_st": 70,
-                "home_off": 85,
-                "home_def": 82,
+                "home_off": 80,
+                "home_def": 85,
                 "home_st": 75,
                 "predicted_winner": "Indianapolis Colts",
                 "confidence": 7,
-                "analysis": "The Colts' offensive efficiency (1.0) suggests a more dynamic attack compared to Washington's 0.0, which may indicate struggles for the Commanders' offense. Indianapolis' Jonathan Taylor (RB) and WR trio (Keenan Allen, Josh Downs, Darius Slayton) provide a balanced threat, while Daniel Jones has a clean pocket with Quenton Nelson and Matt Goncalves protecting him. Washington's defense, led by Daron Payne and Javon Kinlaw, could pressure Jones, but their offensive inefficiency and key injuries (Chig Okonkwo, Frankie Luvu) may limit scoring. The Colts' defense, anchored by DeForest Buckner and Grover Stewart, should contain Jacory Croskey-Merritt and Jayden Daniels, who lacks a reliable TE (Chig Okonkwo is questionable). Special teams are evenly matched, but the Colts' edge in offensive efficiency and depth should translate to a closer game. Indianapolis' ability to capitalize on Washington's offensive struggles and defensive gaps will be critical. Final score prediction: Indianapolis Colts 27, Washington Commanders 20.",
+                "analysis": "The Colts' offensive efficiency (1.0) suggests a more reliable attack compared to the Commanders' 0.0, though Washington's elite WR trio (McLaurin, Diggs, Williams) could exploit a potentially weakened Colts secondary. However, the Colts' defense, anchored by DeForest Buckner, Grover Stewart, and a top-tier pass rush, should limit Washington's explosive plays. The Commanders' injury concerns (Okonkwo, Robertson, Luvu) hurt their offensive line and TE depth, while the Colts' questionable linebacker (Davis-Gaither) may not derail their defense. Special teams are evenly matched, but the Colts' edge in offensive efficiency and defensive stoutness tilts the game. The Commanders' rookie QB Jayden Daniels faces a tough test against a disciplined Colts defense. Final score prediction: Indianapolis Colts 24, Washington Commanders 21.",
                 "injury_impact": {
                     "Akeem Davis-Gaither": {
                         "score": 8.0,
-                        "analysis": "His questionable status at MLB could weaken Indianapolis' middle linebacker presence against Washington's run-heavy RB (Croskey-Merritt)."
+                        "analysis": "His absence weakens the Colts' linebacker corps, reducing pressure on opposing QBs and potentially allowing more big plays."
                     },
                     "Chig Okonkwo": {
                         "score": 9.0,
-                        "analysis": "His absence as the Commanders' primary TE will hurt their passing game and create a void in the red zone."
+                        "analysis": "His injury removes a key red-zone threat for the Commanders, limiting their scoring efficiency."
+                    },
+                    "Amik Robertson": {
+                        "score": 7.5,
+                        "analysis": "His questionable status destabilizes the Commanders' offensive line, affecting pass protection and run blocking."
                     },
                     "Frankie Luvu": {
                         "score": 8.5,
-                        "analysis": "His questionable status at LILB weakens Washington's linebacking corps against Jonathan Taylor's rushing threats."
+                        "analysis": "His absence weakens the Commanders' 3-4 defense, reducing their ability to stop the run and apply pressure."
                     }
                 }
             },
@@ -2978,7 +2970,7 @@
                         "text": "Akeem Davis-Gaither \u2014 Questionable",
                         "name": "Akeem Davis-Gaither",
                         "score": 8.0,
-                        "analysis": "His questionable status at MLB could weaken Indianapolis' middle linebacker presence against Washington's run-heavy RB (Croskey-Merritt)."
+                        "analysis": "His absence weakens the Colts' linebacker corps, reducing pressure on opposing QBs and potentially allowing more big plays."
                     },
                     {
                         "text": "Ashton Dulin \u2014 Questionable",
@@ -3429,7 +3421,7 @@
                         "text": "Frankie Luvu \u2014 Questionable",
                         "name": "Frankie Luvu",
                         "score": 8.5,
-                        "analysis": "His questionable status at LILB weakens Washington's linebacking corps against Jonathan Taylor's rushing threats."
+                        "analysis": "His absence weakens the Commanders' 3-4 defense, reducing their ability to stop the run and apply pressure."
                     },
                     {
                         "text": "Ben Sinnott \u2014 Questionable",
@@ -3441,13 +3433,13 @@
                         "text": "Chig Okonkwo \u2014 Questionable",
                         "name": "Chig Okonkwo",
                         "score": 9.0,
-                        "analysis": "His absence as the Commanders' primary TE will hurt their passing game and create a void in the red zone."
+                        "analysis": "His injury removes a key red-zone threat for the Commanders, limiting their scoring efficiency."
                     },
                     {
                         "text": "Amik Robertson \u2014 Questionable",
                         "name": "Amik Robertson",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 7.5,
+                        "analysis": "His questionable status destabilizes the Commanders' offensive line, affecting pass protection and run blocking."
                     },
                     {
                         "text": "Charles Omenihu \u2014 Questionable",
@@ -3893,7 +3885,7 @@
                         }
                     ]
                 },
-                "inj_metric": 82.5,
+                "inj_metric": 75.0,
                 "color": "#5a1414"
             },
             "is_live": false,
@@ -3907,7 +3899,7 @@
             "id": "401872971",
             "matchup_label": "New England Patriots at Buffalo Bills",
             "utc_date": "2026-10-04T17:00Z",
-            "last_updated": "2026-10-01T03:03:05.331377+00:00",
+            "last_updated": "2026-10-01T14:04:04.700182+00:00",
             "market_line": "BUF -6.5 | O/U: 48.5",
             "ou_line": "O/U 48.5",
             "est_away_pts": 21.0,
@@ -3921,42 +3913,42 @@
             "ai_insights": {
                 "away_off": 65,
                 "away_def": 75,
-                "away_st": 70,
+                "away_st": 60,
                 "home_off": 70,
-                "home_def": 72,
-                "home_st": 75,
+                "home_def": 68,
+                "home_st": 65,
                 "predicted_winner": "Buffalo Bills",
-                "confidence": 8,
-                "analysis": "The Bills enter with a stronger offensive line (Dion Dawkins, Spencer Brown) to protect Josh Allen, though DJ Moore and Keon Coleman's injuries may limit WR production. The Patriots' offensive line (Morgan Moses, Will Campbell) faces challenges against Buffalo's pass rush (Ed Oliver, Bradley Chubb). Drake Maye's youth and inexperience could be exploited by Buffalo's secondary (Christian Benford, C.J. Gardner-Johnson). Buffalo's defense, despite Deone Walker's injury, retains depth with Greg Rousseau and Terrel Bernard. Special teams (Tyler Bass, Greg Dortch) give Buffalo a slight edge. The Bills' balanced attack and defensive versatility should prevail despite injury concerns. Final score prediction: Buffalo Bills 24, New England Patriots 20.",
+                "confidence": 9,
+                "analysis": "The Bills' superior offensive firepower, led by Josh Allen and a deep WR corps (Khalil Shakir, Dalton Kincaid), gives them a clear edge over New England's rookie QB Drake Maye and less-proven WRs. Buffalo's defense, anchored by Ed Oliver, Greg Rousseau, and Bradley Chubb, should pressure Maye effectively. New England's offensive line faces challenges with Morgan Moses (questionable) and Christian Barmore (questionable) potentially missing time, limiting protection for Maye and run blocking for Rhamondre Stevenson. Buffalo's special teams, with Tyler Bass and Greg Dortch, also provide a slight advantage. The Bills' depth and experience should allow them to dominate time of possession and capitalize on New England's injury-related vulnerabilities. The Patriots may struggle to generate consistent offense without key contributors, making a low-scoring game unlikely. Buffalo's defense should limit New England's explosive plays, leading to a decisive win.",
                 "injury_impact": {
-                    "Christian Barmore": {
-                        "score": 8.0,
-                        "analysis": "His absence weakens New England's pass rush, reducing pressure on Josh Allen."
-                    },
                     "Morgan Moses": {
+                        "score": 8.0,
+                        "analysis": "His absence weakens New England's offensive line, reducing protection for Drake Maye and diminishing run blocking for Rhamondre Stevenson."
+                    },
+                    "Christian Barmore": {
                         "score": 7.5,
-                        "analysis": "His injury disrupts New England's right tackle protection, exposing Drake Maye to Buffalo's edge rushers."
+                        "analysis": "His potential absence opens a gap on Buffalo's defensive line, making it easier for Josh Allen to target the middle of the field."
                     },
                     "DJ Moore": {
-                        "score": 9.0,
-                        "analysis": "His absence limits Buffalo's top WR target, reducing offensive efficiency."
-                    },
-                    "Deone Walker": {
                         "score": 8.5,
-                        "analysis": "His injury weakens Buffalo's defensive tackle depth, potentially allowing New England's run game to gain yardage."
+                        "analysis": "His injury reduces Buffalo's WR depth, but Khalil Shakir and Dalton Kincaid can still handle the bulk of the passing game."
+                    },
+                    "Christian Gonzalez": {
+                        "score": 6.0,
+                        "analysis": "His absence leaves a void in New England's secondary, making it harder to cover Buffalo's WRs in man-to-man situations."
                     }
                 }
             },
             "winner_side": "home",
             "loser_side": "away",
-            "confidence": 8,
+            "confidence": 9,
             "is_upset": false,
-            "weather_summary": "70\u00b0F, Clear Sky (Wind: 8 mph)",
+            "weather_summary": "68\u00b0F, Clear Sky (Wind: 8 mph)",
             "quarters_weather": [
                 {
                     "quarter": "Q1",
                     "utc_time": "2026-10-04T17:00:00+00:00",
-                    "temp": 70,
+                    "temp": 68,
                     "wind": 8,
                     "condition": "Clear Sky",
                     "icon": "clear"
@@ -3964,7 +3956,7 @@
                 {
                     "quarter": "Q2",
                     "utc_time": "2026-10-04T17:38:00+00:00",
-                    "temp": 71,
+                    "temp": 69,
                     "wind": 9,
                     "condition": "Clear Sky",
                     "icon": "clear"
@@ -3972,16 +3964,16 @@
                 {
                     "quarter": "Q3",
                     "utc_time": "2026-10-04T18:31:00+00:00",
-                    "temp": 72,
-                    "wind": 9,
+                    "temp": 69,
+                    "wind": 11,
                     "condition": "Clear Sky",
                     "icon": "clear"
                 },
                 {
                     "quarter": "Q4",
                     "utc_time": "2026-10-04T19:06:00+00:00",
-                    "temp": 72,
-                    "wind": 9,
+                    "temp": 69,
+                    "wind": 11,
                     "condition": "Clear Sky",
                     "icon": "clear"
                 }
@@ -4007,20 +3999,20 @@
                     {
                         "text": "Christian Gonzalez \u2014 Questionable",
                         "name": "Christian Gonzalez",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 6.0,
+                        "analysis": "His absence leaves a void in New England's secondary, making it harder to cover Buffalo's WRs in man-to-man situations."
                     },
                     {
                         "text": "Christian Barmore \u2014 Questionable",
                         "name": "Christian Barmore",
-                        "score": 8.0,
-                        "analysis": "His absence weakens New England's pass rush, reducing pressure on Josh Allen."
+                        "score": 7.5,
+                        "analysis": "His potential absence opens a gap on Buffalo's defensive line, making it easier for Josh Allen to target the middle of the field."
                     },
                     {
                         "text": "Morgan Moses \u2014 Questionable",
                         "name": "Morgan Moses",
-                        "score": 7.5,
-                        "analysis": "His injury disrupts New England's right tackle protection, exposing Drake Maye to Buffalo's edge rushers."
+                        "score": 8.0,
+                        "analysis": "His absence weakens New England's offensive line, reducing protection for Drake Maye and diminishing run blocking for Rhamondre Stevenson."
                     }
                 ],
                 "depth_chart": {
@@ -4481,7 +4473,7 @@
                         }
                     ]
                 },
-                "inj_metric": 84.5,
+                "inj_metric": 78.5,
                 "color": "#c60c30"
             },
             "home": {
@@ -4499,8 +4491,8 @@
                     {
                         "text": "Deone Walker \u2014 Questionable",
                         "name": "Deone Walker",
-                        "score": 8.5,
-                        "analysis": "His injury weakens Buffalo's defensive tackle depth, potentially allowing New England's run game to gain yardage."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Damar Hamlin \u2014 Questionable",
@@ -4517,8 +4509,8 @@
                     {
                         "text": "DJ Moore \u2014 Questionable",
                         "name": "DJ Moore",
-                        "score": 9.0,
-                        "analysis": "His absence limits Buffalo's top WR target, reducing offensive efficiency."
+                        "score": 8.5,
+                        "analysis": "His injury reduces Buffalo's WR depth, but Khalil Shakir and Dalton Kincaid can still handle the bulk of the passing game."
                     }
                 ],
                 "depth_chart": {
@@ -4934,7 +4926,7 @@
                         }
                     ]
                 },
-                "inj_metric": 82.5,
+                "inj_metric": 91.5,
                 "color": "#00338d"
             },
             "is_live": false,
@@ -4948,7 +4940,7 @@
             "id": "401872972",
             "matchup_label": "New York Jets at Chicago Bears",
             "utc_date": "2026-10-04T17:00Z",
-            "last_updated": "2026-10-01T03:03:57.012439+00:00",
+            "last_updated": "2026-10-01T14:05:23.000410+00:00",
             "market_line": "CHI -3.5 | O/U: 43.5",
             "ou_line": "O/U 43.5",
             "est_away_pts": 20.0,
@@ -4968,23 +4960,23 @@
                 "home_st": 75,
                 "predicted_winner": "New York Jets",
                 "confidence": 7,
-                "analysis": "The Jets' offensive efficiency (1.0) suggests a more dynamic attack compared to the Bears' stagnant offense (0.0). With Geno Smith at QB and Breece Hall as the primary RB, the Jets can exploit gaps in the Bears' secondary, particularly targeting WR Garrett Wilson and Isaiah Williams. The Bears' injury-depleted offensive line (missing Braxton Jones and Caleb Williams) limits their ability to protect the QB or create running lanes for D'Andre Swift. Chicago's defense, anchored by Grady Jarrett and Montez Sweat, will pressure Smith, but the Jets' defensive line (T'Vondre Sweat, Harrison Phillips) and secondary (Minkah Fitzpatrick, Azareye'h Thomas) should contain the Bears' passing game. Special teams are evenly matched, but the Jets' higher offensive output and Bears' injury-related struggles tilt the game. The Jets' depth on defense and efficient offense should secure a narrow win.",
+                "analysis": "The Jets' offensive efficiency (1.0) suggests a more dynamic attack compared to the Bears' stagnant offense (0.0). Geno Smith's health and Breece Hall's presence create a threat in the passing and rushing game, while the Bears' offensive line struggles with two starters (Braxton Jones, Kyler Gordon) out or doubtful, limiting Caleb Williams' effectiveness. The Bears' defense, anchored by Grady Jarrett and Montez Sweat, could pressure Smith, but the Jets' secondary (Minkah Fitzpatrick, Azareye'h Thomas) has question marks. Special teams parity exists, but the Jets' higher offensive output and Bears' injury-riddled offense tilt the game toward New York. The Bears' defense may limit scoring, but the Jets' efficiency should prevail. Final score prediction: New York Jets 24, Chicago Bears 20.",
                 "injury_impact": {
                     "Dylan Parham": {
                         "score": 8.0,
-                        "analysis": "His absence weakens the Jets' offensive line, reducing protection for Geno Smith and limiting run blocking for Breece Hall."
+                        "analysis": "His absence weakens the Jets' offensive line, potentially exposing Geno Smith to pressure."
                     },
                     "Caleb Williams": {
                         "score": 9.5,
-                        "analysis": "His injury devastates the Bears' offense, forcing a backup QB to face a strong Jets defense."
+                        "analysis": "His doubtful status devastates the Bears' offense, removing their most dangerous playmaker."
                     },
                     "Minkah Fitzpatrick": {
                         "score": 7.5,
-                        "analysis": "His questionable status leaves a void in the Jets' secondary, potentially exposing them to Chicago's passing attack."
+                        "analysis": "His questionable status creates a void in the Jets' secondary against the Bears' passing attack."
                     },
                     "Braxton Jones": {
                         "score": 9.0,
-                        "analysis": "His absence cripples the Bears' offensive line, making it easier for the Jets to apply pressure on Caleb Williams (if he plays)."
+                        "analysis": "His absence destabilizes the Bears' offensive line, worsening protection for Caleb Williams."
                     }
                 }
             },
@@ -4992,20 +4984,20 @@
             "loser_side": "home",
             "confidence": 7,
             "is_upset": true,
-            "weather_summary": "69\u00b0F, Clear Sky (Wind: 5 mph)",
+            "weather_summary": "70\u00b0F, Clear Sky (Wind: 6 mph)",
             "quarters_weather": [
                 {
                     "quarter": "Q1",
                     "utc_time": "2026-10-04T17:00:00+00:00",
-                    "temp": 69,
-                    "wind": 5,
+                    "temp": 70,
+                    "wind": 6,
                     "condition": "Clear Sky",
                     "icon": "clear"
                 },
                 {
                     "quarter": "Q2",
                     "utc_time": "2026-10-04T17:38:00+00:00",
-                    "temp": 71,
+                    "temp": 72,
                     "wind": 6,
                     "condition": "Clear Sky",
                     "icon": "clear"
@@ -5013,7 +5005,7 @@
                 {
                     "quarter": "Q3",
                     "utc_time": "2026-10-04T18:31:00+00:00",
-                    "temp": 71,
+                    "temp": 72,
                     "wind": 7,
                     "condition": "Clear Sky",
                     "icon": "clear"
@@ -5021,7 +5013,7 @@
                 {
                     "quarter": "Q4",
                     "utc_time": "2026-10-04T19:06:00+00:00",
-                    "temp": 71,
+                    "temp": 72,
                     "wind": 7,
                     "condition": "Clear Sky",
                     "icon": "clear"
@@ -5037,7 +5029,7 @@
                         "text": "Dylan Parham \u2014 Doubtful",
                         "name": "Dylan Parham",
                         "score": 8.0,
-                        "analysis": "His absence weakens the Jets' offensive line, reducing protection for Geno Smith and limiting run blocking for Breece Hall."
+                        "analysis": "His absence weakens the Jets' offensive line, potentially exposing Geno Smith to pressure."
                     },
                     {
                         "text": "Jeremy Ruckert \u2014 Questionable",
@@ -5061,7 +5053,7 @@
                         "text": "Minkah Fitzpatrick \u2014 Questionable",
                         "name": "Minkah Fitzpatrick",
                         "score": 7.5,
-                        "analysis": "His questionable status leaves a void in the Jets' secondary, potentially exposing them to Chicago's passing attack."
+                        "analysis": "His questionable status creates a void in the Jets' secondary against the Bears' passing attack."
                     }
                 ],
                 "depth_chart": {
@@ -5499,7 +5491,7 @@
                 "record": "2-1",
                 "injuries": [
                     {
-                        "text": "Anthony Johnson Jr. \u2014 Injured Reserve",
+                        "text": "Anthony Johnson Jr. \u2014 Out",
                         "name": "Anthony Johnson Jr.",
                         "score": 0.0,
                         "analysis": ""
@@ -5508,7 +5500,7 @@
                         "text": "Braxton Jones \u2014 Doubtful",
                         "name": "Braxton Jones",
                         "score": 9.0,
-                        "analysis": "His absence cripples the Bears' offensive line, making it easier for the Jets to apply pressure on Caleb Williams (if he plays)."
+                        "analysis": "His absence destabilizes the Bears' offensive line, worsening protection for Caleb Williams."
                     },
                     {
                         "text": "Kyler Gordon \u2014 Out",
@@ -5520,7 +5512,7 @@
                         "text": "Caleb Williams \u2014 Doubtful",
                         "name": "Caleb Williams",
                         "score": 9.5,
-                        "analysis": "His injury devastates the Bears' offense, forcing a backup QB to face a strong Jets defense."
+                        "analysis": "His doubtful status devastates the Bears' offense, removing their most dangerous playmaker."
                     },
                     {
                         "text": "Cam Lewis \u2014 Questionable",
@@ -5984,7 +5976,7 @@
             "id": "401872969",
             "matchup_label": "Jacksonville Jaguars at Cincinnati Bengals",
             "utc_date": "2026-10-04T17:00Z",
-            "last_updated": "2026-10-01T03:04:49.667208+00:00",
+            "last_updated": "2026-10-01T14:06:27.004795+00:00",
             "market_line": "CIN -2.5 | O/U: 51.5",
             "ou_line": "O/U 51.5",
             "est_away_pts": 24.5,
@@ -5996,35 +5988,35 @@
             "nfelo_away": 52.8,
             "nfelo_home": 47.2,
             "ai_insights": {
-                "away_off": 70,
+                "away_off": 65,
                 "away_def": 75,
-                "away_st": 65,
-                "home_off": 65,
-                "home_def": 78,
-                "home_st": 60,
+                "away_st": 70,
+                "home_off": 70,
+                "home_def": 72,
+                "home_st": 75,
                 "predicted_winner": "Cincinnati Bengals",
                 "confidence": 8,
-                "analysis": "The Bengals' offensive firepower, led by Joe Burrow, Ja'Marr Chase, and Tee Higgins, presents a significant threat to the Jaguars' defense. While Jacksonville's front seven (Travon Walker, Arik Armstead) and secondary (Travis Hunter, Eric Murray) are formidable, their offensive line's injury concerns (DaVon Hamilton, Cole Van Lanen) could limit Trevor Lawrence's effectiveness. Cincinnati's defense, despite questionables in the secondary (Jordan Battle, Bryan Cook), still boasts a dominant front (Boye Mafe, Jonathan Allen) and Barrett Carter at MLB. Special teams are unlikely to be decisive, but the Bengals' superior offensive efficiency and depth at WR should give them the edge. The Jaguars' pass-rush and coverage could force Burrow into mistakes, but Cincinnati's offensive line (Orlando Brown Jr., Amarius Mims) should protect him adequately. Final Score Prediction: Cincinnati 24, Jacksonville 20.",
+                "analysis": "The Bengals' offense, led by Joe Burrow, Ja'Marr Chase, and Tee Higgins, presents a formidable threat against a Jaguars defense missing key players like DaVon Hamilton (questionable) and Cole Van Lanen (questionable). The Jaguars' front seven, anchored by Travon Walker and Arik Armstead, could pressure Burrow, but the Bengals' offensive line (with Dalton Risner questionable) may struggle to protect him. The Bengals' defense, despite missing Jordan Battle (questionable) and Bryan Cook (questionable), still boasts a strong front with Jonathan Allen and Myles Murphy. The Jaguars' offense, reliant on Trevor Lawrence and a shaky WR corps (Jakobi Meyers questionable), may lack the firepower to keep up with Cincinnati's balanced attack. Special teams are evenly matched, but the Bengals' superior depth and experience give them the edge. The Jaguars' defensive injuries and offensive inefficiency will likely limit their ability to close the gap. Cincinnati Bengals 27, Jacksonville Jaguars 20.",
                 "injury_impact": {
                     "DaVon Hamilton": {
-                        "score": 8.0,
-                        "analysis": "His absence weakens Jacksonville's run blocking and pass protection, reducing the effectiveness of the offensive line."
+                        "score": 8.5,
+                        "analysis": "His absence weakens the Jaguars' run defense and pass rush, reducing pressure on Joe Burrow."
                     },
                     "Cole Van Lanen": {
-                        "score": 7.5,
-                        "analysis": "His injury creates uncertainty along the right side of the offensive line, potentially impacting Trevor Lawrence's mobility and protection."
+                        "score": 8.0,
+                        "analysis": "His injury compromises the Jaguars' right tackle protection, increasing Trevor Lawrence's exposure to pressure."
                     },
                     "Jordan Battle": {
-                        "score": 8.5,
-                        "analysis": "His absence leaves a void in Cincinnati's secondary, making them more vulnerable to Jacksonville's passing attack."
+                        "score": 7.5,
+                        "analysis": "His absence leaves a void in the Bengals' secondary, potentially exposing the offense to big plays."
                     },
                     "Bryan Cook": {
-                        "score": 8.0,
-                        "analysis": "His injury weakens Cincinnati's defensive backfield, reducing their ability to cover opposing WRs and make plays on the ball."
+                        "score": 7.0,
+                        "analysis": "His injury weakens the Bengals' safety coverage, reducing their ability to defend against deep passes."
                     },
-                    "Jakobi Meyers": {
+                    "Dalton Risner": {
                         "score": 6.5,
-                        "analysis": "His questionable status limits Jacksonville's WR depth, reducing the threat to Cincinnati's secondary."
+                        "analysis": "His absence destabilizes the Bengals' offensive line, potentially affecting Joe Burrow's protection and blocking efficiency."
                     }
                 }
             },
@@ -6032,12 +6024,12 @@
             "loser_side": "away",
             "confidence": 8,
             "is_upset": false,
-            "weather_summary": "70\u00b0F, Overcast (Wind: 4 mph)",
+            "weather_summary": "71\u00b0F, Overcast (Wind: 4 mph)",
             "quarters_weather": [
                 {
                     "quarter": "Q1",
                     "utc_time": "2026-10-04T17:00:00+00:00",
-                    "temp": 70,
+                    "temp": 71,
                     "wind": 4,
                     "condition": "Overcast",
                     "icon": "overcast"
@@ -6045,15 +6037,15 @@
                 {
                     "quarter": "Q2",
                     "utc_time": "2026-10-04T17:38:00+00:00",
-                    "temp": 71,
-                    "wind": 4,
+                    "temp": 72,
+                    "wind": 5,
                     "condition": "Overcast",
                     "icon": "overcast"
                 },
                 {
                     "quarter": "Q3",
                     "utc_time": "2026-10-04T18:31:00+00:00",
-                    "temp": 72,
+                    "temp": 74,
                     "wind": 4,
                     "condition": "Overcast",
                     "icon": "overcast"
@@ -6061,7 +6053,7 @@
                 {
                     "quarter": "Q4",
                     "utc_time": "2026-10-04T19:06:00+00:00",
-                    "temp": 72,
+                    "temp": 74,
                     "wind": 4,
                     "condition": "Overcast",
                     "icon": "overcast"
@@ -6082,20 +6074,20 @@
                     {
                         "text": "Jakobi Meyers \u2014 Questionable",
                         "name": "Jakobi Meyers",
-                        "score": 6.5,
-                        "analysis": "His questionable status limits Jacksonville's WR depth, reducing the threat to Cincinnati's secondary."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Cole Van Lanen \u2014 Questionable",
                         "name": "Cole Van Lanen",
-                        "score": 7.5,
-                        "analysis": "His injury creates uncertainty along the right side of the offensive line, potentially impacting Trevor Lawrence's mobility and protection."
+                        "score": 8.0,
+                        "analysis": "His injury compromises the Jaguars' right tackle protection, increasing Trevor Lawrence's exposure to pressure."
                     },
                     {
                         "text": "DaVon Hamilton \u2014 Questionable",
                         "name": "DaVon Hamilton",
-                        "score": 8.0,
-                        "analysis": "His absence weakens Jacksonville's run blocking and pass protection, reducing the effectiveness of the offensive line."
+                        "score": 8.5,
+                        "analysis": "His absence weakens the Jaguars' run defense and pass rush, reducing pressure on Joe Burrow."
                     },
                     {
                         "text": "Christian Braswell \u2014 Questionable",
@@ -6537,7 +6529,7 @@
                         }
                     ]
                 },
-                "inj_metric": 78.0,
+                "inj_metric": 83.5,
                 "color": "#007487"
             },
             "home": {
@@ -6555,20 +6547,20 @@
                     {
                         "text": "Dalton Risner \u2014 Questionable",
                         "name": "Dalton Risner",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 6.5,
+                        "analysis": "His absence destabilizes the Bengals' offensive line, potentially affecting Joe Burrow's protection and blocking efficiency."
                     },
                     {
                         "text": "Bryan Cook \u2014 Questionable",
                         "name": "Bryan Cook",
-                        "score": 8.0,
-                        "analysis": "His injury weakens Cincinnati's defensive backfield, reducing their ability to cover opposing WRs and make plays on the ball."
+                        "score": 7.0,
+                        "analysis": "His injury weakens the Bengals' safety coverage, reducing their ability to defend against deep passes."
                     },
                     {
                         "text": "Jordan Battle \u2014 Questionable",
                         "name": "Jordan Battle",
-                        "score": 8.5,
-                        "analysis": "His absence leaves a void in Cincinnati's secondary, making them more vulnerable to Jacksonville's passing attack."
+                        "score": 7.5,
+                        "analysis": "His absence leaves a void in the Bengals' secondary, potentially exposing the offense to big plays."
                     },
                     {
                         "text": "Jalen Davis \u2014 Injured Reserve",
@@ -6978,7 +6970,7 @@
                         }
                     ]
                 },
-                "inj_metric": 83.5,
+                "inj_metric": 79.0,
                 "color": "#fb4f14"
             },
             "is_live": false,
@@ -6992,7 +6984,7 @@
             "id": "401872966",
             "matchup_label": "Arizona Cardinals at New York Giants",
             "utc_date": "2026-10-04T17:00Z",
-            "last_updated": "2026-10-01T03:05:44.424513+00:00",
+            "last_updated": "2026-10-01T14:07:28.030313+00:00",
             "market_line": "ARI -2.5 | O/U: 44.5",
             "ou_line": "O/U 44.5",
             "est_away_pts": 23.5,
@@ -7005,44 +6997,48 @@
             "nfelo_home": 47.5,
             "ai_insights": {
                 "away_off": 65,
-                "away_def": 75,
+                "away_def": 55,
                 "away_st": 70,
-                "home_off": 60,
-                "home_def": 78,
-                "home_st": 72,
+                "home_off": 70,
+                "home_def": 75,
+                "home_st": 75,
                 "predicted_winner": "New York Giants",
-                "confidence": 7,
-                "analysis": "The Giants' defense, anchored by a dominant front four (Shelby Harris, DJ Reader, Chauncey Golston) and experienced linebackers (Kayvon Thibodeaux, Tremaine Edmunds), should pressure Arizona's QB Jacoby Brissett effectively. Arizona's offensive line has multiple question marks (Lopez, Nolen III, Froholdt), which could limit Brissett's mobility and hinder the run game for Jeremiyah Love. The Giants' passing game, led by Malik Nabers and Darnell Mooney, should exploit Arizona's secondary, which lacks elite coverage players. However, Arizona's defense, featuring Zaven Collins and Budda Baker, could disrupt the Giants' offense, particularly if the Giants' offensive line struggles with Andrew Thomas (questionable) and Tyler Nubin (questionable). Special teams are evenly matched, but the Giants' slight edge in depth and experience tilts the game. New York Giants 23, Arizona Cardinals 20.",
+                "confidence": 8,
+                "analysis": "The Giants' defense, anchored by a dominant base 3-4 front seven (Shelby Harris, DJ Reader, Chauncey Golston) and experienced linebackers (Kayvon Thibodeaux, Tremaine Edmunds), should neutralize Arizona's passing attack. Jacoby Brissett faces a Giants secondary with Jevon Holland and Greg Newsome II, but Arizona's offensive line has multiple injury concerns (Hjalte Froholdt, Paris Johnson Jr.) that could limit protection. Conversely, Jameis Winston has a strong WR trio (Malik Nabers, Malachi Fields, Darnell Mooney) and a solid offensive line, though Andrew Thomas' injury may slightly hinder run blocking. Special teams (Giants' Dominic Zvada vs. Arizona's Chad Ryland) should be competitive, but the Giants' defensive depth and experience give them a clear edge. The Cardinals' shaky defense (multiple starters questionable) will struggle to contain the Giants' offense, leading to a low-scoring but decisive Giants win. New York Giants 24, Arizona Cardinals 20.",
                 "injury_impact": {
                     "Roy Lopez": {
                         "score": 8.0,
-                        "analysis": "Lopez's absence weakens Arizona's offensive line, reducing protection for Brissett and limiting run-blocking for Love."
+                        "analysis": "His absence weakens Arizona's run defense, allowing Cam Skattebo to gain consistent yardage."
                     },
                     "Mack Wilson Sr.": {
-                        "score": 7.5,
-                        "analysis": "Wilson's questionable status impacts Arizona's linebacker depth, reducing ability to contain Giants' running back Cam Skattebo."
+                        "score": 9.0,
+                        "analysis": "His questionable status destabilizes Arizona's middle linebacker coverage, creating gaps for the Giants' RBs."
                     },
                     "Andrew Thomas": {
-                        "score": 9.0,
-                        "analysis": "Thomas's injury weakens the Giants' offensive line, potentially limiting pass protection for Jameis Winston and run-blocking for Skattebo."
+                        "score": 7.5,
+                        "analysis": "His injury slightly hampers the Giants' left tackle protection, but backups should manage against Arizona's pass rush."
+                    },
+                    "Hjalte Froholdt": {
+                        "score": 8.5,
+                        "analysis": "His questionable status disrupts Arizona's center protection, increasing pressure on Jacoby Brissett."
                     },
                     "Tyler Nubin": {
-                        "score": 6.5,
-                        "analysis": "Nubin's absence reduces Giants' defensive depth in the secondary, making them vulnerable to Arizona's passing attack."
+                        "score": 6.0,
+                        "analysis": "His absence weakens the Giants' safety coverage, potentially opening space for Arizona's WRs."
                     }
                 }
             },
             "winner_side": "home",
             "loser_side": "away",
-            "confidence": 7,
+            "confidence": 8,
             "is_upset": true,
-            "weather_summary": "70\u00b0F, Overcast (Wind: 8 mph)",
+            "weather_summary": "70\u00b0F, Overcast (Wind: 9 mph)",
             "quarters_weather": [
                 {
                     "quarter": "Q1",
                     "utc_time": "2026-10-04T17:00:00+00:00",
                     "temp": 70,
-                    "wind": 8,
+                    "wind": 9,
                     "condition": "Overcast",
                     "icon": "overcast"
                 },
@@ -7050,23 +7046,23 @@
                     "quarter": "Q2",
                     "utc_time": "2026-10-04T17:38:00+00:00",
                     "temp": 70,
-                    "wind": 8,
+                    "wind": 9,
                     "condition": "Overcast",
                     "icon": "overcast"
                 },
                 {
                     "quarter": "Q3",
                     "utc_time": "2026-10-04T18:31:00+00:00",
-                    "temp": 69,
-                    "wind": 8,
+                    "temp": 67,
+                    "wind": 10,
                     "condition": "Overcast",
                     "icon": "overcast"
                 },
                 {
                     "quarter": "Q4",
                     "utc_time": "2026-10-04T19:06:00+00:00",
-                    "temp": 69,
-                    "wind": 8,
+                    "temp": 67,
+                    "wind": 10,
                     "condition": "Overcast",
                     "icon": "overcast"
                 }
@@ -7086,14 +7082,14 @@
                     {
                         "text": "Mack Wilson Sr. \u2014 Questionable",
                         "name": "Mack Wilson Sr.",
-                        "score": 7.5,
-                        "analysis": "Wilson's questionable status impacts Arizona's linebacker depth, reducing ability to contain Giants' running back Cam Skattebo."
+                        "score": 9.0,
+                        "analysis": "His questionable status destabilizes Arizona's middle linebacker coverage, creating gaps for the Giants' RBs."
                     },
                     {
                         "text": "Roy Lopez \u2014 Questionable",
                         "name": "Roy Lopez",
                         "score": 8.0,
-                        "analysis": "Lopez's absence weakens Arizona's offensive line, reducing protection for Brissett and limiting run-blocking for Love."
+                        "analysis": "His absence weakens Arizona's run defense, allowing Cam Skattebo to gain consistent yardage."
                     },
                     {
                         "text": "Walter Nolen III \u2014 Questionable",
@@ -7104,8 +7100,8 @@
                     {
                         "text": "Hjalte Froholdt \u2014 Questionable",
                         "name": "Hjalte Froholdt",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 8.5,
+                        "analysis": "His questionable status disrupts Arizona's center protection, increasing pressure on Jacoby Brissett."
                     }
                 ],
                 "depth_chart": {
@@ -7533,7 +7529,7 @@
                         }
                     ]
                 },
-                "inj_metric": 84.5,
+                "inj_metric": 74.5,
                 "color": "#a40227"
             },
             "home": {
@@ -7557,8 +7553,8 @@
                     {
                         "text": "Andrew Thomas \u2014 Questionable",
                         "name": "Andrew Thomas",
-                        "score": 9.0,
-                        "analysis": "Thomas's injury weakens the Giants' offensive line, potentially limiting pass protection for Jameis Winston and run-blocking for Skattebo."
+                        "score": 7.5,
+                        "analysis": "His injury slightly hampers the Giants' left tackle protection, but backups should manage against Arizona's pass rush."
                     },
                     {
                         "text": "Brian Burns \u2014 Injured Reserve",
@@ -7569,8 +7565,8 @@
                     {
                         "text": "Tyler Nubin \u2014 Questionable",
                         "name": "Tyler Nubin",
-                        "score": 6.5,
-                        "analysis": "Nubin's absence reduces Giants' defensive depth in the secondary, making them vulnerable to Arizona's passing attack."
+                        "score": 6.0,
+                        "analysis": "His absence weakens the Giants' safety coverage, potentially opening space for Arizona's WRs."
                     }
                 ],
                 "depth_chart": {
@@ -8019,7 +8015,7 @@
                         }
                     ]
                 },
-                "inj_metric": 84.5,
+                "inj_metric": 86.5,
                 "color": "#003c7f"
             },
             "is_live": false,
@@ -8033,7 +8029,7 @@
             "id": "401872970",
             "matchup_label": "Los Angeles Rams at Philadelphia Eagles",
             "utc_date": "2026-10-04T17:00Z",
-            "last_updated": "2026-10-01T03:06:42.233205+00:00",
+            "last_updated": "2026-10-01T14:08:19.231998+00:00",
             "market_line": "LAR -3 | O/U: 43.5",
             "ou_line": "O/U 43.5",
             "est_away_pts": 23.2,
@@ -8045,31 +8041,35 @@
             "nfelo_away": 58.6,
             "nfelo_home": 41.4,
             "ai_insights": {
-                "away_off": 75,
-                "away_def": 85,
-                "away_st": 70,
-                "home_off": 70,
-                "home_def": 88,
-                "home_st": 72,
+                "away_off": 78,
+                "away_def": 72,
+                "away_st": 68,
+                "home_off": 75,
+                "home_def": 82,
+                "home_st": 70,
                 "predicted_winner": "Philadelphia Eagles",
                 "confidence": 8,
-                "analysis": "The Eagles' defense, anchored by Aaron Donald and Poona Ford, will pressure Jalen Hurts effectively, but the Rams' offensive line (Alaric Jackson, Kevin Dotson) should protect Stafford. However, the Eagles' balanced attack with DeVonta Smith, Saquon Barkley, and Dallas Goedert will exploit the Rams' secondary gaps, especially with Kamren Kinchens (questionable) and Nate Landman (questionable) potentially missing. Philadelphia's special teams, led by Braden Mann, will outperform Los Angeles' depth chart, which lacks proven returners. The Eagles' FPI edge and healthier offensive weapons (only Will Shipley questionable) give them the edge despite the Rams' defensive star power. Final score prediction: Philadelphia Eagles 27, Los Angeles Rams 24.",
+                "analysis": "The Eagles' offense, led by Jalen Hurts and a balanced trio of WRs (DeVonta Smith, Dontayvion Wicks, Makai Lemon), presents a significant threat to the Rams' defense. While the Rams' defense boasts Aaron Donald and a solid front seven, the Eagles' offensive line (Jordan Mailata, Cam Jurgens, Lane Johnson) should provide adequate protection for Hurts. The Rams' offense, reliant on Matthew Stafford, Davante Adams, and a questionable Puka Nacua, may struggle without a reliable third WR. The Eagles' defense, despite injuries to Moro Ojomo and Zack Baun, still features Jalen Carter and a strong secondary. Special teams are projected to be evenly matched. The Eagles' superior offensive firepower and the Rams' defensive vulnerabilities tilt the game in Philadelphia's favor. Philadelphia Eagles 27, Los Angeles Rams 20.",
                 "injury_impact": {
                     "Puka Nacua": {
-                        "score": 8.0,
-                        "analysis": "His absence weakens the Rams' WR depth, reducing Matthew Stafford's vertical threat."
-                    },
-                    "Kamren Kinchens": {
-                        "score": 7.5,
-                        "analysis": "His potential absence leaves a void in the Rams' secondary against Hurts' mobility."
-                    },
-                    "Nate Landman": {
-                        "score": 7.0,
-                        "analysis": "His questionable status disrupts the Rams' linebacker communication and run support."
+                        "score": 8.5,
+                        "analysis": "His absence weakens the Rams' WR depth, reducing their ability to stretch the field against the Eagles' secondary."
                     },
                     "Will Shipley": {
+                        "score": 7.0,
+                        "analysis": "His questionable status may disrupt the Eagles' return game, but the team's depth at WR compensates for this loss."
+                    },
+                    "Kamren Kinchens": {
                         "score": 6.5,
-                        "analysis": "His absence hampers the Eagles' special teams and may limit Saquon Barkley's blocking versatility."
+                        "analysis": "His potential absence could weaken the Rams' safety coverage, particularly against Hurts' mobility and the Eagles' WRs."
+                    },
+                    "Nate Landman": {
+                        "score": 6.0,
+                        "analysis": "His injury may force the Rams to adjust their linebacker alignment, potentially creating gaps for the Eagles' running game."
+                    },
+                    "Zack Baun": {
+                        "score": 5.5,
+                        "analysis": "His absence could limit the Eagles' ability to pressure Hurts, though the team's pass rush depth remains intact."
                     }
                 }
             },
@@ -8077,39 +8077,39 @@
             "loser_side": "away",
             "confidence": 8,
             "is_upset": true,
-            "weather_summary": "69\u00b0F, Overcast (Wind: 9 mph)",
+            "weather_summary": "64\u00b0F, Drizzle (Wind: 7 mph)",
             "quarters_weather": [
                 {
                     "quarter": "Q1",
                     "utc_time": "2026-10-04T17:00:00+00:00",
-                    "temp": 69,
-                    "wind": 9,
-                    "condition": "Overcast",
-                    "icon": "overcast"
+                    "temp": 64,
+                    "wind": 7,
+                    "condition": "Drizzle",
+                    "icon": "drizzle"
                 },
                 {
                     "quarter": "Q2",
                     "utc_time": "2026-10-04T17:38:00+00:00",
-                    "temp": 67,
-                    "wind": 8,
-                    "condition": "Overcast",
-                    "icon": "overcast"
+                    "temp": 62,
+                    "wind": 6,
+                    "condition": "Drizzle",
+                    "icon": "drizzle"
                 },
                 {
                     "quarter": "Q3",
                     "utc_time": "2026-10-04T18:31:00+00:00",
-                    "temp": 64,
-                    "wind": 8,
-                    "condition": "Overcast",
-                    "icon": "overcast"
+                    "temp": 60,
+                    "wind": 6,
+                    "condition": "Drizzle",
+                    "icon": "drizzle"
                 },
                 {
                     "quarter": "Q4",
                     "utc_time": "2026-10-04T19:06:00+00:00",
-                    "temp": 64,
-                    "wind": 8,
-                    "condition": "Overcast",
-                    "icon": "overcast"
+                    "temp": 60,
+                    "wind": 6,
+                    "condition": "Drizzle",
+                    "icon": "drizzle"
                 }
             ],
             "away": {
@@ -8121,14 +8121,14 @@
                     {
                         "text": "Kamren Kinchens \u2014 Questionable",
                         "name": "Kamren Kinchens",
-                        "score": 7.5,
-                        "analysis": "His potential absence leaves a void in the Rams' secondary against Hurts' mobility."
+                        "score": 6.5,
+                        "analysis": "His potential absence could weaken the Rams' safety coverage, particularly against Hurts' mobility and the Eagles' WRs."
                     },
                     {
                         "text": "Nate Landman \u2014 Questionable",
                         "name": "Nate Landman",
-                        "score": 7.0,
-                        "analysis": "His questionable status disrupts the Rams' linebacker communication and run support."
+                        "score": 6.0,
+                        "analysis": "His injury may force the Rams to adjust their linebacker alignment, potentially creating gaps for the Eagles' running game."
                     },
                     {
                         "text": "Josh Wallace \u2014 Questionable",
@@ -8145,8 +8145,8 @@
                     {
                         "text": "Puka Nacua \u2014 Questionable",
                         "name": "Puka Nacua",
-                        "score": 8.0,
-                        "analysis": "His absence weakens the Rams' WR depth, reducing Matthew Stafford's vertical threat."
+                        "score": 8.5,
+                        "analysis": "His absence weakens the Rams' WR depth, reducing their ability to stretch the field against the Eagles' secondary."
                     }
                 ],
                 "depth_chart": {
@@ -8570,7 +8570,7 @@
                         }
                     ]
                 },
-                "inj_metric": 77.5,
+                "inj_metric": 79.0,
                 "color": "#003594"
             },
             "home": {
@@ -8588,8 +8588,8 @@
                     {
                         "text": "Zack Baun \u2014 Questionable",
                         "name": "Zack Baun",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 5.5,
+                        "analysis": "His absence could limit the Eagles' ability to pressure Hurts, though the team's pass rush depth remains intact."
                     },
                     {
                         "text": "Hollywood Brown \u2014 Questionable",
@@ -8600,8 +8600,8 @@
                     {
                         "text": "Will Shipley \u2014 Questionable",
                         "name": "Will Shipley",
-                        "score": 6.5,
-                        "analysis": "His absence hampers the Eagles' special teams and may limit Saquon Barkley's blocking versatility."
+                        "score": 7.0,
+                        "analysis": "His questionable status may disrupt the Eagles' return game, but the team's depth at WR compensates for this loss."
                     },
                     {
                         "text": "Moro Ojomo \u2014 Questionable",
@@ -9051,7 +9051,7 @@
                         }
                     ]
                 },
-                "inj_metric": 93.5,
+                "inj_metric": 87.5,
                 "color": "#06424d"
             },
             "is_live": false,
@@ -9065,7 +9065,7 @@
             "id": "401872968",
             "matchup_label": "Green Bay Packers at Tampa Bay Buccaneers",
             "utc_date": "2026-10-04T17:00Z",
-            "last_updated": "2026-10-01T03:07:33.553218+00:00",
+            "last_updated": "2026-10-01T14:09:03.279667+00:00",
             "market_line": "GB -3.5 | O/U: 38.5",
             "ou_line": "O/U 38.5",
             "est_away_pts": 21.0,
@@ -9077,35 +9077,35 @@
             "nfelo_away": 60.4,
             "nfelo_home": 39.6,
             "ai_insights": {
-                "away_off": 70,
-                "away_def": 65,
-                "away_st": 75,
+                "away_off": 65,
+                "away_def": 60,
+                "away_st": 70,
                 "home_off": 75,
                 "home_def": 70,
-                "home_st": 78,
+                "home_st": 75,
                 "predicted_winner": "Tampa Bay Buccaneers",
                 "confidence": 8,
-                "analysis": "The Buccaneers' offense, led by Baker Mayfield and featuring top-tier WRs like Chris Godwin Jr. and Emeka Egbuka, should exploit the Packers' questionable linebacker corps (Van Ness, Cooper, Bain Jr., Trotter), which could struggle with coverage and run support. Tampa's defensive line (Vea, Kancey, Robinson) should pressure Jordan Love, while their secondary (McCollum, Smith, Winfield Jr.) should limit big plays. The Packers' offensive line, with Aaron Banks (questionable) at LG, may struggle to protect Love, though their WRs (Watson, Moore) could create mismatches. Special teams (Buccaneers' 78 vs. Packers' 75) favor Tampa's reliable kicking game. The Buccaneers' depth and balanced attack should prevail despite injury concerns. Final score prediction: Tampa Bay Buccaneers 27, Green Bay Packers 20.",
+                "analysis": "The Buccaneers' offensive line (Tristan Wirfs, Ben Bredeson) provides elite protection for Baker Mayfield, allowing him to exploit mismatches with Chris Godwin Jr. and Emeka Egbuka. The Packers' defensive questionables (Van Ness, Cooper, Brooks) weaken their pass rush and coverage, creating vulnerabilities for Mayfield. Tampa's secondary (Zyon McCollum, Benjamin Morrison) is more experienced in handling deep threats compared to Green Bay's inconsistent CBs. On the ground, Bucky Irving (1,100+ yards season) should dominate against a Packers run defense missing key linebackers. The Packers' offense struggles without Aaron Banks (LG) and healthy WRs, limiting Jordan Love's effectiveness. Special teams (Trey Smack, Daniel Whelan) are competitive but not decisive. Tampa's home-field advantage and superior offensive balance tilt the game toward the Buccaneers. Final score prediction: Tampa Bay 27, Green Bay 20.",
                 "injury_impact": {
                     "Lukas Van Ness": {
                         "score": 8.0,
-                        "analysis": "His absence weakens Packers' pass coverage and run support, allowing Buccaneers' WRs to thrive."
+                        "analysis": "His absence weakens Green Bay's pass rush and coverage against Baker Mayfield's mobility."
                     },
                     "Edgerrin Cooper": {
                         "score": 7.5,
-                        "analysis": "His injury reduces Packers' linebacker depth, impacting their ability to contain Buccaneers' RB Bucky Irving and WRs."
+                        "analysis": "His injury reduces Packers' linebacker depth, allowing Buccaneers' RBs to gain yards after contact."
                     },
-                    "Aaron Banks": {
+                    "Karl Brooks": {
                         "score": 7.0,
-                        "analysis": "His questionable status destabilizes Packers' offensive line, increasing pressure on Jordan Love."
+                        "analysis": "His absence opens the door for Mayfield to target deep threats with minimal pressure."
                     },
                     "Rueben Bain Jr.": {
-                        "score": 8.5,
-                        "analysis": "His absence weakens Buccaneers' linebacker corps, potentially allowing Packers' RB Kaleb Johnson to gain yards."
+                        "score": 6.5,
+                        "analysis": "His injury limits Tampa's ability to contain Jordan Love's scrambling potential."
                     },
                     "Josiah Trotter": {
-                        "score": 8.0,
-                        "analysis": "His injury reduces Buccaneers' linebacker depth, impacting their ability to stop Packers' run game and cover WRs."
+                        "score": 6.0,
+                        "analysis": "His absence reduces Tampa's linebacker versatility in stopping the run and covering tight ends."
                     }
                 }
             },
@@ -9113,39 +9113,39 @@
             "loser_side": "away",
             "confidence": 8,
             "is_upset": true,
-            "weather_summary": "89\u00b0F, Overcast (Wind: 8 mph)",
+            "weather_summary": "90\u00b0F, Partly Cloudy (Wind: 10 mph)",
             "quarters_weather": [
                 {
                     "quarter": "Q1",
                     "utc_time": "2026-10-04T17:00:00+00:00",
-                    "temp": 89,
-                    "wind": 8,
-                    "condition": "Overcast",
-                    "icon": "overcast"
+                    "temp": 90,
+                    "wind": 10,
+                    "condition": "Partly Cloudy",
+                    "icon": "partly_cloudy"
                 },
                 {
                     "quarter": "Q2",
                     "utc_time": "2026-10-04T17:38:00+00:00",
-                    "temp": 90,
+                    "temp": 92,
+                    "wind": 9,
+                    "condition": "Clear Sky",
+                    "icon": "clear"
+                },
+                {
+                    "quarter": "Q3",
+                    "utc_time": "2026-10-04T18:31:00+00:00",
+                    "temp": 93,
                     "wind": 9,
                     "condition": "Partly Cloudy",
                     "icon": "partly_cloudy"
                 },
                 {
-                    "quarter": "Q3",
-                    "utc_time": "2026-10-04T18:31:00+00:00",
-                    "temp": 90,
-                    "wind": 10,
-                    "condition": "Overcast",
-                    "icon": "overcast"
-                },
-                {
                     "quarter": "Q4",
                     "utc_time": "2026-10-04T19:06:00+00:00",
-                    "temp": 90,
-                    "wind": 10,
-                    "condition": "Overcast",
-                    "icon": "overcast"
+                    "temp": 93,
+                    "wind": 9,
+                    "condition": "Partly Cloudy",
+                    "icon": "partly_cloudy"
                 }
             ],
             "away": {
@@ -9158,19 +9158,19 @@
                         "text": "Lukas Van Ness \u2014 Questionable",
                         "name": "Lukas Van Ness",
                         "score": 8.0,
-                        "analysis": "His absence weakens Packers' pass coverage and run support, allowing Buccaneers' WRs to thrive."
+                        "analysis": "His absence weakens Green Bay's pass rush and coverage against Baker Mayfield's mobility."
                     },
                     {
                         "text": "Edgerrin Cooper \u2014 Questionable",
                         "name": "Edgerrin Cooper",
                         "score": 7.5,
-                        "analysis": "His injury reduces Packers' linebacker depth, impacting their ability to contain Buccaneers' RB Bucky Irving and WRs."
+                        "analysis": "His injury reduces Packers' linebacker depth, allowing Buccaneers' RBs to gain yards after contact."
                     },
                     {
                         "text": "Karl Brooks \u2014 Questionable",
                         "name": "Karl Brooks",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 7.0,
+                        "analysis": "His absence opens the door for Mayfield to target deep threats with minimal pressure."
                     },
                     {
                         "text": "Jayden Reed \u2014 Injured Reserve",
@@ -9181,8 +9181,8 @@
                     {
                         "text": "Aaron Banks \u2014 Questionable",
                         "name": "Aaron Banks",
-                        "score": 7.0,
-                        "analysis": "His questionable status destabilizes Packers' offensive line, increasing pressure on Jordan Love."
+                        "score": 0.0,
+                        "analysis": ""
                     }
                 ],
                 "depth_chart": {
@@ -9630,14 +9630,14 @@
                     {
                         "text": "Rueben Bain Jr. \u2014 Questionable",
                         "name": "Rueben Bain Jr.",
-                        "score": 8.5,
-                        "analysis": "His absence weakens Buccaneers' linebacker corps, potentially allowing Packers' RB Kaleb Johnson to gain yards."
+                        "score": 6.5,
+                        "analysis": "His injury limits Tampa's ability to contain Jordan Love's scrambling potential."
                     },
                     {
                         "text": "Josiah Trotter \u2014 Questionable",
                         "name": "Josiah Trotter",
-                        "score": 8.0,
-                        "analysis": "His injury reduces Buccaneers' linebacker depth, impacting their ability to stop Packers' run game and cover WRs."
+                        "score": 6.0,
+                        "analysis": "His absence reduces Tampa's linebacker versatility in stopping the run and covering tight ends."
                     },
                     {
                         "text": "Rakeem Nunez-Roches \u2014 Questionable",
@@ -10067,7 +10067,7 @@
                         }
                     ]
                 },
-                "inj_metric": 83.5,
+                "inj_metric": 87.5,
                 "color": "#bd1c36"
             },
             "is_live": false,
@@ -10081,7 +10081,7 @@
             "id": "401872973",
             "matchup_label": "Tennessee Titans at Baltimore Ravens",
             "utc_date": "2026-10-04T17:00Z",
-            "last_updated": "2026-10-01T03:08:22.899519+00:00",
+            "last_updated": "2026-10-01T14:10:17.422778+00:00",
             "market_line": "BAL -11.5 | O/U: 42.5",
             "ou_line": "O/U 42.5",
             "est_away_pts": 15.5,
@@ -10093,31 +10093,31 @@
             "nfelo_away": 29.6,
             "nfelo_home": 70.4,
             "ai_insights": {
-                "away_off": 65,
-                "away_def": 85,
+                "away_off": 55,
+                "away_def": 75,
                 "away_st": 70,
-                "home_off": 70,
-                "home_def": 90,
-                "home_st": 75,
+                "home_off": 65,
+                "home_def": 68,
+                "home_st": 65,
                 "predicted_winner": "Baltimore Ravens",
                 "confidence": 9,
-                "analysis": "The Ravens' defense, anchored by Pro Bowl players like Calais Campbell and Roquan Smith, will dominate the Titans' offense. Cam Ward lacks elite playmaking ability compared to Lamar Jackson, whose mobility and precision passing will exploit gaps in Tennessee's secondary. Derrick Henry, even with limited touches, will be a focal point against a Titans run defense missing John Franklin-Myers (questionable). The Ravens' offensive line, though missing John Simpson (questionable), should protect Jackson effectively. Special teams are projected to be evenly matched, but the Ravens' superior depth at linebacker and defensive end will create turnovers and short fields. The Titans' injury-plagued offensive line and lack of proven pass catchers (Wan'Dale Robinson is their only reliable WR) will limit Cam Ward's effectiveness. Baltimore's defense will force turnovers and limit Tennessee's explosive plays, leading to a low-scoring but decisive victory. Final Score Prediction: Baltimore Ravens 24, Tennessee Titans 17.",
+                "analysis": "The Ravens' offense, led by Lamar Jackson, Mark Andrews, and Derrick Henry, presents a formidable challenge for the Titans' defense. Jackson's dual-threat ability and the presence of Henry create a balanced attack that can exploit any gaps in Tennessee's secondary. The Titans' offensive line, while solid, lacks the star power to consistently protect Cam Ward, who has limited experience in the NFL. On defense, the Ravens' front seven (Madubuike, Campbell, Jones) should dominate the Titans' offensive line, pressuring Ward and limiting his decision-making. The Titans' injury concerns (Franklin-Myers, Pollard) further weaken their ability to generate pressure or sustain a running game. Special teams are relatively even, but the Ravens' superior depth and experience across all units give them a clear edge. The Titans may score in the low 20s, but the Ravens' offense should consistently move the ball and capitalize on turnovers. Final score prediction: Baltimore Ravens 31, Tennessee Titans 17.",
                 "injury_impact": {
                     "John Franklin-Myers": {
                         "score": 8.0,
-                        "analysis": "His absence weakens Tennessee's pass rush and run defense, allowing Lamar Jackson to operate freely."
+                        "analysis": "His absence weakens the Titans' pass rush, reducing pressure on Lamar Jackson and allowing the Ravens' offense to operate more freely."
                     },
                     "Tony Pollard": {
                         "score": 7.5,
-                        "analysis": "His questionable status reduces Tennessee's rushing threat, limiting Cam Ward's ability to extend plays."
+                        "analysis": "His questionable status limits the Titans' running game, forcing Cam Ward into a more predictable passing attack."
                     },
                     "Zay Flowers": {
-                        "score": 9.0,
-                        "analysis": "His absence hurts Baltimore's WR depth, but Rashod Bateman and Devontez Walker can still stretch the field."
+                        "score": 7.0,
+                        "analysis": "His potential absence reduces the Ravens' WR depth, though Rashod Bateman and Devontez Walker can still stretch the field."
                     },
                     "John Simpson": {
                         "score": 6.5,
-                        "analysis": "His injury slightly weakens Baltimore's offensive line, but Ronnie Stanley and Andrew Vorhees provide solid protection."
+                        "analysis": "His injury on the Ravens' offensive line could create minor protection issues for Lamar Jackson against a strong Titans' front seven."
                     }
                 }
             },
@@ -10125,39 +10125,39 @@
             "loser_side": "away",
             "confidence": 9,
             "is_upset": false,
-            "weather_summary": "62\u00b0F, Drizzle (Wind: 7 mph)",
+            "weather_summary": "60\u00b0F, Drizzle (Wind: 5 mph)",
             "quarters_weather": [
                 {
                     "quarter": "Q1",
                     "utc_time": "2026-10-04T17:00:00+00:00",
-                    "temp": 62,
-                    "wind": 7,
+                    "temp": 60,
+                    "wind": 5,
                     "condition": "Drizzle",
                     "icon": "drizzle"
                 },
                 {
                     "quarter": "Q2",
                     "utc_time": "2026-10-04T17:38:00+00:00",
-                    "temp": 61,
-                    "wind": 6,
-                    "condition": "Heavy Rain",
-                    "icon": "heavy_rain"
+                    "temp": 60,
+                    "wind": 5,
+                    "condition": "Drizzle",
+                    "icon": "drizzle"
                 },
                 {
                     "quarter": "Q3",
                     "utc_time": "2026-10-04T18:31:00+00:00",
                     "temp": 60,
-                    "wind": 7,
-                    "condition": "Heavy Rain",
-                    "icon": "heavy_rain"
+                    "wind": 6,
+                    "condition": "Drizzle",
+                    "icon": "drizzle"
                 },
                 {
                     "quarter": "Q4",
                     "utc_time": "2026-10-04T19:06:00+00:00",
                     "temp": 60,
-                    "wind": 7,
-                    "condition": "Heavy Rain",
-                    "icon": "heavy_rain"
+                    "wind": 6,
+                    "condition": "Drizzle",
+                    "icon": "drizzle"
                 }
             ],
             "away": {
@@ -10170,13 +10170,13 @@
                         "text": "John Franklin-Myers \u2014 Questionable",
                         "name": "John Franklin-Myers",
                         "score": 8.0,
-                        "analysis": "His absence weakens Tennessee's pass rush and run defense, allowing Lamar Jackson to operate freely."
+                        "analysis": "His absence weakens the Titans' pass rush, reducing pressure on Lamar Jackson and allowing the Ravens' offense to operate more freely."
                     },
                     {
                         "text": "Tony Pollard \u2014 Questionable",
                         "name": "Tony Pollard",
                         "score": 7.5,
-                        "analysis": "His questionable status reduces Tennessee's rushing threat, limiting Cam Ward's ability to extend plays."
+                        "analysis": "His questionable status limits the Titans' running game, forcing Cam Ward into a more predictable passing attack."
                     },
                     {
                         "text": "Tyjae Spears \u2014 Questionable",
@@ -10644,14 +10644,14 @@
                     {
                         "text": "Zay Flowers \u2014 Questionable",
                         "name": "Zay Flowers",
-                        "score": 9.0,
-                        "analysis": "His absence hurts Baltimore's WR depth, but Rashod Bateman and Devontez Walker can still stretch the field."
+                        "score": 7.0,
+                        "analysis": "His potential absence reduces the Ravens' WR depth, though Rashod Bateman and Devontez Walker can still stretch the field."
                     },
                     {
                         "text": "John Simpson \u2014 Questionable",
                         "name": "John Simpson",
                         "score": 6.5,
-                        "analysis": "His injury slightly weakens Baltimore's offensive line, but Ronnie Stanley and Andrew Vorhees provide solid protection."
+                        "analysis": "His injury on the Ravens' offensive line could create minor protection issues for Lamar Jackson against a strong Titans' front seven."
                     }
                 ],
                 "depth_chart": {
@@ -11083,7 +11083,7 @@
                         }
                     ]
                 },
-                "inj_metric": 84.5,
+                "inj_metric": 86.5,
                 "color": "#29126f"
             },
             "is_live": false,
@@ -11097,7 +11097,7 @@
             "id": "401872967",
             "matchup_label": "Dallas Cowboys at Houston Texans",
             "utc_date": "2026-10-04T17:00Z",
-            "last_updated": "2026-10-01T03:09:16.728034+00:00",
+            "last_updated": "2026-10-01T14:11:13.874757+00:00",
             "market_line": "HOU -3 | O/U: 48.5",
             "ou_line": "O/U 48.5",
             "est_away_pts": 22.8,
@@ -11110,30 +11110,30 @@
             "nfelo_home": 47.4,
             "ai_insights": {
                 "away_off": 75,
-                "away_def": 65,
-                "away_st": 70,
-                "home_off": 78,
-                "home_def": 68,
-                "home_st": 72,
+                "away_def": 80,
+                "away_st": 78,
+                "home_off": 72,
+                "home_def": 78,
+                "home_st": 75,
                 "predicted_winner": "Dallas Cowboys",
                 "confidence": 7,
-                "analysis": "The Cowboys' offense, led by Dak Prescott and a trio of WRs (Lamb, Pickens, Flournoy), should exploit the Texans' secondary gaps caused by Azeez Al-Shaair's absence. Houston's defense, while strong with Will Anderson Jr. and Danielle Hunter, lacks depth in the middle linebacker role. The Cowboys' offensive line, though unproven, should handle the Texans' pass rush adequately. On defense, Dallas' 3-4 scheme with Quinnen Williams and Rashan Gary could pressure Stroud, though injuries to Overshown and Hooker may leave vulnerabilities in coverage. Special teams parity favors neither team, but the Cowboys' slight edge in offensive efficiency and home-field advantage (controlled climate) tilts the balance. Final score prediction: Dallas 24, Houston 20.",
+                "analysis": "The Cowboys' offensive line (Tyler Guyton, T.J. Bass, Cooper Beebe) should provide solid protection for Dak Prescott, allowing him to exploit mismatches against Houston's secondary, which lacks Azeez Al-Shaair (doubtful) and has Calen Bullock (questionable) at FS. Houston's defense, while strong with Will Anderson Jr. (questionable) and Danielle Hunter, may struggle to contain Javonte Williams and the Cowboys' run game. Dallas' secondary, despite Malik Hooker (questionable), has DaRon Bland and Caleb Downs to counter Houston's WRs. Special teams are evenly matched, but Dallas' kicking game (Brandon Aubrey) gives them a slight edge. Houston's offense, led by C.J. Stroud and Dalton Schultz, could threaten Dallas if Will Anderson Jr. plays, but injury concerns and Dallas' defensive resilience tilt the game toward the Cowboys. Final score prediction: Dallas 24, Houston 21.",
                 "injury_impact": {
                     "DeMarvion Overshown": {
-                        "score": 8.0,
-                        "analysis": "His absence weakens Dallas' linebacker depth, reducing run-stopping and coverage effectiveness."
-                    },
-                    "Malik Hooker": {
                         "score": 7.5,
-                        "analysis": "His potential absence leaves a void in Dallas' safety coverage against Houston's WRs."
+                        "analysis": "His absence weakens Dallas' linebacker depth, potentially allowing Houston's RBs to gain more yards."
                     },
                     "Azeez Al-Shaair": {
                         "score": 9.0,
-                        "analysis": "His doubtful status severely impacts Houston's middle linebacker ability to stop the run and cover tight ends."
+                        "analysis": "His absence creates a significant void in Houston's middle of the field coverage, favoring Dallas' passing attack."
+                    },
+                    "Malik Hooker": {
+                        "score": 6.5,
+                        "analysis": "His questionable status reduces Dallas' safety coverage options against Houston's WRs."
                     },
                     "Will Anderson Jr.": {
-                        "score": 6.5,
-                        "analysis": "His questionable status creates uncertainty at Houston's LDE, potentially limiting pass rush pressure."
+                        "score": 8.0,
+                        "analysis": "His potential absence limits Houston's edge pressure, giving Dak Prescott more time to throw."
                     }
                 }
             },
@@ -11191,14 +11191,14 @@
                     {
                         "text": "Malik Hooker \u2014 Questionable",
                         "name": "Malik Hooker",
-                        "score": 7.5,
-                        "analysis": "His potential absence leaves a void in Dallas' safety coverage against Houston's WRs."
+                        "score": 6.5,
+                        "analysis": "His questionable status reduces Dallas' safety coverage options against Houston's WRs."
                     },
                     {
                         "text": "DeMarvion Overshown \u2014 Questionable",
                         "name": "DeMarvion Overshown",
-                        "score": 8.0,
-                        "analysis": "His absence weakens Dallas' linebacker depth, reducing run-stopping and coverage effectiveness."
+                        "score": 7.5,
+                        "analysis": "His absence weakens Dallas' linebacker depth, potentially allowing Houston's RBs to gain more yards."
                     },
                     {
                         "text": "Jalen Thompson \u2014 Injured Reserve",
@@ -11329,6 +11329,10 @@
                         {
                             "pos": "LCB",
                             "players": [
+                                {
+                                    "name": "Unknown",
+                                    "badge": ""
+                                },
                                 {
                                     "name": "Cobie Durant",
                                     "badge": ""
@@ -11643,7 +11647,7 @@
                         }
                     ]
                 },
-                "inj_metric": 84.5,
+                "inj_metric": 86.0,
                 "color": "#002a5c"
             },
             "home": {
@@ -11661,14 +11665,14 @@
                     {
                         "text": "Will Anderson Jr. \u2014 Questionable",
                         "name": "Will Anderson Jr.",
-                        "score": 6.5,
-                        "analysis": "His questionable status creates uncertainty at Houston's LDE, potentially limiting pass rush pressure."
+                        "score": 8.0,
+                        "analysis": "His potential absence limits Houston's edge pressure, giving Dak Prescott more time to throw."
                     },
                     {
                         "text": "Azeez Al-Shaair \u2014 Doubtful",
                         "name": "Azeez Al-Shaair",
                         "score": 9.0,
-                        "analysis": "His doubtful status severely impacts Houston's middle linebacker ability to stop the run and cover tight ends."
+                        "analysis": "His absence creates a significant void in Houston's middle of the field coverage, favoring Dallas' passing attack."
                     },
                     {
                         "text": "Calen Bullock \u2014 Questionable",
@@ -12148,7 +12152,7 @@
                         }
                     ]
                 },
-                "inj_metric": 84.5,
+                "inj_metric": 83.0,
                 "color": "#021018"
             },
             "is_live": false,
@@ -12162,7 +12166,7 @@
             "id": "401872974",
             "matchup_label": "Miami Dolphins at Minnesota Vikings",
             "utc_date": "2026-10-04T20:05Z",
-            "last_updated": "2026-10-01T03:10:07.021332+00:00",
+            "last_updated": "2026-10-01T14:12:13.877835+00:00",
             "market_line": "MIN -10.5 | O/U: 38.5",
             "ou_line": "O/U 38.5",
             "est_away_pts": 14.0,
@@ -12175,44 +12179,19 @@
             "nfelo_home": 69.9,
             "ai_insights": {
                 "away_off": 65,
-                "away_def": 75,
-                "away_st": 70,
-                "home_off": 85,
-                "home_def": 80,
+                "away_def": 70,
+                "away_st": 60,
+                "home_off": 80,
+                "home_def": 85,
                 "home_st": 75,
                 "predicted_winner": "Minnesota Vikings",
-                "confidence": 9,
-                "analysis": "The Vikings' offensive line and Kyler Murray's mobility create a dynamic threat against Miami's defense, which lacks proven pass-rushers beyond Josh Uche and Willie Gay Jr. Minnesota's WR corps (Jordan Addison, Jauan Jennings) can exploit Miami's secondary gaps left by injured starters. The Dolphins' offensive struggles are compounded by multiple WR/RB injuries, limiting Malik Willis' effectiveness. Minnesota's defense, anchored by Caleb Banks and Levi Drake Rodriguez, should dominate Miami's inconsistent offensive line. Special teams parity won't bridge the gap. Minnesota's superior depth and offensive firepower secure a decisive win. Minnesota 24, Miami 10.",
-                "injury_impact": {
-                    "Justin Jefferson": {
-                        "score": 8.5,
-                        "analysis": "His absence weakens Minnesota's WR depth but doesn't cripple the offense with Jordan Addison and Jauan Jennings available."
-                    },
-                    "Caleb Douglas": {
-                        "score": 6.0,
-                        "analysis": "His questionable status reduces Miami's WR options, limiting Malik Willis' ability to stretch the field."
-                    },
-                    "Blake Cashman": {
-                        "score": 5.5,
-                        "analysis": "His absence slightly weakens Minnesota's linebacker depth but doesn't disrupt their defensive scheme."
-                    },
-                    "Jaylen Wright": {
-                        "score": 5.0,
-                        "analysis": "His questionable status hampers Miami's RB depth, reducing pressure on Malik Willis."
-                    },
-                    "Chris Bell": {
-                        "score": 4.5,
-                        "analysis": "His injury further thins Miami's WR corps, making it easier for Minnesota's defense to focus coverage."
-                    },
-                    "Josh Uche": {
-                        "score": 9.0,
-                        "analysis": "His presence as a premier edge rusher is critical for Miami's defense to pressure Kyler Murray effectively."
-                    }
-                }
+                "confidence": 6,
+                "analysis": "AI Analysis error.",
+                "injury_impact": {}
             },
             "winner_side": "home",
             "loser_side": "away",
-            "confidence": 9,
+            "confidence": 6,
             "is_upset": false,
             "weather_summary": "\ud83c\udfdf\ufe0f Dome (Controlled Climate)",
             "quarters_weather": [
@@ -12270,20 +12249,20 @@
                     {
                         "text": "Chris Bell \u2014 Questionable",
                         "name": "Chris Bell",
-                        "score": 4.5,
-                        "analysis": "His injury further thins Miami's WR corps, making it easier for Minnesota's defense to focus coverage."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Jaylen Wright \u2014 Questionable",
                         "name": "Jaylen Wright",
-                        "score": 5.0,
-                        "analysis": "His questionable status hampers Miami's RB depth, reducing pressure on Malik Willis."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Caleb Douglas \u2014 Questionable",
                         "name": "Caleb Douglas",
-                        "score": 6.0,
-                        "analysis": "His questionable status reduces Miami's WR options, limiting Malik Willis' ability to stretch the field."
+                        "score": 0.0,
+                        "analysis": ""
                     }
                 ],
                 "depth_chart": {
@@ -12712,7 +12691,7 @@
                         }
                     ]
                 },
-                "inj_metric": 84.5,
+                "inj_metric": 100.0,
                 "color": "#008e97"
             },
             "home": {
@@ -12724,14 +12703,14 @@
                     {
                         "text": "Blake Cashman \u2014 Questionable",
                         "name": "Blake Cashman",
-                        "score": 5.5,
-                        "analysis": "His absence slightly weakens Minnesota's linebacker depth but doesn't disrupt their defensive scheme."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Justin Jefferson \u2014 Questionable",
                         "name": "Justin Jefferson",
-                        "score": 8.5,
-                        "analysis": "His absence weakens Minnesota's WR depth but doesn't cripple the offense with Jordan Addison and Jauan Jennings available."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Josh Oliver \u2014 Injured Reserve",
@@ -13178,7 +13157,7 @@
                         }
                     ]
                 },
-                "inj_metric": 86.0,
+                "inj_metric": 100.0,
                 "color": "#4f2683"
             },
             "is_live": false,
@@ -13192,7 +13171,7 @@
             "id": "401872976",
             "matchup_label": "Kansas City Chiefs at Las Vegas Raiders",
             "utc_date": "2026-10-04T20:25Z",
-            "last_updated": "2026-10-01T03:10:57.544659+00:00",
+            "last_updated": "2026-10-01T14:13:03.065537+00:00",
             "market_line": "KC -4.5 | O/U: 47.5",
             "ou_line": "O/U 47.5",
             "est_away_pts": 26.0,
@@ -13206,36 +13185,32 @@
             "ai_insights": {
                 "away_off": 85,
                 "away_def": 78,
-                "away_st": 75,
-                "home_off": 90,
-                "home_def": 85,
-                "home_st": 80,
-                "predicted_winner": "Kansas City Chiefs",
-                "confidence": 7,
-                "analysis": "The Chiefs' offense, led by Patrick Mahomes and Travis Kelce, presents a high-octane threat against a Raiders defense missing key pieces like Taron Johnson (starting CB) and Jackson Powers-Johnson (RG). Mahomes' ability to exploit mismatches and Kelce's dominance in the red zone could overwhelm Las Vegas' secondary, especially with L'Jarius Sneed (CB) questionable. The Chiefs' defense, anchored by Chris Jones and Nick Bolton, will apply pressure on Kirk Cousins, who lacks the elite playmaking ability of Mahomes. The Raiders' offensive line, weakened by Powers-Johnson's injury and the absence of Jackson Powers-Johnson, may struggle to protect Cousins, limiting the effectiveness of Ashton Jeanty and the passing game. Special teams are evenly matched, but the Chiefs' superior offensive efficiency and defensive depth give them the edge. The Raiders' injury-plagued roster and lack of a clear offensive identity make them vulnerable in a high-stakes matchup. Kansas City Chiefs 24, Las Vegas Raiders 20.",
+                "away_st": 72,
+                "home_off": 88,
+                "home_def": 82,
+                "home_st": 75,
+                "predicted_winner": "Las Vegas Raiders",
+                "confidence": 8,
+                "analysis": "The Chiefs' explosive offense with Patrick Mahomes, Travis Kelce, and a trio of dynamic WRs (Rashee Rice, Xavier Worthy, Tyquan Thornton) presents a significant threat, but their offensive line's health is concerning with Josh Simmons (LT, questionable) and the absence of Omarr Norman-Lott. The Raiders' defense, anchored by Maxx Crosby, Adam Butler, and a physical secondary led by Taron Johnson and Jeremy Chinn, should limit big plays. Kirk Cousins' experience and the Raiders' balanced attack with Brock Bowers and Ashton Jeanty provide a reliable counter to Kansas City's high-octane offense. The Chiefs' defense, while formidable with Chris Jones and Nick Bolton, may struggle to contain the Raiders' run game without a full-strength offensive line. Special teams are competitive, but the Raiders' slight edge in field position and kicker accuracy (Matt Gay vs. Harrison Butker) could tilt the game. The Raiders' injury to Jackson Powers-Johnson (RG, questionable) may disrupt their offensive line cohesion, but their depth at tackle and the presence of Kolton Miller should mitigate this. The Chiefs' secondary vulnerabilities with L'Jarius Sneed (CB, questionable) could be exploited by the Raiders' WRs. Final score prediction: Las Vegas Raiders 24, Kansas City Chiefs 20.",
                 "injury_impact": {
                     "Josh Simmons": {
-                        "score": 8.0,
-                        "analysis": "His absence as the starting left tackle could disrupt the Chiefs' offensive line cohesion, potentially leading to more pressure on Patrick Mahomes."
+                        "score": 8.5,
+                        "analysis": "His absence weakens the Chiefs' offensive line, increasing pressure on Patrick Mahomes against the Raiders' pass rush."
                     },
                     "L'Jarius Sneed": {
-                        "score": 7.5,
-                        "analysis": "His questionable status weakens the Chiefs' secondary, creating opportunities for Raiders' receivers like Tre Tucker and Jalen Nailor."
+                        "score": 7.0,
+                        "analysis": "His absence creates a void in the Chiefs' secondary, potentially allowing the Raiders' WRs to exploit mismatches."
                     },
                     "Jackson Powers-Johnson": {
-                        "score": 9.0,
-                        "analysis": "His injury at right guard significantly hampers the Raiders' offensive line, reducing protection for Kirk Cousins and limiting running back opportunities."
-                    },
-                    "Treydan Stukes": {
                         "score": 6.5,
-                        "analysis": "His questionable status at free safety leaves a void in the Raiders' secondary, potentially exploited by Chiefs' WRs like Tyquan Thornton."
+                        "analysis": "His injury disrupts the Raiders' offensive line depth, potentially affecting run blocking and pass protection for Kirk Cousins."
                     }
                 }
             },
-            "winner_side": "away",
-            "loser_side": "home",
-            "confidence": 7,
-            "is_upset": false,
+            "winner_side": "home",
+            "loser_side": "away",
+            "confidence": 8,
+            "is_upset": true,
             "weather_summary": "\ud83c\udfdf\ufe0f Dome (Controlled Climate)",
             "quarters_weather": [
                 {
@@ -13280,14 +13255,14 @@
                     {
                         "text": "Josh Simmons \u2014 Questionable",
                         "name": "Josh Simmons",
-                        "score": 8.0,
-                        "analysis": "His absence as the starting left tackle could disrupt the Chiefs' offensive line cohesion, potentially leading to more pressure on Patrick Mahomes."
+                        "score": 8.5,
+                        "analysis": "His absence weakens the Chiefs' offensive line, increasing pressure on Patrick Mahomes against the Raiders' pass rush."
                     },
                     {
                         "text": "L'Jarius Sneed \u2014 Questionable",
                         "name": "L'Jarius Sneed",
-                        "score": 7.5,
-                        "analysis": "His questionable status weakens the Chiefs' secondary, creating opportunities for Raiders' receivers like Tre Tucker and Jalen Nailor."
+                        "score": 7.0,
+                        "analysis": "His absence creates a void in the Chiefs' secondary, potentially allowing the Raiders' WRs to exploit mismatches."
                     },
                     {
                         "text": "Cooper McDonald \u2014 Injured Reserve",
@@ -13758,8 +13733,8 @@
                     {
                         "text": "Treydan Stukes \u2014 Questionable",
                         "name": "Treydan Stukes",
-                        "score": 6.5,
-                        "analysis": "His questionable status at free safety leaves a void in the Raiders' secondary, potentially exploited by Chiefs' WRs like Tyquan Thornton."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Aidan O'Connell \u2014 Questionable",
@@ -13776,8 +13751,8 @@
                     {
                         "text": "Jackson Powers-Johnson \u2014 Questionable",
                         "name": "Jackson Powers-Johnson",
-                        "score": 9.0,
-                        "analysis": "His injury at right guard significantly hampers the Raiders' offensive line, reducing protection for Kirk Cousins and limiting running back opportunities."
+                        "score": 6.5,
+                        "analysis": "His injury disrupts the Raiders' offensive line depth, potentially affecting run blocking and pass protection for Kirk Cousins."
                     },
                     {
                         "text": "Dont'e Thornton Jr. \u2014 Injured Reserve",
@@ -14220,7 +14195,7 @@
                         }
                     ]
                 },
-                "inj_metric": 84.5,
+                "inj_metric": 93.5,
                 "color": "#000000"
             },
             "is_live": false,
@@ -14234,7 +14209,7 @@
             "id": "401872975",
             "matchup_label": "Denver Broncos at San Francisco 49ers",
             "utc_date": "2026-10-04T20:25Z",
-            "last_updated": "2026-10-01T03:12:00.182188+00:00",
+            "last_updated": "2026-10-01T14:13:42.767495+00:00",
             "market_line": "SF -3 | O/U: 47.5",
             "ou_line": "O/U 47.5",
             "est_away_pts": 22.2,
@@ -14246,35 +14221,31 @@
             "nfelo_away": 33.7,
             "nfelo_home": 66.3,
             "ai_insights": {
-                "away_off": 70,
-                "away_def": 65,
-                "away_st": 75,
-                "home_off": 85,
-                "home_def": 88,
-                "home_st": 80,
+                "away_off": 65,
+                "away_def": 75,
+                "away_st": 60,
+                "home_off": 80,
+                "home_def": 85,
+                "home_st": 70,
                 "predicted_winner": "San Francisco 49ers",
                 "confidence": 9,
-                "analysis": "The 49ers dominate the matchup with superior offensive line play (Trent Williams, Connor Colby) protecting Brock Purdy and creating lanes for Christian McCaffrey. Their defense, anchored by Nick Bosa and Fred Warner, will pressure Bo Nix and limit Denver's passing game. The Broncos' secondary, while solid with Pat Surtain II, lacks the elite coverage depth to contain Deebo Samuel and George Kittle. Special teams are competitive, but the 49ers' overall talent gap is too wide. The Broncos' injury-depleted WR corps (Waddle, Sutton) will struggle against a 49ers defense that ranks top-5 in pass defense. San Francisco's offensive efficiency and defensive dominance will lead to a decisive win. Final score: San Francisco 49ers 30, Denver Broncos 17.",
+                "analysis": "The 49ers possess a significantly stronger offensive and defensive foundation, anchored by Pro Bowl talent like Nick Bosa, George Kittle, and Christian McCaffrey. Their offensive line (Trent Williams, Connor Colby) should protect Brock Purdy effectively while creating running lanes for McCaffrey. The Broncos' defense, while featuring Zach Allen and D.J. Jones, lacks the elite playmakers to consistently pressure Purdy or stop the 49ers' run game. Denver's offense relies on Bo Nix and a WR trio (Waddle, Sutton, Bryant), but injuries to Jonathon Cooper and Nick Gargiulo limit their depth. Special teams are projected as a slight edge to San Francisco due to Deebo Samuel's return kicks. The 49ers' superior depth and experience in critical moments give them a clear advantage. 24-17 San Francisco 49ers.",
                 "injury_impact": {
                     "Mike Evans": {
                         "score": 7.0,
-                        "analysis": "His absence weakens the 49ers' WR depth but doesn't derail their passing game with Deebo Samuel and George Kittle still viable."
+                        "analysis": "His absence weakens the 49ers' WR depth but doesn't cripple the offense with Deebo Samuel and KhaDarel Hodge still available."
                     },
-                    "KhaDarel Hodge": {
-                        "score": 6.5,
-                        "analysis": "His injury reduces the 49ers' return game options but has minimal impact on the passing attack."
+                    "Jonah Coleman": {
+                        "score": 6.0,
+                        "analysis": "His injury reduces Denver's TE options but doesn't drastically impact the offense with Evan Engram starting."
                     },
                     "Dre Greenlaw": {
                         "score": 8.0,
-                        "analysis": "His absence weakens the 49ers' linebacker corps but doesn't cripple their defense with Fred Warner and Jaden Dugger stepping up."
+                        "analysis": "His questionable status creates uncertainty at MLB, potentially weakening San Francisco's middle-of-the-field defense."
                     },
-                    "Jonah Coleman": {
-                        "score": 0.0,
-                        "analysis": "His injury doesn't impact the game as he's not on the active roster."
-                    },
-                    "Dondrea Tillman": {
+                    "Jonathon Cooper": {
                         "score": 5.0,
-                        "analysis": "His questionable status may slightly weaken Denver's secondary but doesn't alter the matchup's outcome."
+                        "analysis": "His absence limits Denver's run-blocking consistency but doesn't derail the offensive line's overall effectiveness."
                     }
                 }
             },
@@ -14295,16 +14266,16 @@
                 {
                     "quarter": "Q2",
                     "utc_time": "2026-10-04T21:03:00+00:00",
-                    "temp": 92,
-                    "wind": 6,
+                    "temp": 93,
+                    "wind": 7,
                     "condition": "Overcast",
                     "icon": "overcast"
                 },
                 {
                     "quarter": "Q3",
                     "utc_time": "2026-10-04T21:56:00+00:00",
-                    "temp": 92,
-                    "wind": 8,
+                    "temp": 94,
+                    "wind": 9,
                     "condition": "Overcast",
                     "icon": "overcast"
                 },
@@ -14312,9 +14283,9 @@
                     "quarter": "Q4",
                     "utc_time": "2026-10-04T22:31:00+00:00",
                     "temp": 92,
-                    "wind": 8,
-                    "condition": "Overcast",
-                    "icon": "overcast"
+                    "wind": 9,
+                    "condition": "Clear Sky",
+                    "icon": "clear"
                 }
             ],
             "away": {
@@ -14326,20 +14297,20 @@
                     {
                         "text": "Dondrea Tillman \u2014 Questionable",
                         "name": "Dondrea Tillman",
-                        "score": 5.0,
-                        "analysis": "His questionable status may slightly weaken Denver's secondary but doesn't alter the matchup's outcome."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Jonah Coleman \u2014 Injured Reserve",
                         "name": "Jonah Coleman",
-                        "score": 0.0,
-                        "analysis": "His injury doesn't impact the game as he's not on the active roster."
+                        "score": 6.0,
+                        "analysis": "His injury reduces Denver's TE options but doesn't drastically impact the offense with Evan Engram starting."
                     },
                     {
                         "text": "Jonathon Cooper \u2014 Out",
                         "name": "Jonathon Cooper",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 5.0,
+                        "analysis": "His absence limits Denver's run-blocking consistency but doesn't derail the offensive line's overall effectiveness."
                     },
                     {
                         "text": "Nick Gargiulo \u2014 Out",
@@ -14787,7 +14758,7 @@
                         }
                     ]
                 },
-                "inj_metric": 95.0,
+                "inj_metric": 89.0,
                 "color": "#0a2343"
             },
             "home": {
@@ -14800,13 +14771,13 @@
                         "text": "Dre Greenlaw \u2014 Questionable",
                         "name": "Dre Greenlaw",
                         "score": 8.0,
-                        "analysis": "His absence weakens the 49ers' linebacker corps but doesn't cripple their defense with Fred Warner and Jaden Dugger stepping up."
+                        "analysis": "His questionable status creates uncertainty at MLB, potentially weakening San Francisco's middle-of-the-field defense."
                     },
                     {
                         "text": "KhaDarel Hodge \u2014 Questionable",
                         "name": "KhaDarel Hodge",
-                        "score": 6.5,
-                        "analysis": "His injury reduces the 49ers' return game options but has minimal impact on the passing attack."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Mykel Williams \u2014 Out",
@@ -14824,7 +14795,7 @@
                         "text": "Mike Evans \u2014 Questionable",
                         "name": "Mike Evans",
                         "score": 7.0,
-                        "analysis": "His absence weakens the 49ers' WR depth but doesn't derail their passing game with Deebo Samuel and George Kittle still viable."
+                        "analysis": "His absence weakens the 49ers' WR depth but doesn't cripple the offense with Deebo Samuel and KhaDarel Hodge still available."
                     }
                 ],
                 "depth_chart": {
@@ -15293,7 +15264,7 @@
                         }
                     ]
                 },
-                "inj_metric": 78.5,
+                "inj_metric": 85.0,
                 "color": "#aa0000"
             },
             "is_live": false,
@@ -15307,7 +15278,7 @@
             "id": "401872977",
             "matchup_label": "Los Angeles Chargers at Seattle Seahawks",
             "utc_date": "2026-10-04T20:25Z",
-            "last_updated": "2026-10-01T03:12:56.105838+00:00",
+            "last_updated": "2026-10-01T14:14:37.267134+00:00",
             "market_line": "SEA -7 | O/U: 42.5",
             "ou_line": "O/U 42.5",
             "est_away_pts": 17.8,
@@ -15320,34 +15291,34 @@
             "nfelo_home": 64.6,
             "ai_insights": {
                 "away_off": 75,
-                "away_def": 70,
-                "away_st": 65,
-                "home_off": 72,
-                "home_def": 78,
-                "home_st": 68,
+                "away_def": 80,
+                "away_st": 70,
+                "home_off": 78,
+                "home_def": 85,
+                "home_st": 75,
                 "predicted_winner": "Seattle Seahawks",
                 "confidence": 8,
-                "analysis": "The Seahawks hold a slight edge in both offensive and defensive efficiency, anchored by Sam Darnold\u2019s experience and Cooper Kupp\u2019s elite receiving ability. While the Chargers\u2019 Khalil Mack is a game-changing pass rusher, the Seahawks\u2019 defensive line (Leonard Williams, Jarran Reed) and secondary (Devon Witherspoon) should neutralize Justin Herbert\u2019s threat. The Chargers\u2019 injury concerns (Herbert, McConkey, James Jr.) create volatility, while the Seahawks\u2019 secondary questions (Okada, Love) could be exploited by Quentin Johnston. Special teams are evenly matched, but the Seahawks\u2019 depth in the backfield (Jadarian Price) gives them a slight edge in time of possession. The Chargers\u2019 offensive line (Rashawn Slater, Joe Alt) should protect Herbert, but without McConkey, the passing game loses a key weapon. Seattle\u2019s defense, even with injuries, should limit Los Angeles\u2019 explosive plays. Final Score Prediction: Seattle Seahawks 24, Los Angeles Chargers 20.",
+                "analysis": "The Seahawks' defense, anchored by Leonard Williams and DeMarcus Lawrence, should pressure Justin Herbert effectively, especially with Khalil Mack's presence on the Chargers' defense. However, the Chargers' offensive line (Rashawn Slater, Joe Alt) provides solid protection, and Sam Darnold's ability to manage the game with Cooper Kupp and Jaxon Smith-Njigba could lead to consistent field goals. The Seahawks' special teams (Jason Myers, Michael Dickson) are slightly more reliable than the Chargers', giving them a marginal edge. Injuries to key players like Derwin James Jr. (Chargers' SS) and Jarran Reed (Seahawks' RDE) may create matchup opportunities, but the Seahawks' depth in the secondary (Devon Witherspoon, Josh Jobe) should compensate. The Chargers' offense could struggle if Justin Herbert is limited, but their defense might force turnovers. Final score prediction: Seattle Seahawks 24, Los Angeles Chargers 20.",
                 "injury_impact": {
                     "Justin Herbert": {
-                        "score": 9.0,
-                        "analysis": "His absence would severely cripple the Chargers\u2019 offensive output, as he is their only reliable playmaker."
+                        "score": 8.5,
+                        "analysis": "His potential absence would severely weaken the Chargers' offensive threat, though backup quarterbacks are unproven."
                     },
                     "Ladd McConkey": {
-                        "score": 8.5,
-                        "analysis": "His injury removes the Chargers\u2019 most dangerous deep threat, reducing their vertical passing game effectiveness."
+                        "score": 7.0,
+                        "analysis": "His injury reduces the Chargers' WR depth, limiting Justin Herbert's options against a strong Seahawks secondary."
                     },
-                    "Derwin James Jr.": {
+                    "Jarran Reed": {
                         "score": 8.0,
-                        "analysis": "His absence weakens the Chargers\u2019 safety coverage, making them vulnerable to Seahawks\u2019 WRs like Cooper Kupp."
-                    },
-                    "Ty Okada": {
-                        "score": 7.5,
-                        "analysis": "His injury leaves a void in Seattle\u2019s secondary, potentially allowing the Chargers to exploit the middle of the field."
+                        "analysis": "His absence weakens the Seahawks' pass rush, giving Herbert more time to operate against a vulnerable Chargers secondary."
                     },
                     "Julian Love": {
-                        "score": 7.0,
-                        "analysis": "His absence impacts Seattle\u2019s nickel coverage, reducing their ability to contain the Chargers\u2019 WRs in short zones."
+                        "score": 7.5,
+                        "analysis": "His injury leaves a void in the Seahawks' secondary, potentially exposing them to the Chargers' passing game."
+                    },
+                    "Derwin James Jr.": {
+                        "score": 9.0,
+                        "analysis": "His absence is a critical blow to the Chargers' defense, reducing their ability to cover Seahawks' WRs like Cooper Kupp."
                     }
                 }
             },
@@ -15355,12 +15326,12 @@
             "loser_side": "away",
             "confidence": 8,
             "is_upset": false,
-            "weather_summary": "71\u00b0F, Clear Sky (Wind: 6 mph)",
+            "weather_summary": "72\u00b0F, Clear Sky (Wind: 6 mph)",
             "quarters_weather": [
                 {
                     "quarter": "Q1",
                     "utc_time": "2026-10-04T20:25:00+00:00",
-                    "temp": 71,
+                    "temp": 72,
                     "wind": 6,
                     "condition": "Clear Sky",
                     "icon": "clear"
@@ -15369,15 +15340,15 @@
                     "quarter": "Q2",
                     "utc_time": "2026-10-04T21:03:00+00:00",
                     "temp": 72,
-                    "wind": 7,
-                    "condition": "Partly Cloudy",
-                    "icon": "partly_cloudy"
+                    "wind": 6,
+                    "condition": "Clear Sky",
+                    "icon": "clear"
                 },
                 {
                     "quarter": "Q3",
                     "utc_time": "2026-10-04T21:56:00+00:00",
-                    "temp": 71,
-                    "wind": 7,
+                    "temp": 72,
+                    "wind": 6,
                     "condition": "Clear Sky",
                     "icon": "clear"
                 },
@@ -15385,9 +15356,9 @@
                     "quarter": "Q4",
                     "utc_time": "2026-10-04T22:31:00+00:00",
                     "temp": 70,
-                    "wind": 7,
-                    "condition": "Clear Sky",
-                    "icon": "clear"
+                    "wind": 6,
+                    "condition": "Overcast",
+                    "icon": "overcast"
                 }
             ],
             "away": {
@@ -15399,8 +15370,8 @@
                     {
                         "text": "Derwin James Jr. \u2014 Questionable",
                         "name": "Derwin James Jr.",
-                        "score": 8.0,
-                        "analysis": "His absence weakens the Chargers\u2019 safety coverage, making them vulnerable to Seahawks\u2019 WRs like Cooper Kupp."
+                        "score": 9.0,
+                        "analysis": "His absence is a critical blow to the Chargers' defense, reducing their ability to cover Seahawks' WRs like Cooper Kupp."
                     },
                     {
                         "text": "Keaton Mitchell \u2014 Questionable",
@@ -15423,8 +15394,8 @@
                     {
                         "text": "Ladd McConkey \u2014 Questionable",
                         "name": "Ladd McConkey",
-                        "score": 8.5,
-                        "analysis": "His injury removes the Chargers\u2019 most dangerous deep threat, reducing their vertical passing game effectiveness."
+                        "score": 7.0,
+                        "analysis": "His injury reduces the Chargers' WR depth, limiting Justin Herbert's options against a strong Seahawks secondary."
                     }
                 ],
                 "depth_chart": {
@@ -15869,7 +15840,7 @@
                         }
                     ]
                 },
-                "inj_metric": 83.5,
+                "inj_metric": 84.0,
                 "color": "#0080c6"
             },
             "home": {
@@ -15881,14 +15852,14 @@
                     {
                         "text": "Ty Okada \u2014 Questionable",
                         "name": "Ty Okada",
-                        "score": 7.5,
-                        "analysis": "His injury leaves a void in Seattle\u2019s secondary, potentially allowing the Chargers to exploit the middle of the field."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Julian Love \u2014 Questionable",
                         "name": "Julian Love",
-                        "score": 7.0,
-                        "analysis": "His absence impacts Seattle\u2019s nickel coverage, reducing their ability to contain the Chargers\u2019 WRs in short zones."
+                        "score": 7.5,
+                        "analysis": "His injury leaves a void in the Seahawks' secondary, potentially exposing them to the Chargers' passing game."
                     },
                     {
                         "text": "Grey Zabel \u2014 Questionable",
@@ -15899,8 +15870,8 @@
                     {
                         "text": "Jarran Reed \u2014 Questionable",
                         "name": "Jarran Reed",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 8.0,
+                        "analysis": "His absence weakens the Seahawks' pass rush, giving Herbert more time to operate against a vulnerable Chargers secondary."
                     },
                     {
                         "text": "George Holani \u2014 Questionable",
@@ -16339,7 +16310,7 @@
                         }
                     ]
                 },
-                "inj_metric": 85.5,
+                "inj_metric": 84.5,
                 "color": "#002a5c"
             },
             "is_live": false,
@@ -16353,7 +16324,7 @@
             "id": "401872978",
             "matchup_label": "Detroit Lions at Carolina Panthers",
             "utc_date": "2026-10-05T00:20Z",
-            "last_updated": "2026-10-01T03:13:47.293497+00:00",
+            "last_updated": "2026-10-01T14:15:48.064327+00:00",
             "market_line": "DET -3.5 | O/U: 51.5",
             "ou_line": "O/U 51.5",
             "est_away_pts": 27.5,
@@ -16365,75 +16336,79 @@
             "nfelo_away": 56.5,
             "nfelo_home": 43.5,
             "ai_insights": {
-                "away_off": 72,
-                "away_def": 78,
-                "away_st": 75,
-                "home_off": 76,
-                "home_def": 82,
-                "home_st": 78,
-                "predicted_winner": "Detroit Lions",
-                "confidence": 7,
-                "analysis": "The Lions' offensive line, led by Penei Sewell and a balanced RB/WR group (Jahmyr Gibbs, Amon-Ra St. Brown, Jameson Williams), should control the tempo against a Panthers defense missing key pieces (Damien Lewis, Xavier Legette). Detroit's front seven (Aidan Hutchinson, Alim McNeill) will pressure Bryce Young, who lacks a reliable WR corps. Carolina's defense, while solid with Derrick Brown and Tre'von Moehrig, struggles against mobile QBs and may falter against Detroit's RBs. Special teams parity favors neither team, but Detroit's marginally stronger offensive line gives them the edge. The Lions' defense will capitalize on turnovers, while their offense converts short-yardage situations effectively. Final score prediction: Detroit Lions 27, Carolina Panthers 20.",
+                "away_off": 65,
+                "away_def": 75,
+                "away_st": 70,
+                "home_off": 60,
+                "home_def": 78,
+                "home_st": 68,
+                "predicted_winner": "Carolina Panthers",
+                "confidence": 8,
+                "analysis": "The Panthers' defense, anchored by edge rushers Derrick Brown and Bobby Brown III, will pressure Jared Goff and disrupt Detroit's offensive rhythm. Carolina's front seven should dominate the Lions' offensive line, particularly targeting Penei Sewell and Blake Miller. However, Detroit's defensive line, led by Aidan Hutchinson and Tyler Lacy, will apply pressure on Bryce Young, who lacks a reliable WR corps with Xavier Legette (Doubtful) and Jalen Coker. The Lions' secondary, despite D.J. Reed's (Questionable) absence, should hold up against the Panthers' passing game. Special teams will be critical, with Jake Bates and Ryan Fitzgerald both capable of long-distance kicks. The game will hinge on turnovers and red-zone efficiency, with Carolina's stronger defense giving them the edge. Final score prediction: Carolina Panthers 23, Detroit Lions 20.",
                 "injury_impact": {
                     "Xavier Legette": {
                         "score": 8.5,
-                        "analysis": "His absence severely limits Carolina's WR depth, reducing Bryce Young's target options and passing efficiency."
-                    },
-                    "Damien Lewis": {
-                        "score": 9.0,
-                        "analysis": "His injury weakens the Panthers' offensive line, making it easier for Detroit's pass rush to pressure Bryce Young."
+                        "analysis": "His absence weakens Carolina's WR depth, reducing Young's ability to stretch the field."
                     },
                     "D.J. Reed": {
                         "score": 7.0,
-                        "analysis": "His questionable status could leave Detroit's secondary vulnerable to Carolina's WRs if he's unable to play."
+                        "analysis": "His questionable status leaves a gap in Detroit's secondary against Panthers' passing attacks."
+                    },
+                    "Damien Lewis": {
+                        "score": 9.0,
+                        "analysis": "His injury destabilizes Carolina's offensive line, impacting protection for Bryce Young."
                     },
                     "Monroe Freeling": {
-                        "score": 8.0,
-                        "analysis": "His injury disrupts Carolina's right tackle protection, increasing pressure on Bryce Young and Chuba Hubbard."
-                    },
-                    "Princely Umanmielen": {
                         "score": 6.5,
-                        "analysis": "His absence slightly weakens Carolina's run support but is less impactful than other key injuries."
+                        "analysis": "His questionable status weakens Carolina's right tackle, exposing Young to pressure."
+                    },
+                    "D.J. Wonnum": {
+                        "score": 5.0,
+                        "analysis": "His questionable status may limit Detroit's special teams flexibility."
+                    },
+                    "Ben Bartch": {
+                        "score": 4.5,
+                        "analysis": "His questionable status has minimal impact on Detroit's special teams depth."
                     }
                 }
             },
-            "winner_side": "away",
-            "loser_side": "home",
-            "confidence": 7,
-            "is_upset": false,
-            "weather_summary": "61\u00b0F, Heavy Rain (Wind: 7 mph)",
+            "winner_side": "home",
+            "loser_side": "away",
+            "confidence": 8,
+            "is_upset": true,
+            "weather_summary": "64\u00b0F, Drizzle (Wind: 2 mph)",
             "quarters_weather": [
                 {
                     "quarter": "Q1",
                     "utc_time": "2026-10-05T00:20:00+00:00",
-                    "temp": 61,
-                    "wind": 7,
-                    "condition": "Heavy Rain",
-                    "icon": "heavy_rain"
+                    "temp": 64,
+                    "wind": 2,
+                    "condition": "Drizzle",
+                    "icon": "drizzle"
                 },
                 {
                     "quarter": "Q2",
                     "utc_time": "2026-10-05T00:58:00+00:00",
-                    "temp": 62,
-                    "wind": 6,
+                    "temp": 63,
+                    "wind": 4,
                     "condition": "Drizzle",
                     "icon": "drizzle"
                 },
                 {
                     "quarter": "Q3",
                     "utc_time": "2026-10-05T01:51:00+00:00",
-                    "temp": 62,
+                    "temp": 63,
                     "wind": 5,
-                    "condition": "Overcast",
-                    "icon": "overcast"
+                    "condition": "Drizzle",
+                    "icon": "drizzle"
                 },
                 {
                     "quarter": "Q4",
                     "utc_time": "2026-10-05T02:26:00+00:00",
-                    "temp": 62,
+                    "temp": 63,
                     "wind": 5,
-                    "condition": "Overcast",
-                    "icon": "overcast"
+                    "condition": "Drizzle",
+                    "icon": "drizzle"
                 }
             ],
             "away": {
@@ -16446,7 +16421,7 @@
                         "text": "D.J. Reed \u2014 Questionable",
                         "name": "D.J. Reed",
                         "score": 7.0,
-                        "analysis": "His questionable status could leave Detroit's secondary vulnerable to Carolina's WRs if he's unable to play."
+                        "analysis": "His questionable status leaves a gap in Detroit's secondary against Panthers' passing attacks."
                     },
                     {
                         "text": "DJ Wonnum \u2014 Questionable",
@@ -16457,8 +16432,8 @@
                     {
                         "text": "Ben Bartch \u2014 Questionable",
                         "name": "Ben Bartch",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 4.5,
+                        "analysis": "His questionable status has minimal impact on Detroit's special teams depth."
                     },
                     {
                         "text": "Cade Mays \u2014 Injured Reserve",
@@ -16902,7 +16877,7 @@
                         }
                     ]
                 },
-                "inj_metric": 93.0,
+                "inj_metric": 88.5,
                 "color": "#bbbbbb"
             },
             "home": {
@@ -16914,14 +16889,14 @@
                     {
                         "text": "Monroe Freeling \u2014 Questionable",
                         "name": "Monroe Freeling",
-                        "score": 8.0,
-                        "analysis": "His injury disrupts Carolina's right tackle protection, increasing pressure on Bryce Young and Chuba Hubbard."
+                        "score": 6.5,
+                        "analysis": "His questionable status weakens Carolina's right tackle, exposing Young to pressure."
                     },
                     {
                         "text": "Damien Lewis \u2014 Out",
                         "name": "Damien Lewis",
                         "score": 9.0,
-                        "analysis": "His injury weakens the Panthers' offensive line, making it easier for Detroit's pass rush to pressure Bryce Young."
+                        "analysis": "His injury destabilizes Carolina's offensive line, impacting protection for Bryce Young."
                     },
                     {
                         "text": "Mike Jackson \u2014 Injured Reserve",
@@ -16933,13 +16908,13 @@
                         "text": "Xavier Legette \u2014 Doubtful",
                         "name": "Xavier Legette",
                         "score": 8.5,
-                        "analysis": "His absence severely limits Carolina's WR depth, reducing Bryce Young's target options and passing efficiency."
+                        "analysis": "His absence weakens Carolina's WR depth, reducing Young's ability to stretch the field."
                     },
                     {
                         "text": "Princely Umanmielen \u2014 Questionable",
                         "name": "Princely Umanmielen",
-                        "score": 6.5,
-                        "analysis": "His absence slightly weakens Carolina's run support but is less impactful than other key injuries."
+                        "score": 0.0,
+                        "analysis": ""
                     }
                 ],
                 "depth_chart": {
@@ -17391,7 +17366,7 @@
                         }
                     ]
                 },
-                "inj_metric": 68.0,
+                "inj_metric": 76.0,
                 "color": "#0085ca"
             },
             "is_live": false,
@@ -17405,7 +17380,7 @@
             "id": "401872979",
             "matchup_label": "Atlanta Falcons at New Orleans Saints",
             "utc_date": "2026-10-06T00:15Z",
-            "last_updated": "2026-10-01T03:14:42.984314+00:00",
+            "last_updated": "2026-10-01T14:16:41.647879+00:00",
             "market_line": "NO -2.5 | O/U: 47.5",
             "ou_line": "O/U 47.5",
             "est_away_pts": 22.5,
@@ -17417,27 +17392,27 @@
             "nfelo_away": 42.2,
             "nfelo_home": 57.8,
             "ai_insights": {
-                "away_off": 60,
-                "away_def": 55,
+                "away_off": 65,
+                "away_def": 60,
                 "away_st": 70,
                 "home_off": 75,
                 "home_def": 80,
                 "home_st": 75,
                 "predicted_winner": "New Orleans Saints",
                 "confidence": 9,
-                "analysis": "The Saints' superior offensive efficiency (1.0 vs. Falcons' 0.0) and dominant defensive depth (led by Cameron Jordan, Chase Young, and Justin Reid) create a clear edge. Atlanta's offensive line, while solid, faces a Saints defense that excels in gap control and coverage. Michael Penix Jr.'s inexperience may lead to turnovers against New Orleans' aggressive pass rush. The Saints' special teams, despite Barion Brown's questionable status, remain reliable with Daniel Carlson and Ryan Wright. Atlanta's injury to Samson Ebukam weakens their pass rush, while the Saints' loss of Travis Etienne Jr. is mitigated by their strong running back depth. The Saints' controlled climate dome and higher FPI (62.7%) favor their execution. New Orleans' balanced attack and defensive dominance should secure the win. Final score prediction: New Orleans Saints 24, Atlanta Falcons 20.",
+                "analysis": "The Saints' superior offensive efficiency (1.0 vs. Falcons' 0.0) and dominant defensive front (Cameron Jordan, Chase Young, Nathan Shepherd) create a clear advantage. Atlanta's offense, led by Michael Penix Jr., lacks proven playmakers outside of Drake London and Kyle Pitts, while their defense struggles with depth injuries (Samson Ebukam questionable, A.J. Terrell Jr. on IR). New Orleans' defense will pressure Penix relentlessly, while their offense, though led by Tyler Shough, benefits from a stronger line and deeper WR corps (Chris Olave, Devaughn Vele). Special teams parity favors neither team, but the Saints' overall roster depth and efficiency metrics tilt the game. The Falcons' offensive inefficiency and defensive vulnerabilities will lead to a low-scoring, Saints-dominated contest. Final score prediction: New Orleans Saints 24, Atlanta Falcons 17.",
                 "injury_impact": {
                     "Samson Ebukam": {
                         "score": 8.0,
-                        "analysis": "His absence weakens Atlanta's pass rush, reducing pressure on Michael Penix Jr."
+                        "analysis": "His absence weakens Atlanta's pass rush, reducing pressure on Tyler Shough and allowing New Orleans' offensive line to operate more freely."
                     },
                     "Travis Etienne Jr.": {
                         "score": 9.0,
-                        "analysis": "His injury removes New Orleans' primary home-run threat, but their offensive efficiency compensates."
+                        "analysis": "His injury removes New Orleans' primary RB, forcing Tyler Shough to rely on unproven backups in the running game."
                     },
                     "Barion Brown": {
-                        "score": 7.0,
-                        "analysis": "His questionable status may disrupt Saints' return game, but depth at KR/PR limits impact."
+                        "score": 6.5,
+                        "analysis": "His questionable status on special teams could disrupt return game efficiency for both teams if he's inactive."
                     }
                 }
             },
@@ -17490,7 +17465,7 @@
                         "text": "Samson Ebukam \u2014 Questionable",
                         "name": "Samson Ebukam",
                         "score": 8.0,
-                        "analysis": "His absence weakens Atlanta's pass rush, reducing pressure on Michael Penix Jr."
+                        "analysis": "His absence weakens Atlanta's pass rush, reducing pressure on Tyler Shough and allowing New Orleans' offensive line to operate more freely."
                     },
                     {
                         "text": "A.J. Terrell Jr. \u2014 Injured Reserve",
@@ -17986,14 +17961,14 @@
                     {
                         "text": "Barion Brown \u2014 Questionable",
                         "name": "Barion Brown",
-                        "score": 7.0,
-                        "analysis": "His questionable status may disrupt Saints' return game, but depth at KR/PR limits impact."
+                        "score": 6.5,
+                        "analysis": "His questionable status on special teams could disrupt return game efficiency for both teams if he's inactive."
                     },
                     {
                         "text": "Travis Etienne Jr. \u2014 Out",
                         "name": "Travis Etienne Jr.",
                         "score": 9.0,
-                        "analysis": "His injury removes New Orleans' primary home-run threat, but their offensive efficiency compensates."
+                        "analysis": "His injury removes New Orleans' primary RB, forcing Tyler Shough to rely on unproven backups in the running game."
                     },
                     {
                         "text": "Anfernee Jennings \u2014 Questionable",
@@ -18451,7 +18426,7 @@
                         }
                     ]
                 },
-                "inj_metric": 84.0,
+                "inj_metric": 84.5,
                 "color": "#d3bc8d"
             }
         }
