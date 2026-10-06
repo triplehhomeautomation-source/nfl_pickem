@@ -18575,6 +18575,26 @@
                 },
                 "inj_metric": 100.0,
                 "color": "#d3bc8d"
+            },
+            "is_live": false,
+            "is_final": true,
+            "live_away_score": "45",
+            "live_home_score": "24"
+        },
+        "autopsy": {
+            "actual_away_score": 45,
+            "actual_home_score": 24,
+            "actual_winner": "Atlanta Falcons",
+            "away_yds": "420",
+            "home_yds": "320",
+            "away_to": "0",
+            "home_to": "1",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "Error",
+                "winner_correct": false,
+                "autopsy_analysis": "AI Autopsy failed to generate.",
+                "key_takeaway": "Error generating post-game review."
             }
         }
     }
