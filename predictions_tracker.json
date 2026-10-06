@@ -3896,9 +3896,25 @@
                 "color": "#5a1414"
             },
             "is_live": false,
-            "is_final": false,
-            "live_away_score": null,
-            "live_home_score": null
+            "is_final": true,
+            "live_away_score": "30",
+            "live_home_score": "13"
+        },
+        "autopsy": {
+            "actual_away_score": 30,
+            "actual_home_score": 13,
+            "actual_winner": "Indianapolis Colts",
+            "away_yds": "257",
+            "home_yds": "317",
+            "away_to": "2",
+            "home_to": "1",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "Error",
+                "winner_correct": false,
+                "autopsy_analysis": "AI Autopsy failed to generate.",
+                "key_takeaway": "Error generating post-game review."
+            }
         }
     },
     "401872971": {
@@ -17493,10 +17509,26 @@
                 "inj_metric": 100.0,
                 "color": "#0085ca"
             },
-            "is_live": true,
-            "is_final": false,
-            "live_away_score": "19",
+            "is_live": false,
+            "is_final": true,
+            "live_away_score": "26",
             "live_home_score": "32"
+        },
+        "autopsy": {
+            "actual_away_score": 26,
+            "actual_home_score": 32,
+            "actual_winner": "Carolina Panthers",
+            "away_yds": "452",
+            "home_yds": "445",
+            "away_to": "0",
+            "home_to": "0",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "Error",
+                "winner_correct": false,
+                "autopsy_analysis": "AI Autopsy failed to generate.",
+                "key_takeaway": "Error generating post-game review."
+            }
         }
     },
     "401872979": {
