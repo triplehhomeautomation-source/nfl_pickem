@@ -20673,10 +20673,26 @@
                 "inj_metric": 91.5,
                 "color": "#007487"
             },
-            "is_live": true,
-            "is_final": false,
-            "live_away_score": "0",
-            "live_home_score": "6"
+            "is_live": false,
+            "is_final": true,
+            "live_away_score": "17",
+            "live_home_score": "19"
+        },
+        "autopsy": {
+            "actual_away_score": 17,
+            "actual_home_score": 19,
+            "actual_winner": "Jacksonville Jaguars",
+            "away_yds": "232",
+            "home_yds": "408",
+            "away_to": "0",
+            "home_to": "1",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "C",
+                "winner_correct": true,
+                "autopsy_analysis": "The Jaguars secured the win as predicted, but the scoreline (19-17) fell far short of the 27-20 projection, highlighting overestimation of Jacksonville's offensive dominance and underestimation of Philadelphia's defensive resilience. The Eagles' 232 total yards (vs. Jaguars' 408) confirmed the Jaguars' passing game edge, yet the Eagles' 0 turnovers and effective run defense (despite injury issues) limited Jacksonville's scoring potential. The original analysis failed to account for the Eagles' ability to neutralize key Jaguars threats (e.g., Travon Walker) and capitalize on Jaguars' turnover (a critical 1-point swing).",
+                "key_takeaway": "Even with superior offensive stats, execution gaps and defensive adjustments can flip a lopsided game into a narrow victory for the underdog."
+            }
         }
     },
     "401872990": {
@@ -21726,9 +21742,25 @@
                 "color": "#204e32"
             },
             "is_live": false,
-            "is_final": false,
-            "live_away_score": null,
-            "live_home_score": null
+            "is_final": true,
+            "live_away_score": "7",
+            "live_home_score": "31"
+        },
+        "autopsy": {
+            "actual_away_score": 7,
+            "actual_home_score": 31,
+            "actual_winner": "Green Bay Packers",
+            "away_yds": "246",
+            "home_yds": "428",
+            "away_to": "5",
+            "home_to": "0",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "B",
+                "winner_correct": true,
+                "autopsy_analysis": "The Packers' dominant offensive performance (428 yards, 0 turnovers) far exceeded expectations, while the Bears' catastrophic turnovers (5) and inability to stop Green Bay's passing game (led by Jordan Love's 288 yards) overshadowed initial defensive concerns. The original prediction underestimated the Packers' offensive efficiency and overestimated the Bears' ability to counter Green Bay's pass-catchers. While the score prediction (27-20) was close to the actual margin (31-7), the Bears' total futility (7 points) was far worse than anticipated. The Packers' defensive pressure on Love was less impactful than their offensive execution, which was the true game-changer.",
+                "key_takeaway": "Turnovers and offensive dominance, not defensive battles, defined the game\u2014highlighting the critical gap between pre-game assumptions and execution."
+            }
         }
     },
     "401872984": {
@@ -22782,9 +22814,25 @@
                 "color": "#4495d2"
             },
             "is_live": false,
-            "is_final": false,
-            "live_away_score": null,
-            "live_home_score": null
+            "is_final": true,
+            "live_away_score": "26",
+            "live_home_score": "3"
+        },
+        "autopsy": {
+            "actual_away_score": 26,
+            "actual_home_score": 3,
+            "actual_winner": "Houston Texans",
+            "away_yds": "329",
+            "home_yds": "187",
+            "away_to": "0",
+            "home_to": "2",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "F",
+                "winner_correct": false,
+                "autopsy_analysis": "The game script deviated drastically from predictions as the Titans' defense collapsed (187 total yards, 2 turnovers) while the Texans' offense dominated (329 total yards, 0 turnovers). The original analysis underestimated Houston's offensive line protection and overestimated Tennessee's defensive ability to pressure Stroud, who completed 75% of passes for 268 yards. The Titans' lack of a reliable WR (Carnell Tate inactive) and poor special teams execution (no returns) compounded their struggles, contrasting sharply with the predicted 'depth and defensive experience' edge. The score prediction (Tennessee win) was entirely inaccurate given the 26-3 margin, highlighting a failure to foresee the Titans' complete offensive breakdown.",
+                "key_takeaway": "The Titans' defense imploded, and the Texans' offense exploited every weakness, proving that even a high-confidence pick can collapse if key matchup dynamics are misjudged."
+            }
         }
     },
     "401872982": {
@@ -23770,9 +23818,25 @@
                 "color": "#008e97"
             },
             "is_live": false,
-            "is_final": false,
-            "live_away_score": null,
-            "live_home_score": null
+            "is_final": true,
+            "live_away_score": "31",
+            "live_home_score": "24"
+        },
+        "autopsy": {
+            "actual_away_score": 31,
+            "actual_home_score": 24,
+            "actual_winner": "Cincinnati Bengals",
+            "away_yds": "307",
+            "home_yds": "331",
+            "away_to": "1",
+            "home_to": "3",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "F",
+                "winner_correct": false,
+                "autopsy_analysis": "The pre-game prediction completely misaligned with reality, as the Bengals dominated the Dolphins despite Miami's higher total yards (331 to 307). The Dolphins' three turnovers proved catastrophic, directly contrasting the prediction's implicit assumption that Miami's offensive efficiency would prevail. The score prediction (AI Analysis error) failed to account for Cincinnati's disciplined play and Miami's costly mistakes, which flipped the game script. The Bengals not only covered the -7 spread (winning by 7) but also highlighted the critical role of turnover differential over raw yardage. The original analysis' failure to emphasize defensive impact and turnover prevention led to a disastrous pick, underscoring a lack of depth in evaluating intangible factors. The over/under (43.5) was easily surpassed (638 total yards), yet the prediction ignored this metric entirely, further exposing analytical gaps.",
+                "key_takeaway": "Turnovers, not total yards, decided the game as the Bengals' stingy defense and minimal mistakes outplayed Miami's offensive output."
+            }
         }
     },
     "401872986": {
@@ -24860,9 +24924,25 @@
                 "color": "#002a5c"
             },
             "is_live": false,
-            "is_final": false,
-            "live_away_score": null,
-            "live_home_score": null
+            "is_final": true,
+            "live_away_score": "17",
+            "live_home_score": "45"
+        },
+        "autopsy": {
+            "actual_away_score": 17,
+            "actual_home_score": 45,
+            "actual_winner": "New England Patriots",
+            "away_yds": "306",
+            "home_yds": "536",
+            "away_to": "1",
+            "home_to": "1",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "C",
+                "winner_correct": true,
+                "autopsy_analysis": "The Patriots' offensive explosion (536 yards, 45 points) far exceeded expectations, as Drake Maye and the offense dominated the Raiders' 3-4 defense, particularly against Kwity Paye. While the original analysis correctly identified the Patriots' defensive edge, it underestimated the sheer dominance of New England's offense, which exploited Raiders' weaknesses with precision. The score prediction (27-20) was overly conservative, as the Patriots' balanced attack and efficient play-calling led to a blowout. The Raiders' offense (306 yards, 17 points) struggled more than anticipated, with Kirk Cousins failing to generate consistent passing threats despite Jalen Nailor's absence. The Patriots' defense, while effective, was secondary to the offensive explosion that defined the game.",
+                "key_takeaway": "New England's offensive firepower and Raiders' defensive vulnerabilities created a blowout, proving even the most conservative score predictions can be outpaced by elite execution."
+            }
         }
     },
     "401872987": {
@@ -25917,9 +25997,25 @@
                 "color": "#d3bc8d"
             },
             "is_live": false,
-            "is_final": false,
-            "live_away_score": null,
-            "live_home_score": null
+            "is_final": true,
+            "live_away_score": "23",
+            "live_home_score": "13"
+        },
+        "autopsy": {
+            "actual_away_score": 23,
+            "actual_home_score": 13,
+            "actual_winner": "Minnesota Vikings",
+            "away_yds": "364",
+            "home_yds": "142",
+            "away_to": "2",
+            "home_to": "3",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "D",
+                "winner_correct": false,
+                "autopsy_analysis": "The pre-game analysis drastically underestimated Minnesota's offensive execution and overestimated New Orleans' offensive capabilities. The Vikings' 364 total yards (vs. Saints' 142) exposed fatal flaws in the Saints' defense, contradicting predictions about their dominant front seven and ability to pressure Kirk Cousins (not Kyler Murray, a critical error in the original analysis). New Orleans' offensive line failed to protect Tyler Shough, while Minnesota's front seven overwhelmed the Saints' struggling offensive line. The score prediction (24-17) was overly optimistic for New Orleans, as the Vikings' 23-13 win reflected a complete collapse by the Saints' offense and a decisive defensive performance by Minnesota.",
+                "key_takeaway": "A critical misidentification of Minnesota's QB (Kirk Cousins vs. Kyler Murray) and failure to anticipate the Saints' offensive implosion doomed the pre-game analysis."
+            }
         }
     },
     "401872983": {
@@ -26970,9 +27066,25 @@
                 "color": "#115740"
             },
             "is_live": false,
-            "is_final": false,
-            "live_away_score": null,
-            "live_home_score": null
+            "is_final": true,
+            "live_away_score": "12",
+            "live_home_score": "17"
+        },
+        "autopsy": {
+            "actual_away_score": 12,
+            "actual_home_score": 17,
+            "actual_winner": "New York Jets",
+            "away_yds": "198",
+            "home_yds": "276",
+            "away_to": "2",
+            "home_to": "2",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "B",
+                "winner_correct": true,
+                "autopsy_analysis": "The pre-game prediction accurately identified the Jets as the victor and correctly highlighted their defensive dominance (reflected in Cleveland's 198 total yards vs. New York's 276). However, the score prediction (24-17) overestimated the Jets' offensive output and underestimated the Browns' resilience, as the final score (17-12) showed a tighter game than anticipated. The Jets' defense limited Cleveland's scoring, but the Browns' efficient offense (despite losing key targets) and the Jets' inability to capitalize on turnovers (both teams had 2) tempered the margin of victory. The prediction also missed that Cleveland's injury-depleted backfield (Judkins out) still managed to avoid a shutout, though their total yards were significantly lower than expected.",
+                "key_takeaway": "Even with superior defensive metrics, the Jets' offense must consistently convert opportunities to secure comfortable wins against injury-plagued opponents."
+            }
         }
     },
     "401872985": {
@@ -28011,9 +28123,25 @@
                 "color": "#000000"
             },
             "is_live": false,
-            "is_final": false,
-            "live_away_score": null,
-            "live_home_score": null
+            "is_final": true,
+            "live_away_score": "22",
+            "live_home_score": "34"
+        },
+        "autopsy": {
+            "actual_away_score": 22,
+            "actual_home_score": 34,
+            "actual_winner": "Pittsburgh Steelers",
+            "away_yds": "332",
+            "home_yds": "352",
+            "away_to": "0",
+            "home_to": "0",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "B",
+                "winner_correct": true,
+                "autopsy_analysis": "The Steelers secured the win as predicted, but the score (34-22) diverged sharply from the 24-17 projection, underscoring overestimation of Pittsburgh's defensive dominance and underestimation of the Colts' offensive efficiency. The original analysis assumed a low-scoring defensive battle, yet the game exceeded the 41.5 O/U by over 100 yards, reflecting the Colts' ability to generate offense despite lacking a clear No. 1 receiver. The Steelers' defense failed to force turnovers (0) and allowed 332 yards, while the Colts' balanced attack (17/33 on third down) capitalized on Pittsburgh's injury-depleted secondary. Rodgers' performance (312 yards, 3 TDs) and the Colts' 22 points contradicted the prediction of a 'defensive battle,' highlighting miscalculations about both teams' offensive capabilities.",
+                "key_takeaway": "Even elite defenses can be outmaneuvered by opposing offenses when injury-depleted units fail to execute their schemes effectively."
+            }
         }
     },
     "401872988": {
@@ -29096,9 +29224,25 @@
                 "color": "#5a1414"
             },
             "is_live": false,
-            "is_final": false,
-            "live_away_score": null,
-            "live_home_score": null
+            "is_final": true,
+            "live_away_score": "27",
+            "live_home_score": "27"
+        },
+        "autopsy": {
+            "actual_away_score": 27,
+            "actual_home_score": 27,
+            "actual_winner": "Washington Commanders",
+            "away_yds": "408",
+            "home_yds": "378",
+            "away_to": "2",
+            "home_to": "0",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "B",
+                "winner_correct": true,
+                "autopsy_analysis": "The prediction correctly identified Washington's defensive dominance (0 turnovers, Giants' 2) and their ability to control the game script. However, the score prediction underestimated the Giants' offensive resilience, as New York's 408 total yards and 27 points reflected better execution than anticipated. Washington's balanced attack (378 yards) and lack of turnovers aligned with the pre-game analysis, but the Giants' ability to match Washington's scoring (27-27) contradicted expectations of a decisive win. The original analysis overestimated Washington's red-zone efficiency and defensive time-of-possession control, as the game remained tightly contested.",
+                "key_takeaway": "Even a dominant defense can't guarantee victory if the opposing offense capitalizes on missed opportunities and maintains efficiency."
+            }
         }
     },
     "401872989": {
@@ -30162,9 +30306,25 @@
                 "color": "#0080c6"
             },
             "is_live": false,
-            "is_final": false,
-            "live_away_score": null,
-            "live_home_score": null
+            "is_final": true,
+            "live_away_score": "23",
+            "live_home_score": "17"
+        },
+        "autopsy": {
+            "actual_away_score": 23,
+            "actual_home_score": 17,
+            "actual_winner": "Denver Broncos",
+            "away_yds": "224",
+            "home_yds": "237",
+            "away_to": "1",
+            "home_to": "3",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "C",
+                "winner_correct": false,
+                "autopsy_analysis": "The pre-game prediction underestimated Denver's defensive resilience and overestimated the Chargers' offensive execution. Despite the Chargers outgaining Denver in total yards (237-224), turnovers proved decisive\u2014Los Angeles committed three turnovers compared to Denver's one, directly impacting the outcome. The Broncos' defense, despite a weakened cornerback corps, limited Herbert to just 17 points and forced critical turnovers, contradicting the expectation that the Chargers' depth at WR would offset McConkey's absence. The score prediction (24-17 Chargers) was remarkably close numerically, but the Broncos' ability to capitalize on turnovers and the Chargers' inability to protect the ball flipped the script. Denver's offense, led by Bo Nix, also performed more effectively than anticipated against the Chargers' third-down efficiency, which was less dominant than predicted.",
+                "key_takeaway": "Turnovers and defensive execution can override even the most detailed offensive projections in high-stakes matchups."
+            }
         }
     },
     "401872991": {
@@ -31202,9 +31362,25 @@
                 "color": "#a40227"
             },
             "is_live": false,
-            "is_final": false,
-            "live_away_score": null,
-            "live_home_score": null
+            "is_final": true,
+            "live_away_score": "45",
+            "live_home_score": "21"
+        },
+        "autopsy": {
+            "actual_away_score": 45,
+            "actual_home_score": 21,
+            "actual_winner": "Detroit Lions",
+            "away_yds": "412",
+            "home_yds": "327",
+            "away_to": "0",
+            "home_to": "1",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "F",
+                "winner_correct": false,
+                "autopsy_analysis": "The pre-game analysis drastically underestimated Detroit\u2019s offensive explosion (412 total yards) and defensive dominance (shutting down Arizona\u2019s offense to 21 points). Arizona\u2019s pass-catching trio was neutralized, while Detroit\u2019s WRs (Jameson Williams, Amon-Ra St. Brown) and QB Jared Goff executed flawlessly. The original score prediction (27-19) was wildly inaccurate, as Detroit\u2019s 45-21 win reflected a complete reversal of expected matchups. Arizona\u2019s turnover (1) and unproven offensive line also hurt, contrasting with the assumption that Brissett would be protected effectively. Detroit\u2019s defense, despite key absences, outperformed expectations, while Arizona\u2019s depth at WR failed to compensate for their offensive struggles.",
+                "key_takeaway": "Never underestimate a team\u2019s ability to exploit perceived defensive weaknesses when their offense is firing on all cylinders."
+            }
         }
     },
     "401872992": {
@@ -32268,9 +32444,25 @@
                 "color": "#002a5c"
             },
             "is_live": false,
-            "is_final": false,
-            "live_away_score": null,
-            "live_home_score": null
+            "is_final": true,
+            "live_away_score": "32",
+            "live_home_score": "29"
+        },
+        "autopsy": {
+            "actual_away_score": 32,
+            "actual_home_score": 29,
+            "actual_winner": "San Francisco 49ers",
+            "away_yds": "269",
+            "home_yds": "251",
+            "away_to": "3",
+            "home_to": "4",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "B",
+                "winner_correct": true,
+                "autopsy_analysis": "The game script aligned with the prediction that the 49ers would win, but the final score (32-29) exceeded the predicted 24-20 margin, indicating stronger offensive execution than anticipated. The 49ers' total yards (269) outpaced the Seahawks' (251), validating the emphasis on their offensive line and WR trio, though the prediction underestimated their scoring efficiency. The Seahawks' lack of a reliable RB (Zach Charbonnet out) did limit their tempo, but their defense held the 49ers to just 32 points, contradicting the expectation that their pass rush would dominate. Turnovers (4 for Seattle) also played a pivotal role, shifting momentum in favor of the 49ers despite the Seahawks' offensive weapons.",
+                "key_takeaway": "The 49ers' offensive line and balanced attack overcame key injuries, while the Seahawks' defensive resilience and turnover luck kept the game closer than expected."
+            }
         }
     },
     "401872993": {
@@ -33323,10 +33515,10 @@
                 "inj_metric": 86.0,
                 "color": "#a71930"
             },
-            "is_live": false,
+            "is_live": true,
             "is_final": false,
-            "live_away_score": null,
-            "live_home_score": null
+            "live_away_score": "15",
+            "live_home_score": "20"
         }
     },
     "401872994": {
@@ -33334,39 +33526,43 @@
             "id": "401872994",
             "matchup_label": "Buffalo Bills at Los Angeles Rams",
             "utc_date": "2026-10-13T00:15Z",
-            "last_updated": "2026-10-11T14:12:24.779715+00:00",
-            "market_line": "LAR -3 | O/U: 54.5",
+            "last_updated": "2026-10-12T03:06:48.733245+00:00",
+            "market_line": "LAR -3.5 | O/U: 54.5",
             "ou_line": "O/U 54.5",
-            "est_away_pts": 25.8,
-            "est_home_pts": 28.8,
+            "est_away_pts": 25.5,
+            "est_home_pts": 29.0,
             "fpi_away": 41.4,
             "fpi_home": 58.2,
-            "vegas_away": 38.7,
-            "vegas_home": 61.3,
+            "vegas_away": 36.9,
+            "vegas_home": 63.1,
             "nfelo_away": 44.8,
             "nfelo_home": 55.2,
             "ai_insights": {
                 "away_off": 75,
-                "away_def": 70,
-                "away_st": 72,
-                "home_off": 80,
-                "home_def": 85,
-                "home_st": 78,
+                "away_def": 65,
+                "away_st": 70,
+                "home_off": 85,
+                "home_def": 80,
+                "home_st": 75,
                 "predicted_winner": "Los Angeles Rams",
                 "confidence": 8,
-                "analysis": "The Rams' defense, anchored by Aaron Donald and a deep secondary, will dominate the Bills' offensive line and limit Josh Allen's effectiveness. The Bills' offensive struggles will be exacerbated by Ed Oliver's absence, which weakens their pass rush and allows Matthew Stafford to operate comfortably. The Rams' offensive line will protect Stafford effectively, while Davante Adams and Puka Nacua will exploit gaps in the Bills' secondary. The Bills' injury-plagued WR corps (DJ Moore questionable) will struggle to generate consistent yardage against the Rams' physical coverage. Special teams will be competitive but unlikely to decide the game. The Rams' superior defensive efficiency and offensive balance will lead to a low-scoring but controlled victory. Final score prediction: Los Angeles Rams 27, Buffalo Bills 20.",
+                "analysis": "The Rams' dominant defensive line, led by Aaron Donald and Poona Ford, will pressure Josh Allen and disrupt the Bills' offensive rhythm. With Ed Oliver out, Buffalo's pass rush lacks a consistent threat, allowing Stafford to operate comfortably against a Bills secondary missing Dee Alford (nickel back) and DJ Moore (WR). The Rams' WR corps (Adams, Nacua) will exploit Buffalo's weakened coverage, while Kyren Williams provides a reliable RB threat. On defense, the Rams' linebackers and secondary will limit Allen's effectiveness, though Buffalo's run game with James Cook III could keep the game competitive. Special teams are projected to be evenly matched. Final score prediction: Los Angeles Rams 27, Buffalo Bills 23.",
                 "injury_impact": {
                     "Ed Oliver": {
                         "score": 9.0,
-                        "analysis": "His absence severely weakens the Bills' pass rush and interior defensive line depth against the Rams' offensive line."
+                        "analysis": "His absence severely weakens Buffalo's pass rush, reducing pressure on Josh Allen and allowing Stafford to control the game."
                     },
                     "DJ Moore": {
-                        "score": 8.5,
-                        "analysis": "His questionable status limits the Bills' WR depth, reducing Josh Allen's ability to stretch the field vertically."
+                        "score": 8.0,
+                        "analysis": "His questionable status limits Buffalo's WR depth, making it easier for the Rams' secondary to focus on covering Khalil Shakir and Keon Coleman."
                     },
                     "Quentin Lake": {
-                        "score": 6.0,
-                        "analysis": "His questionable status slightly impacts the Rams' nickel coverage but does not disrupt their overall defensive scheme."
+                        "score": 7.0,
+                        "analysis": "His questionable status weakens the Rams' nickel coverage, potentially creating opportunities for Buffalo's WRs."
+                    },
+                    "Myles Garrett": {
+                        "score": 10.0,
+                        "analysis": "His absence on IR removes a key pass rusher from the Rams' defense, though the team still has strong depth at the position."
                     }
                 }
             },
@@ -33431,13 +33627,13 @@
                         "text": "Ed Oliver \u2014 Out",
                         "name": "Ed Oliver",
                         "score": 9.0,
-                        "analysis": "His absence severely weakens the Bills' pass rush and interior defensive line depth against the Rams' offensive line."
+                        "analysis": "His absence severely weakens Buffalo's pass rush, reducing pressure on Josh Allen and allowing Stafford to control the game."
                     },
                     {
                         "text": "DJ Moore \u2014 Questionable",
                         "name": "DJ Moore",
-                        "score": 8.5,
-                        "analysis": "His questionable status limits the Bills' WR depth, reducing Josh Allen's ability to stretch the field vertically."
+                        "score": 8.0,
+                        "analysis": "His questionable status limits Buffalo's WR depth, making it easier for the Rams' secondary to focus on covering Khalil Shakir and Keon Coleman."
                     },
                     {
                         "text": "Joshua Palmer \u2014 Out",
@@ -33859,7 +34055,7 @@
                         }
                     ]
                 },
-                "inj_metric": 82.5,
+                "inj_metric": 83.0,
                 "color": "#d50a0a"
             },
             "home": {
@@ -33871,14 +34067,14 @@
                     {
                         "text": "Quentin Lake \u2014 Questionable",
                         "name": "Quentin Lake",
-                        "score": 6.0,
-                        "analysis": "His questionable status slightly impacts the Rams' nickel coverage but does not disrupt their overall defensive scheme."
+                        "score": 7.0,
+                        "analysis": "His questionable status weakens the Rams' nickel coverage, potentially creating opportunities for Buffalo's WRs."
                     },
                     {
                         "text": "Myles Garrett \u2014 Injured Reserve",
                         "name": "Myles Garrett",
-                        "score": 0.0,
-                        "analysis": ""
+                        "score": 10.0,
+                        "analysis": "His absence on IR removes a key pass rusher from the Rams' defense, though the team still has strong depth at the position."
                     },
                     {
                         "text": "Terrance Ferguson \u2014 Injured Reserve",
@@ -34316,7 +34512,7 @@
                         }
                     ]
                 },
-                "inj_metric": 94.0,
+                "inj_metric": 83.0,
                 "color": "#003594"
             }
         }
