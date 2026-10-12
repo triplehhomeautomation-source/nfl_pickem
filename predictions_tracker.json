@@ -33515,10 +33515,26 @@
                 "inj_metric": 86.0,
                 "color": "#a71930"
             },
-            "is_live": true,
-            "is_final": false,
-            "live_away_score": "15",
-            "live_home_score": "20"
+            "is_live": false,
+            "is_final": true,
+            "live_away_score": "30",
+            "live_home_score": "23"
+        },
+        "autopsy": {
+            "actual_away_score": 30,
+            "actual_home_score": 23,
+            "actual_winner": "Baltimore Ravens",
+            "away_yds": "391",
+            "home_yds": "367",
+            "away_to": "1",
+            "home_to": "1",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "C",
+                "winner_correct": false,
+                "autopsy_analysis": "The Ravens' offense defied expectations, with their backup QB and offensive line generating 391 yards despite Lamar Jackson's absence, contradicting the prediction of offensive struggles. The Falcons' defense, while still formidable, failed to contain Baltimore's balanced attack, allowing 30 points compared to the predicted 17. The score prediction (24-17) was notably off, as the Ravens' offensive efficiency and Falcons' defensive lapses shifted momentum. Atlanta's offensive line and Penix's performance were adequate but not dominant enough to overcome Baltimore's resilience. The Ravens' special teams and turnover efficiency (1 turnover) also played a critical role in the upset.",
+                "key_takeaway": "Backup quarterbacks and overlooked offensive lines can outperform expectations when facing overmatched defenses."
+            }
         }
     },
     "401872994": {
@@ -33526,43 +33542,39 @@
             "id": "401872994",
             "matchup_label": "Buffalo Bills at Los Angeles Rams",
             "utc_date": "2026-10-13T00:15Z",
-            "last_updated": "2026-10-12T03:06:48.733245+00:00",
+            "last_updated": "2026-10-12T14:02:05.664880+00:00",
             "market_line": "LAR -3.5 | O/U: 54.5",
             "ou_line": "O/U 54.5",
             "est_away_pts": 25.5,
             "est_home_pts": 29.0,
-            "fpi_away": 41.4,
-            "fpi_home": 58.2,
+            "fpi_away": 41.8,
+            "fpi_home": 57.8,
             "vegas_away": 36.9,
             "vegas_home": 63.1,
-            "nfelo_away": 44.8,
-            "nfelo_home": 55.2,
+            "nfelo_away": 45.1,
+            "nfelo_home": 54.9,
             "ai_insights": {
                 "away_off": 75,
                 "away_def": 65,
                 "away_st": 70,
-                "home_off": 85,
-                "home_def": 80,
+                "home_off": 80,
+                "home_def": 85,
                 "home_st": 75,
                 "predicted_winner": "Los Angeles Rams",
                 "confidence": 8,
-                "analysis": "The Rams' dominant defensive line, led by Aaron Donald and Poona Ford, will pressure Josh Allen and disrupt the Bills' offensive rhythm. With Ed Oliver out, Buffalo's pass rush lacks a consistent threat, allowing Stafford to operate comfortably against a Bills secondary missing Dee Alford (nickel back) and DJ Moore (WR). The Rams' WR corps (Adams, Nacua) will exploit Buffalo's weakened coverage, while Kyren Williams provides a reliable RB threat. On defense, the Rams' linebackers and secondary will limit Allen's effectiveness, though Buffalo's run game with James Cook III could keep the game competitive. Special teams are projected to be evenly matched. Final score prediction: Los Angeles Rams 27, Buffalo Bills 23.",
+                "analysis": "The Rams' dominant defense, anchored by Aaron Donald and a deep secondary, will pressure Josh Allen and limit Buffalo's offensive production. The Bills' offensive line, while solid, lacks elite pass protection, and the absence of Ed Oliver (RDE) weakens their pass rush. Matthew Stafford's experience and the Rams' WR trio (Adams, Nacua, Whittington) should exploit Buffalo's questionable nickel coverage (Dee Alford out). The Bills' RB James Cook and TE Dalton Kincaid may struggle to sustain drives without a functional pass rush. Special teams are evenly matched, but the Rams' home-field advantage in a controlled climate gives them a slight edge. The Rams' defense will force turnovers, while Stafford's precision and the WR depth will keep the offense moving. Final score prediction: Los Angeles Rams 27, Buffalo Bills 20.",
                 "injury_impact": {
                     "Ed Oliver": {
                         "score": 9.0,
-                        "analysis": "His absence severely weakens Buffalo's pass rush, reducing pressure on Josh Allen and allowing Stafford to control the game."
+                        "analysis": "His absence severely weakens Buffalo's pass rush, reducing pressure on opposing quarterbacks."
                     },
                     "DJ Moore": {
-                        "score": 8.0,
-                        "analysis": "His questionable status limits Buffalo's WR depth, making it easier for the Rams' secondary to focus on covering Khalil Shakir and Keon Coleman."
+                        "score": 7.0,
+                        "analysis": "His questionable status limits Buffalo's WR depth, forcing less experienced targets into key roles."
                     },
                     "Quentin Lake": {
-                        "score": 7.0,
-                        "analysis": "His questionable status weakens the Rams' nickel coverage, potentially creating opportunities for Buffalo's WRs."
-                    },
-                    "Myles Garrett": {
-                        "score": 10.0,
-                        "analysis": "His absence on IR removes a key pass rusher from the Rams' defense, though the team still has strong depth at the position."
+                        "score": 6.0,
+                        "analysis": "His questionable status disrupts Los Angeles' nickel coverage, potentially creating mismatches for Buffalo's WRs."
                     }
                 }
             },
@@ -33627,13 +33639,13 @@
                         "text": "Ed Oliver \u2014 Out",
                         "name": "Ed Oliver",
                         "score": 9.0,
-                        "analysis": "His absence severely weakens Buffalo's pass rush, reducing pressure on Josh Allen and allowing Stafford to control the game."
+                        "analysis": "His absence severely weakens Buffalo's pass rush, reducing pressure on opposing quarterbacks."
                     },
                     {
                         "text": "DJ Moore \u2014 Questionable",
                         "name": "DJ Moore",
-                        "score": 8.0,
-                        "analysis": "His questionable status limits Buffalo's WR depth, making it easier for the Rams' secondary to focus on covering Khalil Shakir and Keon Coleman."
+                        "score": 7.0,
+                        "analysis": "His questionable status limits Buffalo's WR depth, forcing less experienced targets into key roles."
                     },
                     {
                         "text": "Joshua Palmer \u2014 Out",
@@ -34055,7 +34067,7 @@
                         }
                     ]
                 },
-                "inj_metric": 83.0,
+                "inj_metric": 84.0,
                 "color": "#d50a0a"
             },
             "home": {
@@ -34067,14 +34079,14 @@
                     {
                         "text": "Quentin Lake \u2014 Questionable",
                         "name": "Quentin Lake",
-                        "score": 7.0,
-                        "analysis": "His questionable status weakens the Rams' nickel coverage, potentially creating opportunities for Buffalo's WRs."
+                        "score": 6.0,
+                        "analysis": "His questionable status disrupts Los Angeles' nickel coverage, potentially creating mismatches for Buffalo's WRs."
                     },
                     {
                         "text": "Myles Garrett \u2014 Injured Reserve",
                         "name": "Myles Garrett",
-                        "score": 10.0,
-                        "analysis": "His absence on IR removes a key pass rusher from the Rams' defense, though the team still has strong depth at the position."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Terrance Ferguson \u2014 Injured Reserve",
@@ -34512,7 +34524,7 @@
                         }
                     ]
                 },
-                "inj_metric": 83.0,
+                "inj_metric": 94.0,
                 "color": "#003594"
             }
         }
