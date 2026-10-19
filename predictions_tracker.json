@@ -48408,10 +48408,26 @@
                 "inj_metric": 84.0,
                 "color": "#204e32"
             },
-            "is_live": true,
-            "is_final": false,
-            "live_away_score": "7",
-            "live_home_score": "20"
+            "is_live": false,
+            "is_final": true,
+            "live_away_score": "13",
+            "live_home_score": "23"
+        },
+        "autopsy": {
+            "actual_away_score": 13,
+            "actual_home_score": 23,
+            "actual_winner": "Green Bay Packers",
+            "away_yds": "303",
+            "home_yds": "318",
+            "away_to": "2",
+            "home_to": "1",
+            "game_leaders": ": Leader (), : Leader ()",
+            "analysis": {
+                "grade": "D",
+                "winner_correct": false,
+                "autopsy_analysis": "The pre-game prediction underestimated the Packers' ability to adapt to their injuries and overestimated the Cowboys' offensive execution. Despite the Cowboys' WR depth and Prescott's experience, Green Bay's defense limited Dallas to 13 points, far below the predicted 27, while the Packers' offense outgained them (318-303 yards) and capitalized on turnovers. The Cowboys' two turnovers proved decisive, contrasting with the original analysis that overlooked the impact of defensive adjustments and the Packers' offensive efficiency. The score prediction (27-24) was wildly inaccurate, as the Cowboys' offense struggled to generate consistent pressure despite the Packers' depleted run defense, and Green Bay's special teams likely contributed to the outcome. The Packers' ability to exploit the Cowboys' defensive gaps, particularly in the red zone, was a key factor not anticipated in the original analysis.",
+                "key_takeaway": "Turnovers and the Packers' resilient defense dictated the game, proving that even with favorable matchups, execution and adaptability can override pre-game assumptions."
+            }
         }
     },
     "401873008": {
@@ -48419,11 +48435,11 @@
             "id": "401873008",
             "matchup_label": "Washington Commanders at San Francisco 49ers",
             "utc_date": "2026-10-20T00:15Z",
-            "last_updated": "2026-10-19T03:06:06.358451+00:00",
-            "market_line": "SF -7.5 | O/U: 52.5",
-            "ou_line": "O/U 52.5",
-            "est_away_pts": 22.5,
-            "est_home_pts": 30.0,
+            "last_updated": "2026-10-19T14:02:02.165672+00:00",
+            "market_line": "SF -7.5 | O/U: 51.5",
+            "ou_line": "O/U 51.5",
+            "est_away_pts": 22.0,
+            "est_home_pts": 29.5,
             "fpi_away": 13.6,
             "fpi_home": 86.3,
             "vegas_away": 24.0,
@@ -48431,48 +48447,27 @@
             "nfelo_away": 28.2,
             "nfelo_home": 71.8,
             "ai_insights": {
-                "away_off": 70,
-                "away_def": 65,
+                "away_off": 65,
+                "away_def": 70,
                 "away_st": 75,
                 "home_off": 85,
-                "home_def": 70,
+                "home_def": 75,
                 "home_st": 80,
                 "predicted_winner": "San Francisco 49ers",
-                "confidence": 8,
-                "analysis": "The 49ers possess a high-octane offense with Brock Purdy, George Kittle, and a trio of elite WRs (Mike Evans, Deebo Samuel Sr., Brandin Cooks) capable of exploiting Washington's inconsistent secondary. Washington's defense, while anchored by Daron Payne and Javon Kinlaw, lacks depth at edge rusher (Tim Settle is unproven) and faces a 49ers offensive line led by Trent Williams. The Commanders' offense is limited by Jayden Daniels' inexperience and the absence of Stefon Diggs, though Antonio Williams and Chig Okonkwo provide some WR support. San Francisco's defense, despite missing Nick Bosa and Marques Sigle, still features Fred Warner and Dre Greenlaw, but their pass rush will struggle against a 49ers O-line that excels in protection. Special teams could be pivotal, with Deebo Samuel's return ability offsetting Washington's Tress Way. The 49ers' offensive firepower and Washington's defensive vulnerabilities make San Francisco the clear favorite, though the Commanders may keep it close. San Francisco 27, Washington 20.",
-                "injury_impact": {
-                    "Stefon Diggs": {
-                        "score": 9.0,
-                        "analysis": "His absence severely limits Washington's passing game, reducing their ability to challenge San Francisco's secondary."
-                    },
-                    "Nick Bosa": {
-                        "score": 10.0,
-                        "analysis": "His injury cripples the 49ers' pass rush, giving Jayden Daniels more time to operate despite his inexperience."
-                    },
-                    "Marques Sigle": {
-                        "score": 8.5,
-                        "analysis": "His absence weakens San Francisco's safety coverage, creating opportunities for Washington's WRs if they can get open."
-                    },
-                    "Nick Cross": {
-                        "score": 7.0,
-                        "analysis": "His questionable status could disrupt Washington's linebacking corps, affecting their ability to stop the run and cover tight ends."
-                    },
-                    "Jeremy McNichols": {
-                        "score": 6.0,
-                        "analysis": "His injury reduces Washington's depth at running back, though Jacory Croskey-Merritt may see limited action."
-                    }
-                }
+                "confidence": 6,
+                "analysis": "AI Analysis error.",
+                "injury_impact": {}
             },
             "winner_side": "home",
             "loser_side": "away",
-            "confidence": 8,
+            "confidence": 6,
             "is_upset": false,
-            "weather_summary": "60\u00b0F, Overcast (Wind: 12 mph)",
+            "weather_summary": "62\u00b0F, Overcast (Wind: 12 mph)",
             "quarters_weather": [
                 {
                     "quarter": "Q1",
                     "utc_time": "2026-10-20T00:15:00+00:00",
-                    "temp": 60,
+                    "temp": 62,
                     "wind": 12,
                     "condition": "Overcast",
                     "icon": "overcast"
@@ -48489,7 +48484,7 @@
                     "quarter": "Q3",
                     "utc_time": "2026-10-20T01:46:00+00:00",
                     "temp": 58,
-                    "wind": 7,
+                    "wind": 8,
                     "condition": "Overcast",
                     "icon": "overcast"
                 },
@@ -48497,7 +48492,7 @@
                     "quarter": "Q4",
                     "utc_time": "2026-10-20T02:21:00+00:00",
                     "temp": 58,
-                    "wind": 7,
+                    "wind": 8,
                     "condition": "Overcast",
                     "icon": "overcast"
                 }
@@ -48523,20 +48518,20 @@
                     {
                         "text": "Jeremy McNichols \u2014 Injured Reserve",
                         "name": "Jeremy McNichols",
-                        "score": 6.0,
-                        "analysis": "His injury reduces Washington's depth at running back, though Jacory Croskey-Merritt may see limited action."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Stefon Diggs \u2014 Questionable",
                         "name": "Stefon Diggs",
-                        "score": 9.0,
-                        "analysis": "His absence severely limits Washington's passing game, reducing their ability to challenge San Francisco's secondary."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Nick Cross \u2014 Questionable",
                         "name": "Nick Cross",
-                        "score": 7.0,
-                        "analysis": "His questionable status could disrupt Washington's linebacking corps, affecting their ability to stop the run and cover tight ends."
+                        "score": 0.0,
+                        "analysis": ""
                     }
                 ],
                 "depth_chart": {
@@ -48984,7 +48979,7 @@
                         }
                     ]
                 },
-                "inj_metric": 78.0,
+                "inj_metric": 100.0,
                 "color": "#5a1414"
             },
             "home": {
@@ -49008,14 +49003,14 @@
                     {
                         "text": "Marques Sigle \u2014 Out",
                         "name": "Marques Sigle",
-                        "score": 8.5,
-                        "analysis": "His absence weakens San Francisco's safety coverage, creating opportunities for Washington's WRs if they can get open."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Nick Bosa \u2014 Out",
                         "name": "Nick Bosa",
-                        "score": 10.0,
-                        "analysis": "His injury cripples the 49ers' pass rush, giving Jayden Daniels more time to operate despite his inexperience."
+                        "score": 0.0,
+                        "analysis": ""
                     },
                     {
                         "text": "Christian Kirk \u2014 Injured Reserve",
@@ -49506,7 +49501,7 @@
                         }
                     ]
                 },
-                "inj_metric": 81.5,
+                "inj_metric": 100.0,
                 "color": "#aa0000"
             }
         }
