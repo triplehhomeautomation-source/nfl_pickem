@@ -134,7 +134,7 @@
                 <button id="mode-phase-btn" class="toggle-btn active" onclick="setComparisonMode('phase')">Phase</button>
                 <button id="mode-tactical-btn" class="toggle-btn" onclick="setComparisonMode('tactical')">Tactical</button>
             </div>
-            <a href="recap.html" class="btn-action" title="View Completed Game Autopsies">🎓 Autopsies & Grades (14)</a>
+            <a href="recap.html" class="btn-action" title="View Completed Game Autopsies">🎓 Autopsies & Grades</a>
             <a href="/backups/" target="_blank" class="btn-action" title="Browse Saved HTML Snapshots">📂 Backups</a>
             <button class="btn-action" onclick="triggerRefresh()">🔄 Refresh</button>
             <button class="btn-action" onclick="copyGeminiPrompt()">📋 Prompt</button>
@@ -235,7 +235,7 @@
             const opt = document.createElement("option");
             opt.value = idx; 
             const liveTag = g.is_live ? " [🔴 LIVE]" : "";
-            opt.textContent = `[${away_abbr} @ ${home_abbr}]${away_name} at ${home_name}${liveTag}`;
+            opt.textContent = `[${away_abbr} @ ${home_abbr}] ${away_name} at ${home_name}${liveTag}`;
             select.appendChild(opt);
         });
         if (GAMES_DATA.length > 0) { 
@@ -278,24 +278,23 @@
                 <div class="comp-bar-header">
                     <div class="fpi-logo-wrap" style="color: ${away_color};">
                         <img src="${away_logo}" alt="">
-                        <span>${away_abbr}${awayDisp}</span>
+                        <span>${away_abbr} ${awayDisp}</span>
                     </div>
                     <span>${label}</span>
                     <div class="fpi-logo-wrap" style="color: ${home_color};">
-                        <span>${homeDisp}${home_abbr}</span>
+                        <span>${homeDisp} ${home_abbr}</span>
                         <img src="${home_logo}" alt="">
                     </div>
                 </div>
                 <div class="comp-bar-track" style="background: ${home_color};">
                     <div class="comp-centerline"></div>
-                    <div class="comp-bar-fill" style="width: ${awayPct}\%; background:${away_color};"></div>
+                    <div class="comp-bar-fill" style="width: ${awayPct}%; background: ${away_color};"></div>
                 </div>
             </div>`;
     }
 
     function renderQuarterlyWeatherHtml(g) {
         if (!g.quarters_weather || g.quarters_weather.length === 0) return "";
-
         let cardsHtml = g.quarters_weather.map(q => `
             <div class="quarter-card">
                 <div class="quarter-header-badge">
@@ -308,7 +307,6 @@
                 <div class="quarter-wind">💨 ${q.wind}${q.wind !== '--' && q.wind !== 0 ? 'm' : ''}</div>
             </div>
         `).join("");
-
         return `
         <div class="quarterly-weather-container">
             <div class="weather-section-title">
@@ -325,21 +323,18 @@
             const winTeam = g[g.winner_side];
             const loseTeam = g[g.loser_side];
             const upsetBadge = g.is_upset ? `<span class="upset-badge" style="font-size:10px; padding:2px 6px;">🚨 UPSET</span>` : "";
-            
             let away_abbr = g.away ? g.away.abbr : (g.away_abbr || "AWY");
             let home_abbr = g.home ? g.home.abbr : (g.home_abbr || "HOM");
             let away_name = g.away ? g.away.name : (g.away_name || "Away");
             let home_name = g.home ? g.home.name : (g.home_name || "Home");
             let away_color = g.away ? g.away.color : (g.away_color || "#3b82f6");
             let home_color = g.home ? g.home.color : (g.home_color || "#14b8a6");
-
-            const liveBadge = g.is_live ? `<span class="live-badge" style="font-size:10px; padding:2px 6px;">🔴 ${g.live_away_score} -${g.live_home_score}</span>` : "";
-            
+            const liveBadge = g.is_live ? `<span class="live-badge" style="font-size:10px; padding:2px 6px;">🔴 ${g.live_away_score} - ${g.live_home_score}</span>` : "";
             const kickoffWeather = (g.quarters_weather && g.quarters_weather[0]) ? g.quarters_weather[0] : null;
             let weatherVisualHtml = "";
             if (kickoffWeather) {
                 weatherVisualHtml = `
-                    <span class="qp-weather-inline" title="${kickoffWeather.condition} •${kickoffWeather.wind} mph wind">
+                    <span class="qp-weather-inline" title="${kickoffWeather.condition} • ${kickoffWeather.wind} mph wind">
                         ${getWeatherSvg(kickoffWeather.icon)}
                         <span>${kickoffWeather.temp}°F</span>
                         <span style="font-size:10px; color:var(--muted);">(${kickoffWeather.wind}m)</span>
@@ -350,9 +345,9 @@
             rowsHtml += `
             <tr>
                 <td>
-                    <div style="font-weight:700;">${away_name} <span style="color:var(--muted);">@</span> ${home_name}${liveBadge}</div>
+                    <div style="font-weight:700;">${away_name} <span style="color:var(--muted);">@</span> ${home_name} ${liveBadge}</div>
                     <div style="font-size:11px; color:var(--muted); display:flex; align-items:center;">
-                        ${g.local_time_display} •${weatherVisualHtml}
+                        ${g.local_time_display} • ${weatherVisualHtml}
                     </div>
                 </td>
                 <td>
@@ -370,8 +365,8 @@
                 </td>
                 <td>
                     <div class="score-badge">
-                        <span style="color:${away_color}">${away_abbr}${g.est_away_pts}</span> - 
-                        <span style="color:${home_color}">${home_abbr}${g.est_home_pts}</span>
+                        <span style="color:${away_color}">${away_abbr} ${g.est_away_pts}</span> - 
+                        <span style="color:${home_color}">${home_abbr} ${g.est_home_pts}</span>
                     </div>
                 </td>
                 <td><span style="font-weight:700; color:var(--primary);">${g.ou_line}</span></td>
@@ -399,7 +394,6 @@
     function renderGameCard(g) {
         const winnerTeam = g[g.winner_side] || {logo: "", color: "", name: g.ai_insights.predicted_winner};
         const upsetHtml = g.is_upset ? `<div class="upset-badge">🚨 UPSET ALERT</div>` : ``;
-        
         let away_abbr = g.away ? g.away.abbr : (g.away_abbr || "AWY");
         let home_abbr = g.home ? g.home.abbr : (g.home_abbr || "HOM");
         let away_logo = g.away ? g.away.logo : (g.away_logo || "");
@@ -410,8 +404,7 @@
         let home_record = g.home ? g.home.record : "0-0";
         let inj_away = g.away ? g.away.inj_metric : 100;
         let inj_home = g.home ? g.home.inj_metric : 100;
-
-        const liveHtml = g.is_live ? `<div class="live-badge">🔴 LIVE: ${away_abbr}${g.live_away_score} - ${home_abbr}${g.live_home_score}</div>` : ``;
+        const liveHtml = g.is_live ? `<div class="live-badge">🔴 LIVE: ${away_abbr} ${g.live_away_score} - ${home_abbr} ${g.live_home_score}</div>` : ``;
 
         return `
         <div class="game-pane-card">
@@ -420,7 +413,6 @@
                     <span class="timestamp-badge">🗓 ${g.local_time_display}</span>
                     ${liveHtml}
                 </div>
-                
                 <div class="header-center-logos">
                     <span class="record-txt">(${away_record})</span>
                     <img src="${away_logo}">
@@ -428,7 +420,6 @@
                     <img src="${home_logo}">
                     <span class="record-txt">(${home_record})</span>
                 </div>
-
                 <div class="header-market-box">
                     <span class="market-badge">${g.market_line}</span>
                     <div class="implied-pts">
@@ -437,23 +428,19 @@
                     </div>
                 </div>
             </div>
-
             <div class="matchup-overview-grid">
                 <div class="comp-bars-container">
                     ${renderQuarterlyWeatherHtml(g)}
-                    
                     <div class="comp-group-title">The Models (Win Probability)</div>
                     ${buildCompBar("ESPN FPI", g, g.fpi_away, g.fpi_home, "", true)}
                     ${buildCompBar("Nfelo Rating", g, g.nfelo_away, g.nfelo_home, "", true)}
                     ${buildCompBar("Vegas True Odds", g, g.vegas_away, g.vegas_home, "", true)}
-                    
                     <div class="comp-group-title" style="margin-top: 8px;">The Roster (AI PR)</div>
                     ${buildCompBar("Offense", g, g.ai_insights.away_off, g.ai_insights.home_off)}
                     ${buildCompBar("Defense", g, g.ai_insights.away_def, g.ai_insights.home_def)}
                     ${buildCompBar("Special Teams", g, g.ai_insights.away_st, g.ai_insights.home_st)}
                     ${buildCompBar("Team Health", g, inj_away, inj_home, "Higher = Healthier")}
                 </div>
-
                 <div class="ai-script-card">
                     <div class="winner-banner">
                         <div class="winner-info">
@@ -469,6 +456,43 @@
                         </div>
                     </div>
                     <p class="ai-script-text">${g.ai_insights.analysis || "AI generation error."}</p>
+                </div>
+            </div>
+        </div>`;
+    }
+
+    function buildKeysToVictoryHTML(g) {
+        if (!g.ai_insights || !g.ai_insights.keys_to_win) return "";
+        const awayKeys = g.ai_insights.keys_to_win.away || [];
+        const homeKeys = g.ai_insights.keys_to_win.home || [];
+        
+        let awayHtml = awayKeys.map((k, i) => `<div style="margin-bottom: 8px;"><strong>${i+1}.</strong> ${k}</div>`).join("");
+        let homeHtml = homeKeys.map((k, i) => `<div style="margin-bottom: 8px;"><strong>${i+1}.</strong> ${k}</div>`).join("");
+        
+        let awayColor = g.away ? g.away.color : (g.away_color || "#3b82f6");
+        let homeColor = g.home ? g.home.color : (g.home_color || "#14b8a6");
+        let awayLogo = g.away ? g.away.logo : (g.away_logo || "");
+        let homeLogo = g.home ? g.home.logo : (g.home_logo || "");
+        let awayName = g.away ? g.away.name : (g.away_name || "Away");
+        let homeName = g.home ? g.home.name : (g.home_name || "Home");
+
+        return `
+        <div class="game-pane-card" style="margin-bottom: 24px;">
+            <div style="text-align: center; margin-bottom: 16px;">
+                <h3 style="margin: 0; font-size: 16px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.05em;">🗝️ Keys to Victory</h3>
+            </div>
+            <div class="side-by-side-grid">
+                <div style="padding: 16px; background: var(--toggle-bg); border-radius: 10px; border-left: 5px solid ${awayColor};">
+                    <div style="font-weight: 900; font-size: 15px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; color: ${awayColor};">
+                        <img src="${awayLogo}" style="width: 26px;"> ${awayName}
+                    </div>
+                    <div style="font-size: 13.5px; line-height: 1.5;">${awayHtml}</div>
+                </div>
+                <div style="padding: 16px; background: var(--toggle-bg); border-radius: 10px; border-left: 5px solid ${homeColor};">
+                    <div style="font-weight: 900; font-size: 15px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; color: ${homeColor};">
+                        <img src="${homeLogo}" style="width: 26px;"> ${homeName}
+                    </div>
+                    <div style="font-size: 13.5px; line-height: 1.5;">${homeHtml}</div>
                 </div>
             </div>
         </div>`;
@@ -553,7 +577,8 @@
         } else {
             toggles.style.display = "flex";
             const g = GAMES_DATA[val];
-            content.innerHTML = renderGameCard(g) + buildDepthChartsHTML(g) + buildInjuriesHTML(g);
+            // Render specific deep dive with Keys to Win attached!
+            content.innerHTML = renderGameCard(g) + buildKeysToVictoryHTML(g) + buildDepthChartsHTML(g) + buildInjuriesHTML(g);
         }
     }
 
