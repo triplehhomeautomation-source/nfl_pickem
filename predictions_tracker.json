@@ -59524,7 +59524,7 @@
                 "id": "401873078",
                 "matchup_label": "Cincinnati Bengals at Washington Commanders",
                 "utc_date": "2026-11-24T01:15Z",
-                "last_updated": "2026-11-23T10:18:24.112269+00:00",
+                "last_updated": "2026-11-23T21:02:09.366168+00:00",
                 "market_line": "CIN -6 | O/U: 54.5",
                 "ou_line": "O/U 54.5",
                 "est_away_pts": 30.2,
@@ -59536,39 +59536,43 @@
                 "nfelo_away": 64.7,
                 "nfelo_home": 35.3,
                 "ai_insights": {
-                    "away_off": 75,
-                    "away_def": 65,
+                    "away_off": 65,
+                    "away_def": 75,
                     "away_st": 70,
-                    "home_off": 80,
-                    "home_def": 60,
+                    "home_off": 70,
+                    "home_def": 72,
                     "home_st": 75,
                     "predicted_winner": "Washington Commanders",
                     "confidence": 8,
-                    "analysis": "The Bengals are a goddamn mess on the offensive line without Dalton Risner, and their defense is gutted with Dax Hill and Kyle Dugger questionable. Joe Burrow\u2019s gonna get shredded by the Commanders\u2019 pass rush, especially with Odafe Oweh and Shy Tuttle coming off the edges. Washington\u2019s offense, led by Jayden Daniels and Stefon Diggs, is a damn machine when healthy. Their O-line\u2019s got some holes, but they\u2019re not as crippled as the Bengals\u2019. The Commanders\u2019 defense, while not elite, can clog the run and force Burrow into mistakes. The Bengals\u2019 only hope is to throw the hell out of the ball and hope the Commanders\u2019 secondary stumbles. But with the Commanders\u2019 FPI dominance and their better overall roster, they\u2019re gonna smoke the Bengals. Washington 27, Cincinnati 20.",
+                    "analysis": "The Bengals are a mess on the offensive line with Dalton Risner out and Dax Hill questionable. Burrow\u2019s gonna get lit up if the O-line can\u2019t block. Washington\u2019s defense has some juice with Oweh and Tuttle, but their offensive line is shaky. Daniels needs to trust Diggs and Burks to make plays. If the Commanders can protect Daniels and get Diggs open, they\u2019ll win. Bengals need to stop the run and pressure Daniels, but with Risner gone, that\u2019s a tall order. Weather\u2019s not a factor, but the Commanders\u2019 special teams are better. This is a trap game for Cincinnati. Washington\u2019s gonna win by a field goal.",
                     "keys_to_win": {
                         "away": [
-                            "Protect Jayden Daniels\u2019 blind side with Brandon Coleman and Josh Conerly Jr.",
-                            "Get Stefon Diggs open early to take pressure off the O-line.",
-                            "Force Burrow into turnovers with aggressive pass rush."
+                            "Protect Burrow at all costs, no matter what",
+                            "Stop Stefon Diggs in the passing game",
+                            "Force Jayden Daniels into mistakes with pressure"
                         ],
                         "home": [
-                            "Limit Stefon Diggs\u2019 yards after the catch with physical coverage.",
-                            "Stop the run with Dexter Lawrence II and Jonathan Allen.",
-                            "Force Jayden Daniels into quick throws to disrupt his rhythm."
+                            "Keep Daniels upright and let Diggs eat",
+                            "Control the run game to limit Chase Brown",
+                            "Use special teams to flip field position"
                         ]
                     },
                     "injury_impact": {
                         "Dalton Risner": {
+                            "score": 10.0,
+                            "analysis": "His absence cripples the Bengals' offensive line, leaving Burrow exposed to pressure."
+                        },
+                        "Dax Hill": {
+                            "score": 8.0,
+                            "analysis": "His questionable status weakens Cincinnati\u2019s secondary against Diggs."
+                        },
+                        "Lucas Patrick": {
                             "score": 9.0,
-                            "analysis": "His absence cripples the Bengals\u2019 offensive line, leaving Burrow exposed to Washington\u2019s pass rush."
+                            "analysis": "His injury destabilizes Washington\u2019s offensive line, hurting Daniels\u2019 protection."
                         },
-                        "Laremy Tunsil": {
-                            "score": 8.5,
-                            "analysis": "His injury weakens the Commanders\u2019 O-line, but they\u2019re still better than the Bengals\u2019 in the trenches."
-                        },
-                        "Rachaad White": {
-                            "score": 7.0,
-                            "analysis": "His questionable status hurts the Commanders\u2019 run game, but Jayden Daniels can still pick up yards through the air."
+                        "Amik Robertson": {
+                            "score": 8.0,
+                            "analysis": "His absence leaves a hole in Washington\u2019s defense against the Bengals\u2019 passing game."
                         }
                     }
                 },
@@ -59576,39 +59580,39 @@
                 "loser_side": "away",
                 "confidence": 8,
                 "is_upset": true,
-                "weather_summary": "53\u00b0F, Overcast (Wind: 10 mph)",
+                "weather_summary": "54\u00b0F, Drizzle (Wind: 9 mph)",
                 "quarters_weather": [
                     {
                         "quarter": "Q1",
                         "utc_time": "2026-11-24T01:15:00+00:00",
-                        "temp": 53,
+                        "temp": 54,
+                        "wind": 9,
+                        "condition": "Drizzle",
+                        "icon": "drizzle"
+                    },
+                    {
+                        "quarter": "Q2",
+                        "utc_time": "2026-11-24T01:53:00+00:00",
+                        "temp": 52,
+                        "wind": 9,
+                        "condition": "Drizzle",
+                        "icon": "drizzle"
+                    },
+                    {
+                        "quarter": "Q3",
+                        "utc_time": "2026-11-24T02:46:00+00:00",
+                        "temp": 50,
                         "wind": 10,
                         "condition": "Overcast",
                         "icon": "overcast"
                     },
                     {
-                        "quarter": "Q2",
-                        "utc_time": "2026-11-24T01:53:00+00:00",
-                        "temp": 53,
-                        "wind": 11,
-                        "condition": "Overcast",
-                        "icon": "overcast"
-                    },
-                    {
-                        "quarter": "Q3",
-                        "utc_time": "2026-11-24T02:46:00+00:00",
-                        "temp": 52,
-                        "wind": 11,
-                        "condition": "Partly Cloudy",
-                        "icon": "partly_cloudy"
-                    },
-                    {
                         "quarter": "Q4",
                         "utc_time": "2026-11-24T03:21:00+00:00",
-                        "temp": 52,
-                        "wind": 11,
-                        "condition": "Partly Cloudy",
-                        "icon": "partly_cloudy"
+                        "temp": 50,
+                        "wind": 10,
+                        "condition": "Overcast",
+                        "icon": "overcast"
                     }
                 ],
                 "away": {
@@ -59618,6 +59622,12 @@
                     "record": "7-2",
                     "injuries": [
                         {
+                            "text": "Jalen Davis \u2014 Injured Reserve",
+                            "name": "Jalen Davis",
+                            "score": 0.0,
+                            "analysis": ""
+                        },
+                        {
                             "text": "Kyle Dugger \u2014 Questionable",
                             "name": "Kyle Dugger",
                             "score": 0.0,
@@ -59626,24 +59636,18 @@
                         {
                             "text": "Dalton Risner \u2014 Out",
                             "name": "Dalton Risner",
-                            "score": 9.0,
-                            "analysis": "His absence cripples the Bengals\u2019 offensive line, leaving Burrow exposed to Washington\u2019s pass rush."
+                            "score": 10.0,
+                            "analysis": "His absence cripples the Bengals' offensive line, leaving Burrow exposed to pressure."
                         },
                         {
                             "text": "Dax Hill \u2014 Questionable",
                             "name": "Dax Hill",
-                            "score": 0.0,
-                            "analysis": ""
+                            "score": 8.0,
+                            "analysis": "His questionable status weakens Cincinnati\u2019s secondary against Diggs."
                         },
                         {
                             "text": "Andrei Iosivas \u2014 Injured Reserve",
                             "name": "Andrei Iosivas",
-                            "score": 0.0,
-                            "analysis": ""
-                        },
-                        {
-                            "text": "Oren Burks \u2014 Injured Reserve",
-                            "name": "Oren Burks",
                             "score": 0.0,
                             "analysis": ""
                         }
@@ -59749,7 +59753,7 @@
                                     },
                                     {
                                         "name": "Oren Burks",
-                                        "badge": "IR"
+                                        "badge": ""
                                     }
                                 ]
                             },
@@ -59818,7 +59822,7 @@
                                     },
                                     {
                                         "name": "Jalen Davis",
-                                        "badge": ""
+                                        "badge": "IR"
                                     },
                                     {
                                         "name": "Ja'Sir Taylor",
@@ -60065,7 +60069,7 @@
                             }
                         ]
                     },
-                    "inj_metric": 91.0,
+                    "inj_metric": 82.0,
                     "color": "#fb4f14"
                 },
                 "home": {
@@ -60075,34 +60079,34 @@
                     "record": "3-5-1",
                     "injuries": [
                         {
-                            "text": "Lucas Patrick \u2014 Questionable",
-                            "name": "Lucas Patrick",
-                            "score": 0.0,
-                            "analysis": ""
-                        },
-                        {
-                            "text": "Amik Robertson \u2014 Questionable",
-                            "name": "Amik Robertson",
-                            "score": 0.0,
-                            "analysis": ""
-                        },
-                        {
                             "text": "Jacory Croskey-Merritt \u2014 Injured Reserve",
                             "name": "Jacory Croskey-Merritt",
                             "score": 0.0,
                             "analysis": ""
                         },
                         {
+                            "text": "Lucas Patrick \u2014 Questionable",
+                            "name": "Lucas Patrick",
+                            "score": 9.0,
+                            "analysis": "His injury destabilizes Washington\u2019s offensive line, hurting Daniels\u2019 protection."
+                        },
+                        {
+                            "text": "Amik Robertson \u2014 Questionable",
+                            "name": "Amik Robertson",
+                            "score": 8.0,
+                            "analysis": "His absence leaves a hole in Washington\u2019s defense against the Bengals\u2019 passing game."
+                        },
+                        {
                             "text": "Rachaad White \u2014 Questionable",
                             "name": "Rachaad White",
-                            "score": 7.0,
-                            "analysis": "His questionable status hurts the Commanders\u2019 run game, but Jayden Daniels can still pick up yards through the air."
+                            "score": 0.0,
+                            "analysis": ""
                         },
                         {
                             "text": "Laremy Tunsil \u2014 Injured Reserve",
                             "name": "Laremy Tunsil",
-                            "score": 8.5,
-                            "analysis": "His injury weakens the Commanders\u2019 O-line, but they\u2019re still better than the Bengals\u2019 in the trenches."
+                            "score": 0.0,
+                            "analysis": ""
                         }
                     ],
                     "depth_chart": {
@@ -60554,7 +60558,7 @@
                             }
                         ]
                     },
-                    "inj_metric": 84.5,
+                    "inj_metric": 83.0,
                     "color": "#5a1414"
                 }
             }
